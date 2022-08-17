@@ -1,0 +1,6 @@
+profileLoadedMessage: "&9&lVibeツ &8» &aProfile loaded. Welcome back "
+profileCreatedMessage: "&9&lVibeツ &8» &aProfile created. Welcome "
+configReloaded: "&9&lVibeツ &8» &aReloaded config."
+NoPermissionMessage: "&9&lVibeツ &8» &cYou do not have permission!"
+ClearInventoryBypassPermission: "hub.clearinventory.bypass"
+ReloadConfigPermission: "hub.reloadconfig"
