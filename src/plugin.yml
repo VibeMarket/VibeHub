@@ -1,0 +1,6 @@
+name: VibeHub
+version: 1.0
+author: ItsCryptic
+api-version: 1.17
+main: me.kevind.main.VibeHub
+commands: {}
