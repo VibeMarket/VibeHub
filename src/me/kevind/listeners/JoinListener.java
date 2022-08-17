@@ -17,10 +17,8 @@ public class JoinListener implements Listener {
         Player player = event.getPlayer();
         Location loc = new Location(Bukkit.getWorld("TempHub2022"), 0.500, 65.0, 0.500, 90, 2);
         player.teleport(loc);
-        //give the player flight
         player.setAllowFlight(true);
         player.setFlying(true);
-        //give speed 3 <3
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
         player.setGameMode(GameMode.ADVENTURE);
         player.getInventory().clear();
