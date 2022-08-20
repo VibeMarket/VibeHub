@@ -1,5 +1,6 @@
 package me.kevind.main;
 
+import me.kevind.commands.BuildCommand;
 import me.kevind.commands.IDontWantSpeedCommand;
 import me.kevind.commands.IWantSpeedCommand;
 import me.kevind.commands.ReloadCommand;
@@ -36,6 +37,7 @@ public class VibeHub extends JavaPlugin {
         getCommand("hubreload").setExecutor(new ReloadCommand());
         getCommand("idontwantspeed").setExecutor(new IDontWantSpeedCommand());
         getCommand("iwantspeed").setExecutor(new IWantSpeedCommand());
+        getCommand("build").setExecutor(new BuildCommand());
     }
     public void onDisable() {}
 }
