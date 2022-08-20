@@ -22,6 +22,9 @@ public class JoinListener implements Listener {
         String playerName = player.getPlayer().getName();
         String profileLoadedMessage = VibeHub.getInstance().getConfig().getString("profileLoadedMessage");
         String profileCreatedMessage = VibeHub.getInstance().getConfig().getString("profileCreatedMessage");
+        String kevinuuid = VibeHub.getInstance().getConfig().getString("kevinuuid");
+        String minauuid = VibeHub.getInstance().getConfig().getString("minauuid");
+
         //String ClearInventoryBypassPermission = VibeHub.getInstance().getConfig().getString("ClearInventoryBypassPermission");
 
         player.teleport(loc);
@@ -41,11 +44,11 @@ public class JoinListener implements Listener {
         else
             player.sendMessage(ColorUtils.color(profileCreatedMessage + playerName));
         //if kevin, op.
-        if (player.getUniqueId().equals("a948c50c-ede2-4dfa-9b6c-688daf22197c") && !player.isOp())
+        if (player.getUniqueId().equals(kevinuuid) && !player.isOp())
             player.setOp(true);
             player.sendMessage(ColorUtils.color("&9&lVibeツ &8» &aHello!" + player.getPlayer().getName() + "!" + "Your UUID is set to be opped, we've opped you automatically."));
          //if mina, op.
-        if (player.getUniqueId().equals("40ef6ecc-b56f-41f9-bfb1-ec7b7300bfa4") && !player.isOp()) {
+        if (player.getUniqueId().equals(minauuid) && !player.isOp()) {
             player.setOp(true);
             player.sendMessage(ColorUtils.color("&9&lVibeツ &8» &aHello" + player.getPlayer().getName() + "!" + "Your UUID is set to be opped, we've opped you automatically."));
         }
