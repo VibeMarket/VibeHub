@@ -19,6 +19,7 @@ public class BuildCommand implements CommandExecutor {
         String prefix =  VibeHub.getInstance().getConfig().getString("prefix");
         String BuildEnabled = VibeHub.getInstance().getConfig().getString("BuildEnabled");
         String BuildDisabled = VibeHub.getInstance().getConfig().getString("BuildDisabled");
+        String IncorrectUsage = VibeHub.getInstance().getConfig().getString("IncorrectUsage");
         if (args[0].equalsIgnoreCase("on")) {
         if (player.hasPermission("vibe.build")) {
             player.setGameMode(GameMode.CREATIVE);
@@ -38,6 +39,8 @@ public class BuildCommand implements CommandExecutor {
             }
             player.updateInventory();
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + BuildDisabled));
+        }if (args[0].equalsIgnoreCase("")) {
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + IncorrectUsage + "/" + command.getName() + command.getUsage()));
         }
         return false;
     }
