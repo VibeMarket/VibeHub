@@ -14,9 +14,9 @@ public class IWantSpeedCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            player.sendMessage(ColorUtils.color("&cThis command has moved to /vspeed on"));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&cThis command has moved to /vspeed on"));
         }else {
-            sender.sendMessage(ColorUtils.color("&cYou need to be a player to do that."));
+            sender.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&cYou need to be a player to do that."));
         }
         return false;
     }

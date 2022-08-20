@@ -17,6 +17,8 @@ public class BuildCommand implements CommandExecutor {
         Player player = (Player) sender;
         String NoPermissionMessage =  VibeHub.getInstance().getConfig().getString("NoPermissionMessage");
         String prefix =  VibeHub.getInstance().getConfig().getString("prefix");
+        String BuildEnabled = VibeHub.getInstance().getConfig().getString("BuildEnabled");
+        String BuildDisabled = VibeHub.getInstance().getConfig().getString("BuildDisabled");
         if (args[0].equalsIgnoreCase("on")) {
         if (player.hasPermission("vibe.build")) {
             player.setGameMode(GameMode.CREATIVE);
@@ -24,9 +26,9 @@ public class BuildCommand implements CommandExecutor {
             player.getInventory().addItem(new ItemStack(Material.WOODEN_AXE));
             player.getInventory().setItem(4, new ItemStack(Material.COMPASS));
             player.updateInventory();
-            player.sendMessage(ColorUtils.color(prefix + "&aTurned on build mode."));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + BuildEnabled));
         }else {
-            player.sendMessage(ColorUtils.color(NoPermissionMessage));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + NoPermissionMessage));
         }
         }if (args[0].equalsIgnoreCase("off")) {
             player.setGameMode(GameMode.ADVENTURE);
@@ -35,7 +37,7 @@ public class BuildCommand implements CommandExecutor {
                 player.getInventory().setItem(8, ItemList.SERVER_SELECTOR);
             }
             player.updateInventory();
-            player.sendMessage(ColorUtils.color(prefix + "&cTurned off build mode. You'll need to re-log to get the server selector."));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + BuildDisabled));
         }
         return false;
     }

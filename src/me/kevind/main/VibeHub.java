@@ -18,7 +18,7 @@ public class VibeHub extends JavaPlugin {
     public static VibeHub getInstance() {
         return instance;
     }
-
+    public static String getPrefix() { return instance.getConfig().getString("prefix"); }
     public void onEnable() {
         instance = this;
         serverselector = new SelectorGUI();

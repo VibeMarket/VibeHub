@@ -36,9 +36,9 @@ public class JoinListener implements Listener {
         player.updateInventory();
 
         if (player.hasPlayedBefore())
-            player.sendMessage(ColorUtils.color(profileLoadedMessage + playerName));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileLoadedMessage + playerName));
         else
-            player.sendMessage(ColorUtils.color(profileCreatedMessage + playerName));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileCreatedMessage + playerName));
 
         player.teleport(loc);
 

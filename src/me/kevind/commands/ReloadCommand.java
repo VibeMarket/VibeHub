@@ -2,7 +2,6 @@ package me.kevind.commands;
 
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -16,10 +15,10 @@ public class ReloadCommand implements CommandExecutor {
         if (player.hasPermission(ReloadConfigPermission)) {
             String reloadedConfigMessage = VibeHub.getInstance().getConfig().getString("configReloaded");
             VibeHub.getInstance().reloadConfig();
-            player.sendMessage(ColorUtils.color(reloadedConfigMessage));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + reloadedConfigMessage));
         }else {
             String NoPermissionMessage =  VibeHub.getInstance().getConfig().getString("NoPermissionMessage");
-            player.sendMessage(ColorUtils.color(NoPermissionMessage));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + NoPermissionMessage));
         }
         return false;
     }
