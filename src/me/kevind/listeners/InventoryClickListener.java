@@ -18,7 +18,6 @@ public class InventoryClickListener implements Listener {
     public void onInventoryClick(InventoryClickEvent e) {
         if(e.getWhoClicked() instanceof Player) {
             Player player = (Player) e.getWhoClicked();
-            e.setCancelled(true);
 
             if (e.getClickedInventory().equals(VibeHub.getSelectorGUI().getInv())) {
                 ByteArrayDataOutput out = ByteStreams.newDataOutput();
@@ -30,10 +29,11 @@ public class InventoryClickListener implements Listener {
                     out.writeUTF("creative");
                 else if (e.getCurrentItem().isSimilar(ItemList.SKYBLOCK_SERVER))
                     out.writeUTF("skyblock");
-
+                e.setCancelled(true);
                 player.sendPluginMessage(VibeHub.getInstance(), "BungeeCord", out.toByteArray());
             }
            if (e.getClickedInventory().equals(VibeHub.getSpeedGUI().getInv())) {
+               e.setCancelled(true);
                if (e.getCurrentItem().isSimilar(ItemList.SPEED_3)) {
                    for (PotionEffect effect : player.getActivePotionEffects())
                        player.removePotionEffect(effect.getType());
