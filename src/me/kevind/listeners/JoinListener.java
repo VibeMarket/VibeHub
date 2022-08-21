@@ -28,7 +28,7 @@ public class JoinListener implements Listener {
         //String ClearInventoryBypassPermission = VibeHub.getInstance().getConfig().getString("ClearInventoryBypassPermission");
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
         player.setGameMode(GameMode.ADVENTURE);
-
+        player.setInvulnerable(true);
         player.getInventory().clear();
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
