@@ -25,6 +25,7 @@ public class BuildCommand implements CommandExecutor {
             player.getInventory().clear();
             player.getInventory().addItem(new ItemStack(Material.WOODEN_AXE));
             player.getInventory().setItem(4, new ItemStack(Material.COMPASS));
+            player.getInventory().setItem(8, ItemList.SPEED_ITEM);
             player.updateInventory();
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + BuildEnabled));
         }else {
