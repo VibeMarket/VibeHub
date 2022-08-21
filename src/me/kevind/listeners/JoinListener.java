@@ -30,9 +30,7 @@ public class JoinListener implements Listener {
         player.setGameMode(GameMode.ADVENTURE);
 
         player.getInventory().clear();
-        if (player.hasPermission("vibe.serverselector")) {
-            player.getInventory().setItem(8, ItemList.SERVER_SELECTOR);
-        }
+        player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.updateInventory();
 
         if (player.hasPlayedBefore())

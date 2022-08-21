@@ -16,7 +16,6 @@ public class BuildCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         Player player = (Player) sender;
         String NoPermissionMessage =  VibeHub.getInstance().getConfig().getString("NoPermissionMessage");
-        String prefix =  VibeHub.getInstance().getConfig().getString("prefix");
         String BuildEnabled = VibeHub.getInstance().getConfig().getString("BuildEnabled");
         String BuildDisabled = VibeHub.getInstance().getConfig().getString("BuildDisabled");
         String IncorrectUsage = VibeHub.getInstance().getConfig().getString("IncorrectUsage");
@@ -34,13 +33,9 @@ public class BuildCommand implements CommandExecutor {
         }if (args[0].equalsIgnoreCase("off")) {
             player.setGameMode(GameMode.ADVENTURE);
             player.getInventory().clear();
-            if (player.hasPermission("vibe.serverselector")) {
-                player.getInventory().setItem(8, ItemList.SERVER_SELECTOR);
-            }
+            player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
             player.updateInventory();
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + BuildDisabled));
-        }if (args[0].equalsIgnoreCase("")) {
-            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + IncorrectUsage + "/" + command.getName() + command.getUsage()));
         }
         return false;
     }

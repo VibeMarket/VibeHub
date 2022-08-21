@@ -3,6 +3,7 @@ package me.kevind.main;
 import me.kevind.commands.*;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.listeners.InteractListener;
+import me.kevind.listeners.InventoryClickListener;
 import me.kevind.listeners.JoinListener;
 import me.kevind.listeners.LeaveListener;
 import org.bukkit.Bukkit;
@@ -25,10 +26,13 @@ public class VibeHub extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveConfig();
 
+        this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+
         //Events
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new LeaveListener(), this);
         Bukkit.getPluginManager().registerEvents(new InteractListener(), this);
+        Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
         //Commands
         getCommand("hubreload").setExecutor(new ReloadCommand());
         getCommand("idontwantspeed").setExecutor(new IDontWantSpeedCommand());
