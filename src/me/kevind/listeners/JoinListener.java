@@ -31,6 +31,7 @@ public class JoinListener implements Listener {
 
         player.getInventory().clear();
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
+        player.getInventory().setItem(8, ItemList.SPEED_ITEM);
         player.updateInventory();
 
         if (player.hasPlayedBefore())

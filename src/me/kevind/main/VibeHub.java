@@ -2,6 +2,7 @@ package me.kevind.main;
 
 import me.kevind.commands.*;
 import me.kevind.inventory.SelectorGUI;
+import me.kevind.inventory.SpeedGUI;
 import me.kevind.listeners.InteractListener;
 import me.kevind.listeners.InventoryClickListener;
 import me.kevind.listeners.JoinListener;
@@ -12,10 +13,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
     private static SelectorGUI serverselector;
+    private static SpeedGUI speeditem;
 
     public static SelectorGUI getSelectorGUI() {
         return serverselector;
     }
+    public static SpeedGUI getSpeedGUI() { return speeditem; }
     public static VibeHub getInstance() {
         return instance;
     }
@@ -23,6 +26,7 @@ public class VibeHub extends JavaPlugin {
     public void onEnable() {
         instance = this;
         serverselector = new SelectorGUI();
+        speeditem = new SpeedGUI();
         getConfig().options().copyDefaults(true);
         saveConfig();
 

@@ -17,5 +17,9 @@ public class InteractListener implements Listener {
             e.setCancelled(true);
             e.getPlayer().openInventory(VibeHub.getSelectorGUI().getInv());
         }
+        if (e.getPlayer().getInventory().getItemInMainHand().isSimilar(ItemList.SPEED_ITEM)) {
+            e.setCancelled(true);
+            e.getPlayer().openInventory(VibeHub.getSpeedGUI().getInv());
+        }
     }
 }
