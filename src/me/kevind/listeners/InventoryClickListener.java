@@ -33,7 +33,6 @@ public class InventoryClickListener implements Listener {
                 player.sendPluginMessage(VibeHub.getInstance(), "BungeeCord", out.toByteArray());
             }
            if (e.getClickedInventory().equals(VibeHub.getSpeedGUI().getInv())) {
-               e.setCancelled(true);
                if (e.getCurrentItem().isSimilar(ItemList.SPEED_3)) {
                    for (PotionEffect effect : player.getActivePotionEffects())
                        player.removePotionEffect(effect.getType());
@@ -57,6 +56,7 @@ public class InventoryClickListener implements Listener {
                        player.removePotionEffect(effect.getType());
                    player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&cDisabled speed"));
                }
+               e.setCancelled(true);
            }
         }
     }
