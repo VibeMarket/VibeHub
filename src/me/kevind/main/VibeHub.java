@@ -4,8 +4,11 @@ import me.kevind.commands.*;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.inventory.SpeedGUI;
 import me.kevind.listeners.*;
+import me.kevind.tasks.ActionBarTask;
+import org.apache.logging.log4j.core.appender.rolling.action.Action;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitScheduler;
 
 public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
@@ -28,7 +31,9 @@ public class VibeHub extends JavaPlugin {
         saveConfig();
 
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
-
+        //Tasks
+        BukkitScheduler scheduler = getServer().getScheduler();
+        scheduler.runTaskTimerAsynchronously(this, new ActionBarTask(), 40, 40);
         //Events
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new LeaveListener(), this);
@@ -41,6 +46,7 @@ public class VibeHub extends JavaPlugin {
         getCommand("iwantspeed").setExecutor(new IWantSpeedCommand());
         getCommand("build").setExecutor(new BuildCommand());
         getCommand("vspeed").setExecutor(new VSpeedCommand());
+
     }
     public void onDisable() {}
 }
