@@ -4,10 +4,14 @@ import me.kevind.commands.*;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.inventory.SpeedGUI;
 import me.kevind.listeners.*;
-import me.kevind.tasks.ActionBarTask;
+import me.kevind.utils.ColorUtils;
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.apache.logging.log4j.core.appender.rolling.action.Action;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitScheduler;
 
 public class VibeHub extends JavaPlugin {
@@ -30,10 +34,21 @@ public class VibeHub extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveConfig();
 
+        //tasks
+        new BukkitRunnable()
+        {
+            @Override
+            public void run()
+            {
+                for (Player player : Bukkit.getOnlinePlayers()) {
+                    TextComponent ip = new TextComponent(ColorUtils.color("&9&lvibemarket.org"));
+                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, ip);
+                }
+            }
+        }.runTaskTimerAsynchronously(this, 1, 1);
+
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
-        //Tasks
-        BukkitScheduler scheduler = getServer().getScheduler();
-        scheduler.runTaskTimerAsynchronously(this, new ActionBarTask(), 40, 40);
+
         //Events
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new LeaveListener(), this);
