@@ -45,7 +45,7 @@ public class VibeHub extends JavaPlugin {
                     player.spigot().sendMessage(ChatMessageType.ACTION_BAR, ip);
                 }
             }
-        }.runTaskTimerAsynchronously(this, 1, 1);
+        }.runTaskTimerAsynchronously(this, 40, 40);
 
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
