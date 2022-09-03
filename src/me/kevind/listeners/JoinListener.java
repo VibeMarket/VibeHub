@@ -3,8 +3,7 @@ package me.kevind.listeners;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.ItemList;
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
+import me.kevind.utils.Users;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -14,10 +13,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public class JoinListener implements Listener {
-    private Location loc = new Location(Bukkit.getWorld("TempHub2022"), 0.500, 65.0, 0.500, 90, 2);
+    private final Location loc = new Location(Bukkit.getWorld("TempHub2022"), 0.500, 65.0, 0.500, 90, 2);
+    private final Location kevinloc = new Location(Bukkit.getWorld("Hub2023"), 0.500, 65.0, 0.500, 90, 2);
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
@@ -46,14 +45,12 @@ public class JoinListener implements Listener {
         player.setAllowFlight(true);
         player.setFlying(true);
 
-        //if kevin, op.
-       /* if (player.getUniqueId().equals(kevinuuid) && !player.isOp())
-            player.setOp(true);
-            player.sendMessage(ColorUtils.color("&9&lVibeツ &8» &aHello " + player.getPlayer().getName() + "!" + " Your UUID is set to be opped, we've opped you automatically."));
-         //if mina, op.
-        if (player.getUniqueId().equals(minauuid) && !player.isOp()) {
-            player.setOp(true);
-            player.sendMessage(ColorUtils.color("&9&lVibeツ &8» &aHello" + player.getPlayer().getName() + "!" + "Your UUID is set to be opped, we've opped you automatically."));
-        }*/
+        if (Users.isKevin()) {
+            player.teleport(kevinloc);
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7You've been detected as" + player.getName() + ". We're teleporting you to the new Hub."));
+        if (Users.isMina()) {
+
+        }
+        }
     }
 }
