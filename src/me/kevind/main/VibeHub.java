@@ -80,8 +80,6 @@ public class VibeHub extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerFoodChangeEvent(), this);
         //Commands
         getCommand("hubreload").setExecutor(new ReloadCommand());
-        getCommand("idontwantspeed").setExecutor(new IDontWantSpeedCommand());
-        getCommand("iwantspeed").setExecutor(new IWantSpeedCommand());
         getCommand("build").setExecutor(new BuildCommand());
         getCommand("vspeed").setExecutor(new VSpeedCommand());
         getCommand("sethub").setExecutor(new SetHubCommand());

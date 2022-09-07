@@ -11,6 +11,7 @@ messages:
   IncorrectUsage: "&cThe proper usage for this command is "
   HubSetMessage: "&7Hub location has been set to your current location!"
   ServerIP: "&9&lvibemarket.org"
+  VSpeedInvalidArgs: "&cInvalid arguments! Correct usage is /vspeed on & /vspeed off"
 coordinates:
   hub:
     world: "TempHub2022"
@@ -21,6 +22,9 @@ coordinates:
     yaw: 90
 permissions:
   ClearInventoryBypassPermission: "hub.clearinventory.bypass"
+  SetHubPermission: "vibe.sethub"
+  ReloadConfigPermission: "vibe.reloadconfig"
+  BuildCommandPermission: "vibe.build"
 uuids:
   minauuid: "40ef6ecc-b56f-41f9-bfb1-ec7b7300bfa4"
   kevinuuid: "a948c50c-ede2-4dfa-9b6c-688daf22197c"

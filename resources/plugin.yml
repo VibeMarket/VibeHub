@@ -7,8 +7,6 @@ softdepend: [HolographicDisplays]
 #depend: [PlaceholderAPI]
 commands:
   hubreload:
-  idontwantspeed:
-  iwantspeed:
   build:
     description: Toggle build mode for Hub
     aliases:

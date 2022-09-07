@@ -13,6 +13,7 @@ public class VSpeedCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         Player player = (Player) sender;
+        String vspeedinvalidargs = VibeHub.getInstance().getConfig().getString("messages.VSpeedInvalidArgs");
         String NoPermissionMessage =  VibeHub.getInstance().getConfig().getString("messages.NoPermissionMessage");
         if (sender instanceof Player) {
             if (args[0].equalsIgnoreCase("on")) {
@@ -25,7 +26,7 @@ public class VSpeedCommand implements CommandExecutor {
                     player.removePotionEffect(effect.getType());
                 player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + IDontWantSpeedMessage));
             }if (args[0] == null) {
-                player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&cInvalid arguments! Correct usage is /vspeed on & /vspeed off"));
+                player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + vspeedinvalidargs));
             }
         }else {
             player.sendMessage(NoPermissionMessage);
