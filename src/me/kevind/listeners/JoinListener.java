@@ -36,6 +36,7 @@ public class JoinListener implements Listener {
         player.setGameMode(GameMode.ADVENTURE);
         player.setInvulnerable(true);
         player.setSaturation(20);
+        player.setFoodLevel(20);
         player.setHealth(20);
         player.getInventory().clear();
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);

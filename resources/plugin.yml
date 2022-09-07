@@ -4,6 +4,7 @@ author: ItsCryptic
 api-version: 1.17
 main: me.kevind.main.VibeHub
 softdepend: [HolographicDisplays]
+depend: [PlaceholderAPI]
 commands:
   hubreload:
   idontwantspeed:

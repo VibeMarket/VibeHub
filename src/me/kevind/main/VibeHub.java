@@ -41,6 +41,7 @@ public class VibeHub extends JavaPlugin {
         saveDefaultConfig();
 
         //tasks
+        //action bar to always show server ip
         new BukkitRunnable()
         {
             @Override
