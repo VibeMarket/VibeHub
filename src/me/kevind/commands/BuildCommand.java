@@ -15,10 +15,10 @@ public class BuildCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         Player player = (Player) sender;
-        String NoPermissionMessage =  VibeHub.getInstance().getConfig().getString("NoPermissionMessage");
-        String BuildEnabled = VibeHub.getInstance().getConfig().getString("BuildEnabled");
-        String BuildDisabled = VibeHub.getInstance().getConfig().getString("BuildDisabled");
-        String IncorrectUsage = VibeHub.getInstance().getConfig().getString("IncorrectUsage");
+        String NoPermissionMessage =  VibeHub.getInstance().getConfig().getString("messages.NoPermissionMessage");
+        String BuildEnabled = VibeHub.getInstance().getConfig().getString("messages.BuildEnabled");
+        String BuildDisabled = VibeHub.getInstance().getConfig().getString("messages.BuildDisabled");
+        String IncorrectUsage = VibeHub.getInstance().getConfig().getString("messages.IncorrectUsage");
         if (args[0].equalsIgnoreCase("on")) {
         if (player.hasPermission("vibe.build")) {
             player.setGameMode(GameMode.CREATIVE);

@@ -1,14 +1,26 @@
-profileLoadedMessage: "&aProfile loaded. Welcome back "
-profileCreatedMessage: "&aProfile created. Welcome "
-configReloaded: "&aReloaded config."
-NoPermissionMessage: "&cYou do not have permission!"
-ClearInventoryBypassPermission: "hub.clearinventory.bypass"
-IDontWantSpeedMessage: "&cDisabled speed."
-IWantSpeedMessage: "&aRe-enabled speed."
-BuildEnabled: "&aTurned on build mode."
-BuildDisabled: "&cTurned off build mode."
-IncorrectUsage: "&cThe proper usage for this command is "
-minauuid: "40ef6ecc-b56f-41f9-bfb1-ec7b7300bfa4"
-kevinuuid: "a948c50c-ede2-4dfa-9b6c-688daf22197c"
-prefix: "&9&lVibeツ &8»"
-andreauuid: "8bab5cd7-e97f-44bc-839f-c7e54461de20"
+messages:
+  prefix: "&9&lVibeツ &8» "
+  profileLoadedMessage: "&aProfile loaded. Welcome back "
+  profileCreatedMessage: "&aProfile created. Welcome "
+  configReloaded: "&aReloaded config."
+  NoPermissionMessage: "&cYou do not have permission!"
+  IDontWantSpeedMessage: "&cDisabled speed."
+  IWantSpeedMessage: "&aRe-enabled speed."
+  BuildEnabled: "&aTurned on build mode."
+  BuildDisabled: "&cTurned off build mode."
+  IncorrectUsage: "&cThe proper usage for this command is "
+  HubSetMessage: "&7Hub location has been set to your current location!"
+coordinates:
+  hub:
+    world: "TempHub2022"
+    x: 0.500
+    y: 65.0
+    z: 0.500
+    pitch: 2
+    yaw: 90
+permissions:
+  ClearInventoryBypassPermission: "hub.clearinventory.bypass"
+uuids:
+  minauuid: "40ef6ecc-b56f-41f9-bfb1-ec7b7300bfa4"
+  kevinuuid: "a948c50c-ede2-4dfa-9b6c-688daf22197c"
+  andreauuid: "8bab5cd7-e97f-44bc-839f-c7e54461de20"

@@ -3,9 +3,14 @@ version: 1.0
 author: ItsCryptic
 api-version: 1.17
 main: me.kevind.main.VibeHub
+softdepend: [HolographicDisplays]
 commands:
   hubreload:
   idontwantspeed:
   iwantspeed:
   build:
+    description: Toggle build mode for Hub
+    aliases:
+      - b
   vspeed:
+  sethub:
