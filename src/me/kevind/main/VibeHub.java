@@ -38,8 +38,7 @@ public class VibeHub extends JavaPlugin {
         instance = this;
         serverselector = new SelectorGUI();
         speeditem = new SpeedGUI();
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        saveDefaultConfig();
 
         //tasks
         new BukkitRunnable()
