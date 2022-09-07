@@ -10,6 +10,7 @@ messages:
   BuildDisabled: "&cTurned off build mode."
   IncorrectUsage: "&cThe proper usage for this command is "
   HubSetMessage: "&7Hub location has been set to your current location!"
+  ServerIP: "&9&lvibemarket.org"
 coordinates:
   hub:
     world: "TempHub2022"

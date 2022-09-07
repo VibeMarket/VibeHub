@@ -24,6 +24,7 @@ public class VibeHub extends JavaPlugin {
     private static SelectorGUI serverselector;
     private static SpeedGUI speeditem;
     private Player player;
+    String serverip = VibeHub.getInstance().getConfig().getString("messages.serverip");
     private final Location loc = new Location(Bukkit.getWorld("Hub2023"), 2.500, 70, 0.500, 91, 90);
     public static SelectorGUI getSelectorGUI() {
         return serverselector;
@@ -48,7 +49,7 @@ public class VibeHub extends JavaPlugin {
             public void run()
             {
                 for (Player player : Bukkit.getOnlinePlayers()) {
-                    TextComponent ip = new TextComponent(ColorUtils.color("&9&lvibemarket.org"));
+                    TextComponent ip = new TextComponent(ColorUtils.color(serverip));
                     player.spigot().sendMessage(ChatMessageType.ACTION_BAR, ip);
                 }
             }
