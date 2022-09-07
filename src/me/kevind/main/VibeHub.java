@@ -59,6 +59,7 @@ public class VibeHub extends JavaPlugin {
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            getLogger().info("Using PlaceholderAPI.");
         }else {
             getLogger().warning("Could not find PlaceholderAPI. This plugin is required");
             Bukkit.getPluginManager().disablePlugin(this);
