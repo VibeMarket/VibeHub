@@ -58,6 +58,12 @@ public class VibeHub extends JavaPlugin {
 
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+        }else {
+            getLogger().warning("Could not find PlaceholderAPI. This plugin is required");
+            Bukkit.getPluginManager().disablePlugin(this);
+        }
+
         if (!Bukkit.getPluginManager().isPluginEnabled("HolographicDisplays")) {
             getLogger().warning("HolographicDisplays is not enabled");
             getLogger().warning("A part of this plugin will not work\nPlease install HolographicDisplays");

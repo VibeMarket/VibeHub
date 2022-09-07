@@ -1,7 +1,7 @@
 messages:
   prefix: "&9&lVibeツ &8» "
-  profileLoadedMessage: "&aProfile loaded. Welcome back "
-  profileCreatedMessage: "&aProfile created. Welcome "
+  profileLoadedMessage: "&aProfile loaded. Welcome back %player_name%"
+  profileCreatedMessage: "&aProfile created. Welcome %player_name%"
   configReloaded: "&aReloaded config."
   NoPermissionMessage: "&cYou do not have permission!"
   IDontWantSpeedMessage: "&cDisabled speed."

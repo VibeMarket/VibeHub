@@ -1,5 +1,6 @@
 package me.kevind.listeners;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.ItemList;
@@ -42,10 +43,13 @@ public class JoinListener implements Listener {
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
         player.updateInventory();
-        if (player.hasPlayedBefore())
-            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileLoadedMessage + playerName));
-        else
+        if (player.hasPlayedBefore()) {
+           profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);
+        player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileLoadedMessage));
+    }   else {
+            profileCreatedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileCreatedMessage);
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileCreatedMessage + playerName));
+        }
         //Teleport the player to the hub on join
         player.teleport(loc);
         //Allow the player to fly
