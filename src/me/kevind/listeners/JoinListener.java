@@ -28,8 +28,8 @@ public class JoinListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         String playerName = player.getPlayer().getName();
-        String profileLoadedMessage = VibeHub.getInstance().getConfig().getString("messages.profileLoadedMessage");
-        String profileCreatedMessage = VibeHub.getInstance().getConfig().getString("messages.profileCreatedMessage");
+        String profileLoadedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileLoadedMessage");
+        String profileCreatedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileCreatedMessage");
 
         //String ClearInventoryBypassPermission = VibeHub.getInstance().getConfig().getString("ClearInventoryBypassPermission");
         //Add potion effect, set gamemode, don't let the player take damage, set the health and saturation to 20, clear the inventory then give the player the server selector & speed item.
