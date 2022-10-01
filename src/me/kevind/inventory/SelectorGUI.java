@@ -15,9 +15,9 @@ public class SelectorGUI {
 
     public SelectorGUI() {
         inv = Bukkit.createInventory(null, 27, "Server Selector");
-        inv.setItem(13, ItemList.SURVIVAL_SERVER);
-        inv.setItem(14, ItemList.SKYBLOCK_SERVER);
-        inv.setItem(15, ItemList.CREATIVE_SERVER);
+        inv.setItem(12, ItemList.SURVIVAL_SERVER);
+        inv.setItem(13, ItemList.SKYBLOCK_SERVER);
+        inv.setItem(14, ItemList.CREATIVE_SERVER);
         inv.setItem(26, ItemList.BUILD_SERVER);
     }
 
