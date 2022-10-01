@@ -14,10 +14,11 @@ public class SelectorGUI {
     private Inventory inv;
 
     public SelectorGUI() {
-        inv = Bukkit.createInventory(null, 9, "Server Selector");
-        inv.setItem(3, ItemList.SURVIVAL_SERVER);
-        inv.setItem(4, ItemList.SKYBLOCK_SERVER);
-        inv.setItem(5, ItemList.CREATIVE_SERVER);
+        inv = Bukkit.createInventory(null, 27, "Server Selector");
+        inv.setItem(13, ItemList.SURVIVAL_SERVER);
+        inv.setItem(14, ItemList.SKYBLOCK_SERVER);
+        inv.setItem(15, ItemList.CREATIVE_SERVER);
+        inv.setItem(27, ItemList.BUILD_SERVER);
     }
 
     public Inventory getInv() {

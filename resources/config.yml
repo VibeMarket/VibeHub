@@ -3,7 +3,7 @@ messages:
   Prefix: "&9&lVibeツ &8» "
   ProfileLoadedMessage: "&aProfile loaded. Welcome back %player_name%"
   ProfileCreatedMessage: "&aProfile created. Welcome %player_name%"
-  configReloaded: "&aReloaded config."
+  ConfigReloaded: "&aReloaded config."
   NoPermissionMessage: "&cYou do not have permission!"
   IDontWantSpeedMessage: "&cDisabled speed."
   IWantSpeedMessage: "&aRe-enabled speed."

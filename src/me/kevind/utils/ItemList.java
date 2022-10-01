@@ -13,4 +13,5 @@ public class ItemList {
     public static final ItemStack SPEED_6 = new ItemMaker(Material.BLAZE_ROD).name("&c&lSpeed 6").lore("&7Give yourself Speed 6").build();
     public static final ItemStack SPEED_9 = new ItemMaker(Material.BLAZE_ROD).name("&c&lSpeed 9").lore("&7Give yourself Speed 9").build();
     public static final ItemStack NO_SPEED = new ItemMaker(Material.BARRIER).name("&c&lDisable Speed").lore("&7Disable speed").build();
+    public static final ItemStack BUILD_SERVER = new ItemMaker(Material.COMMAND_BLOCK).name("Build Server").lore("&&Staff only... sorry :)").build();
 }
