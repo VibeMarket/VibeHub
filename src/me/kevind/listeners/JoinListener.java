@@ -1,9 +1,9 @@
 package me.kevind.listeners;
 
-import me.clip.placeholderapi.PlaceholderAPI;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.ItemList;
+import me.kevind.utils.Users;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -15,46 +15,42 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class JoinListener implements Listener {
-    String world = VibeHub.getInstance().getConfig().getString("coordinates.hub.world");
-    Double x = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.x"));
-    Double y = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.y"));
-    Double z = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.z"));
-    float yaw = Float.parseFloat(VibeHub.getInstance().getConfig().getString("coordinates.hub.yaw"));
-    float pitch = Float.parseFloat(VibeHub.getInstance().getConfig().getString("coordinates.hub.pitch"));
-
-    private final Location loc = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
+    private final Location loc = new Location(Bukkit.getWorld("TempHub2022"), 0.500, 65.0, 0.500, 90, 2);
+    private final Location kevinloc = new Location(Bukkit.getWorld("Hub2023"), 0.500, 65.0, 0.500, 90, 2);
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         String playerName = player.getPlayer().getName();
-        String profileLoadedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileLoadedMessage");
-        String profileCreatedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileCreatedMessage");
+        String profileLoadedMessage = VibeHub.getInstance().getConfig().getString("profileLoadedMessage");
+        String profileCreatedMessage = VibeHub.getInstance().getConfig().getString("profileCreatedMessage");
+        String kevinuuid = VibeHub.getInstance().getConfig().getString("kevinuuid");
+        String minauuid = VibeHub.getInstance().getConfig().getString("minauuid");
 
         //String ClearInventoryBypassPermission = VibeHub.getInstance().getConfig().getString("ClearInventoryBypassPermission");
-        //Add potion effect, set gamemode, don't let the player take damage, set the health and saturation to 20, clear the inventory then give the player the server selector & speed item.
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
         player.setGameMode(GameMode.ADVENTURE);
         player.setInvulnerable(true);
-        player.setSaturation(20);
-        player.setFoodLevel(20);
-        player.setHealth(20);
         player.getInventory().clear();
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
         player.updateInventory();
-        if (player.hasPlayedBefore()) {
-           profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);
-        player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileLoadedMessage));
-    }   else {
-            profileCreatedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileCreatedMessage);
+        if (player.hasPlayedBefore())
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileLoadedMessage + playerName));
+        else
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileCreatedMessage + playerName));
-        }
-        //Teleport the player to the hub on join
+
         player.teleport(loc);
-        //Allow the player to fly
+
         player.setAllowFlight(true);
         player.setFlying(true);
 
+        if (Users.isKevin()) {
+            player.teleport(kevinloc);
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7You've been detected as" + player.getName() + ". We're teleporting you to the new Hub."));
+        if (Users.isMina()) {
+
+        }
+        }
     }
 }
