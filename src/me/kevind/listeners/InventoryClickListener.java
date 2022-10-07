@@ -29,6 +29,8 @@ public class InventoryClickListener implements Listener {
                     out.writeUTF("creative");
                 else if (e.getCurrentItem().isSimilar(ItemList.SKYBLOCK_SERVER))
                     out.writeUTF("skyblock");
+                else if (e.getCurrentItem().isSimilar(ItemList.BUILD_SERVER))
+                    out.writeUTF("staff");
                 e.setCancelled(true);
                 player.sendPluginMessage(VibeHub.getInstance(), "BungeeCord", out.toByteArray());
             }
