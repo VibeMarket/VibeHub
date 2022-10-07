@@ -18,7 +18,7 @@ public class SelectorGUI {
         inv.setItem(12, ItemList.SURVIVAL_SERVER);
         inv.setItem(13, ItemList.SKYBLOCK_SERVER);
         inv.setItem(14, ItemList.CREATIVE_SERVER);
-        inv.setItem(26, ItemList.STAFF_SERVER);
+        inv.setItem(26, ItemList.BUILD_SERVER);
     }
 
     public Inventory getInv() {

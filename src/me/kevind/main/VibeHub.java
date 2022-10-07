@@ -8,7 +8,11 @@ import me.kevind.utils.ColorUtils;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -16,7 +20,8 @@ public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
     private static SelectorGUI serverselector;
     private static SpeedGUI speeditem;
-
+    private Player player;
+    private final Location loc = new Location(Bukkit.getWorld("Hub2023"), 2.500, 70, 0.500, 91, 90);
     public static SelectorGUI getSelectorGUI() {
         return serverselector;
     }
@@ -24,22 +29,25 @@ public class VibeHub extends JavaPlugin {
     public static VibeHub getInstance() {
         return instance;
     }
-    public static String getPrefix() { return instance.getConfig().getString("prefix"); }
+    public static String getPrefix() { return instance.getConfig().getString("messages.Prefix"); }
+
+    String serverip = getConfig().getString("messages.ServerIP");
+
     public void onEnable() {
         instance = this;
         serverselector = new SelectorGUI();
         speeditem = new SpeedGUI();
-        getConfig().options().copyDefaults(true);
-        saveConfig();
+        saveDefaultConfig();
 
         //tasks
+        //action bar to always show server ip
         new BukkitRunnable()
         {
             @Override
             public void run()
             {
                 for (Player player : Bukkit.getOnlinePlayers()) {
-                    TextComponent ip = new TextComponent(ColorUtils.color("&9&lvibemarket.org"));
+                    TextComponent ip = new TextComponent(ColorUtils.color(serverip));
                     player.spigot().sendMessage(ChatMessageType.ACTION_BAR, ip);
                 }
             }
@@ -47,19 +55,24 @@ public class VibeHub extends JavaPlugin {
 
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            getLogger().info("Using PlaceholderAPI.");
+        }else {
+            getLogger().warning("Could not find PlaceholderAPI. This plugin is required");
+            Bukkit.getPluginManager().disablePlugin(this);
+        }
+
         //Events
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new LeaveListener(), this);
         Bukkit.getPluginManager().registerEvents(new InteractListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
-        Bukkit.getPluginManager().registerEvents(new PlayerMoveListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerFoodChangeEvent(), this);
         //Commands
         getCommand("hubreload").setExecutor(new ReloadCommand());
-        getCommand("idontwantspeed").setExecutor(new IDontWantSpeedCommand());
-        getCommand("iwantspeed").setExecutor(new IWantSpeedCommand());
         getCommand("build").setExecutor(new BuildCommand());
         getCommand("vspeed").setExecutor(new VSpeedCommand());
-
+        getCommand("sethub").setExecutor(new SetHubCommand());
     }
     public void onDisable() {}
 }
