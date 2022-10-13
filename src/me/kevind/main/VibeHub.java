@@ -20,7 +20,6 @@ public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
     private static SelectorGUI serverselector;
     private static SpeedGUI speeditem;
-    private Player player;
     private final Location loc = new Location(Bukkit.getWorld("Hub2023"), 2.500, 70, 0.500, 91, 90);
     public static SelectorGUI getSelectorGUI() {
         return serverselector;
@@ -68,6 +67,7 @@ public class VibeHub extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new InteractListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerFoodChangeEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new ProjectileLaunchListener(), this);
         //Commands
         getCommand("hubreload").setExecutor(new ReloadCommand());
         getCommand("build").setExecutor(new BuildCommand());
