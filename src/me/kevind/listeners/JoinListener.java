@@ -42,7 +42,7 @@ public class JoinListener implements Listener {
         player.getInventory().clear();
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
-        player.getInventory().setItem(0, ItemList.ENDERBUTT);
+        //player.getInventory().setItem(0, ItemList.ENDERBUTT);
         player.updateInventory();
         if (player.hasPlayedBefore()) {
            profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);
