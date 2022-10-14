@@ -20,7 +20,7 @@ public class ItemInfoCommand implements CommandExecutor {
             } else {
                 player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + nopermission));
             }
-        }else {
+        }else if (!(sender instanceof Player)) {
             sender.sendMessage("You need to be a player to use this command.");
         }
         return false;
