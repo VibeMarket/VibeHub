@@ -73,6 +73,7 @@ public class VibeHub extends JavaPlugin {
         getCommand("build").setExecutor(new BuildCommand());
         getCommand("vspeed").setExecutor(new VSpeedCommand());
         getCommand("sethub").setExecutor(new SetHubCommand());
+        getCommand("iteminfo").setExecutor(new ItemInfoCommand());
     }
     public void onDisable() {}
 }
