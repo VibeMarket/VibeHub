@@ -13,3 +13,6 @@ commands:
       - b
   vspeed:
   sethub:
+  iteminfo:
+    aliases:
+      - "ii"
