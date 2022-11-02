@@ -67,7 +67,7 @@ public class VibeHub extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new InteractListener(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerFoodChangeEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new ProjectileLaunchListener(), this);
+        //Bukkit.getPluginManager().registerEvents(new ProjectileLaunchListener(), this);
         //Commands
         getCommand("hubreload").setExecutor(new ReloadCommand());
         getCommand("build").setExecutor(new BuildCommand());
