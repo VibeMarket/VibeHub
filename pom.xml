@@ -67,5 +67,5 @@
     </dependencies>
     <groupId>groupId</groupId>
     <artifactId>VibeHub</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.0.9-SNAPSHOT</version>
 </project>
