@@ -12,9 +12,8 @@ public class SetHubCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         String NoPermissionMessage =  VibeHub.getInstance().getConfig().getString("messages.NoPermissionMessage");
         String hubsetmessage  =  VibeHub.getInstance().getConfig().getString("messages.HubSetMessage");
-        String hubsetpermission = VibeHub.getInstance().getConfig().getString("permissions.HubSetPermission");
         Player player = (Player) sender;
-        if (player.hasPermission(hubsetpermission)) {
+        if (player.hasPermission("vibe.sethub")) {
             //grab the players x, y, z, yaw, pitch and world name then set the respective values in the config & reload the configuration.
             VibeHub.getInstance().getConfig().set("coordinates.hub.world", player.getLocation().getWorld().getName());
             VibeHub.getInstance().getConfig().set("coordinates.hub.x", player.getLocation().getX());
