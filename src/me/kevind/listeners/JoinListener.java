@@ -49,7 +49,7 @@ public class JoinListener implements Listener {
         player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileLoadedMessage));
     }   else {
             profileCreatedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileCreatedMessage);
-            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileCreatedMessage + playerName));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileCreatedMessage));
         }
         //Teleport the player to the hub on join
         player.teleport(loc);
