@@ -11,3 +11,7 @@ If you're compiling this from source, Maven should automatically download these 
 Minecraft version 1.17 or later
 
 Java 17 or later
+
+# Disclaimer
+
+The Vibe minecraft server may use an older version than what is currently in development. This repository should be viewed as a rough changelog and should give you an idea as to what is changing.
