@@ -7,12 +7,23 @@ softdepend: [HolographicDisplays]
 depend: [PlaceholderAPI]
 commands:
   hubreload:
+    description: Reloads Hub
+    aliases:
+      - "hr"
+      - "reloadhub"
   build:
     description: Toggle build mode for Hub
     aliases:
       - b
   vspeed:
+    description: Old speed setting command for Hub.
+    aliases:
+      - "vs"
   sethub:
+    description: Sets the Hub
+    aliases:
+      - "sh"
   iteminfo:
+    description: Shows information about the item you're currently holding
     aliases:
       - "ii"
