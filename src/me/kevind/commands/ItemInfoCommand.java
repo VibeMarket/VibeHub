@@ -12,7 +12,6 @@ public class ItemInfoCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         Player player = (Player) sender;
-        String kevinuuid = VibeHub.getInstance().getConfig().getString("kevinuuid");
         String nopermission = VibeHub.getInstance().getConfig().getString("NoPermissionMessage");
         if (sender instanceof Player) {
             if (player.hasPermission("vibe.iteminfo")) {

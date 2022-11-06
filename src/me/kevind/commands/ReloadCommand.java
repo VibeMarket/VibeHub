@@ -11,8 +11,7 @@ public class ReloadCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
         Player player = (Player) sender;
-        String reloadconfigpermission = VibeHub.getInstance().getConfig().getString("permissions.ReloadConfigPermission");
-        if (player.hasPermission(reloadconfigpermission)) {
+        if (player.hasPermission("vibe.reloadconfig")) {
             String reloadedConfigMessage = VibeHub.getInstance().getConfig().getString("messages.ConfigReloaded");
             VibeHub.getInstance().reloadConfig();
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + reloadedConfigMessage));

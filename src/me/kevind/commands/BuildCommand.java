@@ -15,11 +15,15 @@ public class BuildCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         Player player = (Player) sender;
+        String incorrectusage = VibeHub.getInstance().getConfig().getString("messages.IncorrectUsage");
         String buildpermission = VibeHub.getInstance().getConfig().getString("permissions.BuildCommandPermission");
         String NoPermissionMessage =  VibeHub.getInstance().getConfig().getString("messages.NoPermissionMessage");
         String BuildEnabled = VibeHub.getInstance().getConfig().getString("messages.BuildEnabled");
         String BuildDisabled = VibeHub.getInstance().getConfig().getString("messages.BuildDisabled");
-        String IncorrectUsage = VibeHub.getInstance().getConfig().getString("messages.IncorrectUsage");
+        if (args[0] == null) {
+            player.sendMessage(ColorUtils.color(incorrectusage + "&aon &7or &coff"));
+            return true;
+        }
         if (args[0].equalsIgnoreCase("on")) {
         if (player.hasPermission(buildpermission)) {
             player.setGameMode(GameMode.CREATIVE);
