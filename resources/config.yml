@@ -29,3 +29,8 @@ uuids:
   minauuid: 40ef6ecc-b56f-41f9-bfb1-ec7b7300bfa4
   kevinuuid: a948c50c-ede2-4dfa-9b6c-688daf22197c
   andreauuid: 8bab5cd7-e97f-44bc-839f-c7e54461de20
+citizens:
+  npcs:
+    survival: 0
+    skyblock: 6
+    creative: 1
