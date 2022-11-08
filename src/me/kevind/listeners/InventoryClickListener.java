@@ -23,6 +23,10 @@ public class InventoryClickListener implements Listener {
                 return;
             }
 
+            if (e.getCurrentItem() == null) {
+                e.setCancelled(true);
+                return;
+            }
 
             if (e.getClickedInventory().equals(VibeHub.getSelectorGUI().getInv())) {
                 ByteArrayDataOutput out = ByteStreams.newDataOutput();
