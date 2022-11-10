@@ -74,6 +74,13 @@ public class VibeHub extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerFoodChangeEvent(), this);
         Bukkit.getPluginManager().registerEvents(new DropListener(), this);
         Bukkit.getPluginManager().registerEvents(new ProjectileLaunchListener(), this);
+        if (Bukkit.getPluginManager().isPluginEnabled("WorldGuard")) {
+            getLogger().info("WorldGuard is enabled... not registering fallback protection.");
+        }else {
+            Bukkit.getPluginManager().registerEvents(new BlockBreakListener(), this);
+            Bukkit.getPluginManager().registerEvents(new BlockPlaceListener(), this);
+            getLogger().warning("WorldGuard is highly encouraged... registered fallback protection.");
+        }
         //Commands
         getCommand("hubreload").setExecutor(new ReloadCommand());
         getCommand("build").setExecutor(new BuildCommand());
