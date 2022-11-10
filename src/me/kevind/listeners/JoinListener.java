@@ -14,6 +14,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import static org.bukkit.Bukkit.getLogger;
+
 public class JoinListener implements Listener {
     String world = VibeHub.getInstance().getConfig().getString("coordinates.hub.world");
     Double x = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.x"));
@@ -43,6 +45,13 @@ public class JoinListener implements Listener {
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
         player.getInventory().setItem(0, ItemList.TIME_SELECTOR);
+        if (player.hasPermission("vibe.dev")) {
+            player.getInventory().setItem(7, ItemList.ENDERBUTT);
+            getLogger().info(player.getName() + " has permission for enderbutt... giving now.");
+        }else {
+            player.getInventory().clear(7);
+            getLogger().info(player.getName() + " doesn't have permission for enderbutt, if they had it before it is now gone.");
+        }
         player.getInventory().setHeldItemSlot(4);
         player.updateInventory();
         if (player.hasPlayedBefore()) {
