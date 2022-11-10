@@ -1,4 +1,4 @@
-package me.kevind.listeners;
+package me.kevind.listeners.player;
 
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;

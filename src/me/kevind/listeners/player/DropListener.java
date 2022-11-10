@@ -1,4 +1,4 @@
-package me.kevind.listeners;
+package me.kevind.listeners.player;
 
 import me.kevind.utils.ItemList;
 import org.bukkit.entity.Player;

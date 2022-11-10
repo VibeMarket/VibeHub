@@ -1,4 +1,4 @@
-package me.kevind.listeners;
+package me.kevind.listeners.player;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.kevind.main.VibeHub;
