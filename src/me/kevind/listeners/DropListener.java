@@ -10,7 +10,7 @@ public class DropListener implements Listener {
     @EventHandler
     public void onPlayerDropItemListener(PlayerDropItemEvent event) {
         Player player = event.getPlayer();
-        if (player.getInventory().contains(ItemList.ENDERBUTT)) {
+        if (player.getInventory().contains(ItemList.ENDERPEARL)) {
             event.setCancelled(true);
         }
         if (player.getInventory().contains(ItemList.SPEED_ITEM)) {

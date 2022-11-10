@@ -46,11 +46,11 @@ public class JoinListener implements Listener {
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
         player.getInventory().setItem(0, ItemList.TIME_SELECTOR);
         if (player.hasPermission("vibe.dev")) {
-            player.getInventory().setItem(7, ItemList.ENDERBUTT);
-            getLogger().info(player.getName() + " has permission for enderbutt... giving now.");
+            player.getInventory().setItem(7, ItemList.ENDERPEARL);
+            getLogger().info(player.getName() + " has permission for enderpearl... giving now.");
         }else {
             player.getInventory().clear(7);
-            getLogger().info(player.getName() + " doesn't have permission for enderbutt, if they had it before it is now gone.");
+            getLogger().info(player.getName() + " doesn't have permission for enderpearl, if they had it before it is now gone.");
         }
         player.getInventory().setHeldItemSlot(4);
         player.updateInventory();
