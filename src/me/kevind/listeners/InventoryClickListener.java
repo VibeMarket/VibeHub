@@ -72,7 +72,7 @@ public class InventoryClickListener implements Listener {
            }
             if (e.getClickedInventory().equals(VibeHub.getTimeGUI().getInv())) {
                 if (e.getCurrentItem().isSimilar(ItemList.DAY_TIME)) {
-                    player.setPlayerTime(0, true);
+                    player.setPlayerTime(6000, true);
                     player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Set your time to &eDay&7."));
                 }
                 if (e.getCurrentItem().isSimilar(ItemList.NIGHT_TIME)) {
