@@ -5,6 +5,7 @@ import com.google.common.io.ByteStreams;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.ItemList;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -68,6 +69,17 @@ public class InventoryClickListener implements Listener {
                    player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&cDisabled speed"));
                }
                e.setCancelled(true);
+           }
+            if (e.getClickedInventory().equals(VibeHub.getTimeGUI().getInv())) {
+                if (e.getCurrentItem().isSimilar(ItemList.DAY_TIME)) {
+                    player.setPlayerTime(0, true);
+                    player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Set your time to &eDay&7."));
+                }
+                if (e.getCurrentItem().isSimilar(ItemList.NIGHT_TIME)) {
+                    player.setPlayerTime(14000, true);
+                    player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Set your time to &8Night&7."));
+                }
+                e.setCancelled(true);
            }
         }
     }

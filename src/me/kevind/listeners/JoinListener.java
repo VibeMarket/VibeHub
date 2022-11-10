@@ -35,13 +35,15 @@ public class JoinListener implements Listener {
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
         player.setGameMode(GameMode.ADVENTURE);
         player.setInvulnerable(true);
+        player.setCollidable(false);
         player.setSaturation(20);
         player.setFoodLevel(20);
         player.setHealth(20);
         player.getInventory().clear();
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
-        //player.getInventory().setItem(0, ItemList.ENDERBUTT);
+        player.getInventory().setItem(0, ItemList.TIME_SELECTOR);
+        player.getInventory().setHeldItemSlot(4);
         player.updateInventory();
         if (player.hasPlayedBefore()) {
            profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);
@@ -54,7 +56,6 @@ public class JoinListener implements Listener {
         player.teleport(loc);
         //Allow the player to fly
         player.setAllowFlight(true);
-        player.setFlying(true);
 
     }
 }

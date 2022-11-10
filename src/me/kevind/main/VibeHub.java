@@ -3,6 +3,7 @@ package me.kevind.main;
 import me.kevind.commands.*;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.inventory.SpeedGUI;
+import me.kevind.inventory.TimeGUI;
 import me.kevind.listeners.*;
 import me.kevind.utils.ColorUtils;
 import net.md_5.bungee.api.ChatMessageType;
@@ -20,9 +21,13 @@ public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
     private static SelectorGUI serverselector;
     private static SpeedGUI speeditem;
+    private static TimeGUI timegui;
     private final Location loc = new Location(Bukkit.getWorld("Hub2023"), 2.500, 70, 0.500, 91, 90);
     public static SelectorGUI getSelectorGUI() {
         return serverselector;
+    }
+    public static TimeGUI getTimeGUI() {
+        return timegui;
     }
     public static SpeedGUI getSpeedGUI() { return speeditem; }
     public static VibeHub getInstance() {
@@ -36,6 +41,7 @@ public class VibeHub extends JavaPlugin {
         instance = this;
         serverselector = new SelectorGUI();
         speeditem = new SpeedGUI();
+        timegui = new TimeGUI();
         saveDefaultConfig();
 
         //tasks
