@@ -1,4 +1,4 @@
-package me.kevind.listeners.entity;
+package me.kevind.listeners.item;
 
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;

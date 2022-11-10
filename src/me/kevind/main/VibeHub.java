@@ -4,7 +4,7 @@ import me.kevind.commands.*;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.inventory.SpeedGUI;
 import me.kevind.inventory.TimeGUI;
-import me.kevind.listeners.entity.ProjectileLaunchListener;
+import me.kevind.listeners.item.ProjectileLaunchListener;
 import me.kevind.listeners.inventory.InteractListener;
 import me.kevind.listeners.inventory.InventoryClickListener;
 import me.kevind.listeners.player.*;
