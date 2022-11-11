@@ -11,6 +11,7 @@ public class InteractListener implements Listener {
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e) {
+        Action action = e.getAction();
         if (e.getAction().equals(Action.PHYSICAL))
             return;
         if (e.getPlayer().getInventory().getItemInMainHand().isSimilar(ItemList.SERVER_SELECTOR)) {
@@ -24,6 +25,9 @@ public class InteractListener implements Listener {
         if (e.getPlayer().getInventory().getItemInMainHand().isSimilar(ItemList.TIME_SELECTOR)) {
             e.setCancelled(true);
             e.getPlayer().openInventory(VibeHub.getTimeGUI().getInv());
+        }
+        if (action.equals(Action.RIGHT_CLICK_AIR) || action.equals(Action.RIGHT_CLICK_BLOCK)) {
+            e.getPlayer().getInventory().getItem(7).setAmount(16);
         }
     }
 }
