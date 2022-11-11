@@ -41,6 +41,10 @@ public class BuildCommand implements CommandExecutor {
             player.getInventory().clear();
             player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
             player.getInventory().setItem(8, ItemList.SPEED_ITEM);
+            player.getInventory().setItem(0, ItemList.TIME_SELECTOR);
+            player.getInventory().setItem(7, ItemList.ENDERPEARL);
+            player.getInventory().getItem(7).setAmount(16);
+            player.getInventory().setHeldItemSlot(4);
             player.updateInventory();
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + BuildDisabled));
         }
