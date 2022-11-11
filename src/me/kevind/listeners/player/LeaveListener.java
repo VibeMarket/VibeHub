@@ -1,4 +1,4 @@
-package me.kevind.listeners;
+package me.kevind.listeners.player;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

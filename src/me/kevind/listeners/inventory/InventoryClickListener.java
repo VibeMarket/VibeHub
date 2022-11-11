@@ -1,4 +1,4 @@
-package me.kevind.listeners;
+package me.kevind.listeners.inventory;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;

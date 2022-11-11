@@ -13,7 +13,7 @@ public class ItemList {
     public static final ItemStack SPEED_6 = new ItemMaker(Material.BLAZE_ROD).name("&c&lSpeed 6").lore("&7Give yourself Speed 6").build();
     public static final ItemStack SPEED_9 = new ItemMaker(Material.BLAZE_ROD).name("&c&lSpeed 9").lore("&7Give yourself Speed 9").build();
     public static final ItemStack NO_SPEED = new ItemMaker(Material.BARRIER).name("&c&lDisable Speed").lore("&7Disable speed").build();
-    public static final ItemStack ENDERBUTT = new ItemMaker(Material.ENDER_PEARL).name("&cEnderbutt &7(Right Click)").lore("Throw me to teleport!!").build();
+    public static final ItemStack ENDERPEARL = new ItemMaker(Material.ENDER_PEARL).name("&cEnderpearl &7(Right Click)").lore("Throw me to teleport!!").build();
     public static final ItemStack BUILD_SERVER = new ItemMaker(Material.COMMAND_BLOCK).name("&c&lBuild").lore("&7Staff only... sorry :)\n&cNot yet ready.").build();
     public static final ItemStack TIME_SELECTOR = new ItemMaker(Material.CLOCK).name("&e&lTime Selector &7(Right Click)").lore("&7Set your personal time.").build();
     public static final ItemStack PLACEHOLDER_PURPLE_GLASS = new ItemMaker(Material.PURPLE_STAINED_GLASS_PANE).name(" ").build();

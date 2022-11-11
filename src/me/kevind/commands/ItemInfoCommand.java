@@ -15,7 +15,7 @@ public class ItemInfoCommand implements CommandExecutor {
         String nopermission = VibeHub.getInstance().getConfig().getString("NoPermissionMessage");
         if (sender instanceof Player) {
             if (player.hasPermission("vibe.iteminfo")) {
-                player.sendMessage(ColorUtils.color("&7Item Information: &9" + player.getActiveItem().getType() + "\n" + "&7Amount: &9" + player.getActiveItem().getAmount() + "\n" + "&7Enchantments: &9" + player.getActiveItem().getEnchantments() + "\n&7Rarity: &9" + player.getActiveItem().getRarity() + "\n&7Max Stack Size: &9" + player.getActiveItem().getMaxStackSize()));
+                player.sendMessage(ColorUtils.color("&7Item Information: &9" + player.getItemInUse().getType() + "\n" + "&7Amount: &9" + player.getItemInUse().getAmount() + "\n" + "&7Enchantments: &9" + player.getItemInUse().getEnchantments() +  "\n&7Max Stack Size: &9" + player.getItemInUse().getMaxStackSize()));
             } else {
                 player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + nopermission));
             }

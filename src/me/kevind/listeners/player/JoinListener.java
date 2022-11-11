@@ -1,4 +1,4 @@
-package me.kevind.listeners;
+package me.kevind.listeners.player;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.kevind.main.VibeHub;
@@ -13,6 +13,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+
+import static org.bukkit.Bukkit.getLogger;
 
 public class JoinListener implements Listener {
     String world = VibeHub.getInstance().getConfig().getString("coordinates.hub.world");
@@ -43,6 +45,13 @@ public class JoinListener implements Listener {
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
         player.getInventory().setItem(0, ItemList.TIME_SELECTOR);
+        if (player.hasPermission("vibe.dev")) {
+            player.getInventory().setItem(7, ItemList.ENDERPEARL);
+            getLogger().info(player.getName() + " has permission for enderpearl... giving now.");
+        }else {
+            player.getInventory().clear(7);
+            getLogger().info(player.getName() + " doesn't have permission for enderpearl, if they had it before it is now gone.");
+        }
         player.getInventory().setHeldItemSlot(4);
         player.updateInventory();
         if (player.hasPlayedBefore()) {
