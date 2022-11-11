@@ -7,14 +7,18 @@ import me.kevind.inventory.TimeGUI;
 import me.kevind.listeners.item.ProjectileLaunchListener;
 import me.kevind.listeners.inventory.InteractListener;
 import me.kevind.listeners.inventory.InventoryClickListener;
+import me.kevind.listeners.npc.NPCRightClickEvent;
 import me.kevind.listeners.player.*;
 import me.kevind.utils.ColorUtils;
+import net.citizensnpcs.api.event.NPCEvent;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import me.kevind.utils.ScoreboardUtils;
+import org.bukkit.scoreboard.Scoreboard;
 
 public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
@@ -41,7 +45,7 @@ public class VibeHub extends JavaPlugin {
         speeditem = new SpeedGUI();
         timegui = new TimeGUI();
         saveDefaultConfig();
-
+        ScoreboardUtils.CreateScoreboard();
         //tasks
         //action bar to always show server ip
         new BukkitRunnable()
@@ -73,6 +77,12 @@ public class VibeHub extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerFoodChangeEvent(), this);
         Bukkit.getPluginManager().registerEvents(new DropListener(), this);
         Bukkit.getPluginManager().registerEvents(new ProjectileLaunchListener(), this);
+        if (Bukkit.getPluginManager().isPluginEnabled("Citizens")) {
+            Bukkit.getPluginManager().registerEvents(new NPCRightClickEvent(), this);
+            getLogger().info("Registered NPC listener.");
+        }else {
+            getLogger().warning("Not registering NPC listener. Please install Citizens.");
+        }
         if (Bukkit.getPluginManager().isPluginEnabled("WorldGuard")) {
             getLogger().info("WorldGuard is enabled... not registering fallback protection.");
         }else {
@@ -87,5 +97,6 @@ public class VibeHub extends JavaPlugin {
         getCommand("sethub").setExecutor(new SetHubCommand());
         getCommand("iteminfo").setExecutor(new ItemInfoCommand());
     }
+
     public void onDisable() {}
 }
