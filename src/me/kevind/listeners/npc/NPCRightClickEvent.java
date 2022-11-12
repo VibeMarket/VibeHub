@@ -13,7 +13,7 @@ public class NPCRightClickEvent implements Listener {
         NPC npc = event.getNPC();
         Player player = event.getClicker().getPlayer();
         if (npc.getName().equalsIgnoreCase("§6§lCreative §7(Coming Soon)")) {
-            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "This server is coming soon!"));
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7This server is coming soon!"));
         }
         if (npc.getName().equalsIgnoreCase("§c§lComing Soon §7(Right Click)")) {
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7This server is coming soon!"));
