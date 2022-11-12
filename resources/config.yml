@@ -27,6 +27,7 @@ uuids:
   andreauuid: 8bab5cd7-e97f-44bc-839f-c7e54461de20
 citizens:
   npcs:
-    survival: 0
-    skyblock: 6
-    creative: 1
+    survival: "§a§lSurvival §7(Right Click)"
+    skyblock: "§b§lSkyblock §7(Coming Soon)"
+    creative: "§6§lCreative §7(Coming Soon)"
+    comingsoon: "§c§lComing Soon §7(Right Click)"
