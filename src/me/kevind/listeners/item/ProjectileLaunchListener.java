@@ -10,7 +10,7 @@ public class ProjectileLaunchListener implements Listener {
     @EventHandler
     public void onProjectileLaunch(ProjectileLaunchEvent event) {
         if (event.getEntity().getShooter() instanceof Player && event.getEntity() instanceof EnderPearl) {
-            event.getEntity().setPassenger((Player)event.getEntity().getShooter());
+            event.getEntity().addPassenger((Player)event.getEntity().getShooter());
         }
     }
 }

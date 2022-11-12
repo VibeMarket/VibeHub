@@ -90,6 +90,7 @@ public class VibeHub extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new BlockPlaceListener(), this);
             getLogger().warning("WorldGuard is highly encouraged... registered fallback protection.");
         }
+        Bukkit.getPluginManager().registerEvents(new EntityDismountListener(), this);
         //Commands
         getCommand("hubreload").setExecutor(new ReloadCommand());
         getCommand("build").setExecutor(new BuildCommand());

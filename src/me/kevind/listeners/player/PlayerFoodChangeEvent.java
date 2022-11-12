@@ -9,7 +9,9 @@ public class PlayerFoodChangeEvent implements Listener {
     @EventHandler
     public void onLoseHunger(FoodLevelChangeEvent event) {
         Player player = (Player) event.getEntity();
-        player.setSaturation(20);
-        player.setFoodLevel(20);
+        if (player.getSaturation() <= 20 || player.getFoodLevel() <= 20) {
+            player.setSaturation(20);
+            player.setFoodLevel(20);
+        }
     }
 }
