@@ -14,8 +14,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import static org.bukkit.Bukkit.getLogger;
-
 public class JoinListener implements Listener {
     String world = VibeHub.getInstance().getConfig().getString("coordinates.hub.world");
     Double x = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.x"));
@@ -50,9 +48,9 @@ public class JoinListener implements Listener {
         player.getInventory().setHeldItemSlot(4);
         player.updateInventory();
         if (player.hasPlayedBefore()) {
-           profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);
-        player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileLoadedMessage));
-    }   else {
+            profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileLoadedMessage));
+        } else {
             profileCreatedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileCreatedMessage);
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileCreatedMessage));
         }

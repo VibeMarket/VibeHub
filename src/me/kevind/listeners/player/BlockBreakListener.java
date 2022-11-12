@@ -14,7 +14,7 @@ public class BlockBreakListener implements Listener {
         if (!(player.hasPermission("vibe.build"))) {
             event.setCancelled(true);
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7You cannot break blocks here."));
-        }else {
+        } else {
             event.setCancelled(false);
         }
     }

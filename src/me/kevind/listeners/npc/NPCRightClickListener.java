@@ -21,7 +21,7 @@ public class NPCRightClickListener implements Listener {
         String skyblocknpc = VibeHub.getInstance().getConfig().getString("citizens.npcs.skyblock");
 
 
-        ByteArrayDataOutput  out = ByteStreams.newDataOutput();
+        ByteArrayDataOutput out = ByteStreams.newDataOutput();
         out.writeUTF("Connect");
 
 

@@ -10,8 +10,8 @@ import org.bukkit.entity.Player;
 public class SetHubCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-        String NoPermissionMessage =  VibeHub.getInstance().getConfig().getString("messages.NoPermissionMessage");
-        String hubsetmessage  =  VibeHub.getInstance().getConfig().getString("messages.HubSetMessage");
+        String NoPermissionMessage = VibeHub.getInstance().getConfig().getString("messages.NoPermissionMessage");
+        String hubsetmessage = VibeHub.getInstance().getConfig().getString("messages.HubSetMessage");
         Player player = (Player) sender;
         if (player.hasPermission("vibe.sethub")) {
             //grab the players x, y, z, yaw, pitch and world name then set the respective values in the config & reload the configuration.
@@ -24,7 +24,7 @@ public class SetHubCommand implements CommandExecutor {
             VibeHub.getInstance().saveConfig();
             VibeHub.getInstance().reloadConfig();
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + hubsetmessage));
-        }else {
+        } else {
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + NoPermissionMessage));
         }
         return false;

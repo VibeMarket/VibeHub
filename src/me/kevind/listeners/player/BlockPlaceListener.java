@@ -13,7 +13,7 @@ public class BlockPlaceListener implements Listener {
             event.setBuild(false);
             event.setCancelled(true);
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7You cannot place blocks here."));
-        }else {
+        } else {
             event.setBuild(true);
             event.setCancelled(false);
         }

@@ -116,8 +116,7 @@ public class ItemMaker {
             meta.setUnbreakable(unbreakable);
             item.setItemMeta(meta);
 
-            if (meta instanceof LeatherArmorMeta) {
-                LeatherArmorMeta leatherArmorMeta = (LeatherArmorMeta) meta;
+            if (meta instanceof LeatherArmorMeta leatherArmorMeta) {
 
                 if (color != null)
                     leatherArmorMeta.setColor(color);
@@ -125,8 +124,7 @@ public class ItemMaker {
                 item.setItemMeta(leatherArmorMeta);
             }
 
-            if (meta instanceof SkullMeta) {
-                SkullMeta skullMeta = (SkullMeta) meta;
+            if (meta instanceof SkullMeta skullMeta) {
 
                 if (profile != null) {
                     try {
@@ -135,7 +133,8 @@ public class ItemMaker {
                         field.set(skullMeta, profile);
 
                         item.setItemMeta(skullMeta);
-                    } catch (NoSuchFieldException | IllegalAccessException exception) {}
+                    } catch (NoSuchFieldException | IllegalAccessException exception) {
+                    }
                 }
             }
         }
