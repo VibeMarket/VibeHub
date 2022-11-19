@@ -26,16 +26,16 @@ public class NPCRightClickListener implements Listener {
 
 
         if (npc.getName().equalsIgnoreCase(creativenpc)) {
-            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7This server is coming soon!"));
-            return;
+            out.writeUTF("creative");
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Sending you to &6&lCreative&7."));
         }
         if (npc.getName().equalsIgnoreCase(comingsoonnpc)) {
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7This server is coming soon!"));
             return;
         }
         if (npc.getName().equalsIgnoreCase(skyblocknpc)) {
-            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7This server is coming soon!"));
-            return;
+            out.writeUTF("skyblock");
+            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Sending you to &b&lSkyblock&7."));
         }
         if (npc.getName().equalsIgnoreCase(survivalnpc)) {
             out.writeUTF("survival");
