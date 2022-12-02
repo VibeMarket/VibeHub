@@ -1,5 +1,7 @@
 package me.kevind.listeners.player;
 
+import com.yapzhenyie.GadgetsMenu.api.GadgetsMenuAPI;
+import com.yapzhenyie.GadgetsMenu.player.PlayerManager;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
@@ -27,6 +29,7 @@ public class JoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
+        PlayerManager playerManager = GadgetsMenuAPI.getPlayerManager(player);
         String profileLoadedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileLoadedMessage");
         String profileCreatedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileCreatedMessage");
 
@@ -40,6 +43,7 @@ public class JoinListener implements Listener {
         player.setFoodLevel(20);
         player.setHealth(20);
         player.getInventory().clear();
+        playerManager.giveMenuSelector();
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
         player.getInventory().setItem(0, ItemList.TIME_SELECTOR);
