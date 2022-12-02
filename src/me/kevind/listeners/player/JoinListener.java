@@ -1,7 +1,5 @@
 package me.kevind.listeners.player;
 
-import com.yapzhenyie.GadgetsMenu.api.GadgetsMenuAPI;
-import com.yapzhenyie.GadgetsMenu.player.PlayerManager;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
