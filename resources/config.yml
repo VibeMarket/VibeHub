@@ -31,3 +31,7 @@ citizens:
     skyblock: "§b§lSkyblock §7(Coming Soon)"
     creative: "§6§lCreative §7(Coming Soon)"
     comingsoon: "§c§lComing Soon §7(Right Click)"
+versions:
+  survival: "1.19.2"
+  creative: "1.19.2"
+  skyblock: "1.19.2"
