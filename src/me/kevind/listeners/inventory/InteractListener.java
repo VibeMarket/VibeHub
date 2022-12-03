@@ -14,9 +14,12 @@ public class InteractListener implements Listener {
         Action action = e.getAction();
         if (e.getAction().equals(Action.PHYSICAL))
             return;
-        if (e.getPlayer().getInventory().getItemInMainHand().isSimilar(ItemList.SERVER_SELECTOR)) {
+        if (!e.getPlayer().hasPermission("vibe.staff") && e.getPlayer().getInventory().getItemInMainHand().isSimilar(ItemList.SERVER_SELECTOR)) {
             e.setCancelled(true);
             e.getPlayer().openInventory(VibeHub.getSelectorGUI().getInv());
+        }else if(e.getPlayer().hasPermission("vibe.staff") && e.getPlayer().getInventory().getItemInMainHand().isSimilar(ItemList.SERVER_SELECTOR)) {
+            e.setCancelled(true);
+            e.getPlayer().openInventory(VibeHub.getStaffselector().getInv());
         }
         if (e.getPlayer().getInventory().getItemInMainHand().isSimilar(ItemList.SPEED_ITEM)) {
             e.setCancelled(true);

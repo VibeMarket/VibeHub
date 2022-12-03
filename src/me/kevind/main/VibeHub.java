@@ -3,6 +3,7 @@ package me.kevind.main;
 import me.kevind.commands.*;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.inventory.SpeedGUI;
+import me.kevind.inventory.StaffSelectorGUI;
 import me.kevind.inventory.TimeGUI;
 import me.kevind.listeners.inventory.InteractListener;
 import me.kevind.listeners.inventory.InventoryClickListener;
@@ -26,6 +27,7 @@ public class VibeHub extends JavaPlugin {
     private static SelectorGUI serverselector;
     private static SpeedGUI speeditem;
     private static TimeGUI timegui;
+    private static StaffSelectorGUI staffselector;
 
     public static SelectorGUI getSelectorGUI() {
         return serverselector;
@@ -33,6 +35,9 @@ public class VibeHub extends JavaPlugin {
 
     public static TimeGUI getTimeGUI() {
         return timegui;
+    }
+    public static StaffSelectorGUI getStaffselector() {
+        return staffselector;
     }
 
     public static SpeedGUI getSpeedGUI() {
@@ -54,6 +59,7 @@ public class VibeHub extends JavaPlugin {
         serverselector = new SelectorGUI();
         speeditem = new SpeedGUI();
         timegui = new TimeGUI();
+        staffselector = new StaffSelectorGUI();
         saveDefaultConfig();
         ScoreboardUtils.CreateScoreboard();
         //tasks
