@@ -20,7 +20,7 @@ public class ItemList {
     public static final ItemStack SPEED_9 = new ItemMaker(Material.BLAZE_ROD).name("&c&lSpeed 9").lore("&7Give yourself Speed 9").build();
     public static final ItemStack NO_SPEED = new ItemMaker(Material.BARRIER).name("&c&lDisable Speed").lore("&7Disable speed").build();
     public static final ItemStack ENDERPEARL = new ItemMaker(Material.ENDER_PEARL).name("&d&lEnderpearl &7(Right Click)").lore("&7Throw me to ride!").build();
-    public static final ItemStack BUILD_SERVER = new ItemMaker(Material.COMMAND_BLOCK).name("&c&lBuild").lore("&7Version: &9" + staffversion,"&7Staff only... sorry :)\n&cNot yet ready.").build();
+    public static final ItemStack BUILD_SERVER = new ItemMaker(Material.COMMAND_BLOCK).name("&c&lBuild").lore("&7Version: &9" + staffversion, "&7Teleport to the Build server." ,"&7You are staff so you can see this server.").build();
     public static final ItemStack TIME_SELECTOR = new ItemMaker(Material.CLOCK).name("&e&lTime Selector &7(Right Click)").lore("&7Set your personal time.").build();
     public static final ItemStack PLACEHOLDER_PURPLE_GLASS = new ItemMaker(Material.PURPLE_STAINED_GLASS_PANE).name(" ").build();
     public static final ItemStack PLACEHOLDER_GLASS = new ItemMaker(Material.GRAY_STAINED_GLASS_PANE).name(" ").build();
