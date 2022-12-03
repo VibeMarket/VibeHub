@@ -15,11 +15,7 @@ public class VSpeedCommand implements CommandExecutor {
         Player player = (Player) sender;
         String NoPermissionMessage = VibeHub.getInstance().getConfig().getString("messages.NoPermissionMessage");
         if (sender instanceof Player) {
-            if (player.hasPermission("vibe.staff")) {
-                player.openInventory(VibeHub.getStaffselector().getInv());
-            }else {
-                player.openInventory(VibeHub.getSelectorGUI().getInv());
-            }
+            player.openInventory(VibeHub.getSpeedGUI().getInv());
         } else {
             player.sendMessage(NoPermissionMessage);
         }
