@@ -14,6 +14,7 @@ public class StaffSelectorGUI {
         inv.setItem(14, ItemList.CREATIVE_SERVER);
         inv.setItem(26, ItemList.BUILD_SERVER);
     }
+
     public Inventory getInv() {
         return inv;
     }

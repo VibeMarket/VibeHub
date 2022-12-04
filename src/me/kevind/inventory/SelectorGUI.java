@@ -2,7 +2,6 @@ package me.kevind.inventory;
 
 import me.kevind.utils.ItemList;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 public class SelectorGUI {
