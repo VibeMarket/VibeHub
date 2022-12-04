@@ -1,4 +1,4 @@
-package me.kevind.inventory;
+package me.kevind.inventory.staff;
 
 import me.kevind.utils.ItemList;
 import org.bukkit.Bukkit;

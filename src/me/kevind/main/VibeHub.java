@@ -3,7 +3,7 @@ package me.kevind.main;
 import me.kevind.commands.*;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.inventory.SpeedGUI;
-import me.kevind.inventory.StaffSelectorGUI;
+import me.kevind.inventory.staff.StaffSelectorGUI;
 import me.kevind.inventory.TimeGUI;
 import me.kevind.listeners.inventory.InteractListener;
 import me.kevind.listeners.inventory.InventoryClickListener;
