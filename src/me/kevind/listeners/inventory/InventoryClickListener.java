@@ -27,7 +27,7 @@ public class InventoryClickListener implements Listener {
                 return;
             }
 
-            if (e.getClickedInventory().equals(VibeHub.getSelectorGUI().getInv())) {
+            if (e.getClickedInventory().equals(VibeHub.getSelectorGUI().getInv()) || e.getClickedInventory().equals(VibeHub.getStaffselector().getInv())) {
                 ByteArrayDataOutput out = ByteStreams.newDataOutput();
                 out.writeUTF("Connect");
 
