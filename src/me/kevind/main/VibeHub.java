@@ -1,6 +1,7 @@
 package me.kevind.main;
 
 import me.kevind.commands.*;
+import me.kevind.inventory.CosmeticsGUI;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.inventory.SpeedGUI;
 import me.kevind.inventory.staff.StaffSelectorGUI;
@@ -25,6 +26,7 @@ public class VibeHub extends JavaPlugin {
     private static SpeedGUI speeditem;
     private static TimeGUI timegui;
     private static StaffSelectorGUI staffselector;
+    private static CosmeticsGUI cosmetics;
 
     public static SelectorGUI getSelectorGUI() {
         return serverselector;
@@ -36,6 +38,10 @@ public class VibeHub extends JavaPlugin {
 
     public static StaffSelectorGUI getStaffselector() {
         return staffselector;
+    }
+
+    public static CosmeticsGUI getCosmetics() {
+        return cosmetics;
     }
 
     public static SpeedGUI getSpeedGUI() {
