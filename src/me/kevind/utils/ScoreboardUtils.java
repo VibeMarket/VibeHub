@@ -9,6 +9,7 @@ public class ScoreboardUtils {
     public static void CreateScoreboard() {
         ScoreboardManager manager = Bukkit.getScoreboardManager();
         Scoreboard board = manager.getNewScoreboard();
-        board.registerNewObjective("hub", "dummy");
+        board.registerNewObjective("hub","dummy");
+
     }
 }

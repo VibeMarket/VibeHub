@@ -26,5 +26,5 @@ public class ItemList {
     public static final ItemStack PLACEHOLDER_GLASS = new ItemMaker(Material.GRAY_STAINED_GLASS_PANE).name(" ").build();
     public static final ItemStack DAY_TIME = new ItemMaker(Material.CLOCK).name("&eDay").lore("&7Sets your time to day").build();
     public static final ItemStack NIGHT_TIME = new ItemMaker(Material.CLOCK).name("&8Night").build();
-    public static final ItemStack PLAYERS = new ItemMaker(Material.GREEN_DYE).name("").build();
+    public static final ItemStack COSMETICS_ITEM = new ItemMaker(Material.CHEST).name("&d&lCosmetics &7(Right Click)").build();
 }
