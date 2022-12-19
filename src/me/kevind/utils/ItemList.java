@@ -27,4 +27,5 @@ public class ItemList {
     public static final ItemStack DAY_TIME = new ItemMaker(Material.CLOCK).name("&eDay").lore("&7Sets your time to day").build();
     public static final ItemStack NIGHT_TIME = new ItemMaker(Material.CLOCK).name("&8Night").build();
     public static final ItemStack COSMETICS_ITEM = new ItemMaker(Material.CHEST).name("&d&lCosmetics &7(Right Click)").build();
+    public static final ItemStack DEVELOPMENT_SERVER = new ItemMaker(Material.BARRIER).name("&d&lDevelopment").lore("&7Version: &91.17.1").build();
 }

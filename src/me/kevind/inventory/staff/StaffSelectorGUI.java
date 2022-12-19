@@ -12,6 +12,7 @@ public class StaffSelectorGUI {
         inv.setItem(12, ItemList.SURVIVAL_SERVER);
         inv.setItem(13, ItemList.SKYBLOCK_SERVER);
         inv.setItem(14, ItemList.CREATIVE_SERVER);
+        inv.setItem(8, ItemList.DEVELOPMENT_SERVER);
         inv.setItem(26, ItemList.BUILD_SERVER);
     }
 
