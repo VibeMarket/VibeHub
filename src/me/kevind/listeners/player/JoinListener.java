@@ -69,7 +69,7 @@ public class JoinListener implements Listener {
                 ChatColor.GRAY + "Player: " + ChatColor.WHITE + player.getName(),
                 ChatColor.GRAY + "Rank: " + ChatColor.WHITE + ColorUtils.color(user.getCachedData().getMetaData().getPrefix()),
                 ChatColor.GRAY + "Ping: " + ChatColor.WHITE + player.getPing() + "ms",
-                ChatColor.GRAY + "First Joined: " + ChatColor.WHITE + firstplayed,
+                ChatColor.GRAY + "Joined: " + ChatColor.WHITE + firstplayed,
                 " ",
                 ChatColor.GRAY + "vibemarket.org"
         );
@@ -99,7 +99,7 @@ public class JoinListener implements Listener {
                 ChatColor.GRAY + "Player: " + ChatColor.WHITE + board.getPlayer().getName(),
                 ChatColor.GRAY + "Rank: " + ChatColor.WHITE + ColorUtils.color(user.getCachedData().getMetaData().getPrefix()),
                 ChatColor.GRAY + "Ping: " + ChatColor.WHITE + board.getPlayer().getPing() + "ms",
-                ChatColor.GRAY + "First Joined: " + ChatColor.WHITE + firstplayed,
+                ChatColor.GRAY + "Joined: " + ChatColor.WHITE + firstplayed,
                 " ",
                 ChatColor.GRAY + "vibemarket.org"
         );
