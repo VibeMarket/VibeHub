@@ -12,7 +12,6 @@ import me.kevind.listeners.item.ProjectileLaunchListener;
 import me.kevind.listeners.npc.NPCRightClickListener;
 import me.kevind.listeners.player.*;
 import me.kevind.utils.ColorUtils;
-import me.kevind.utils.ScoreboardUtils;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -65,7 +64,6 @@ public class VibeHub extends JavaPlugin {
         timegui = new TimeGUI();
         staffselector = new StaffSelectorGUI();
         saveDefaultConfig();
-        ScoreboardUtils.CreateScoreboard();
         //tasks
         //action bar to always show server ip
         new BukkitRunnable() {
