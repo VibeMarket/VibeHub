@@ -5,6 +5,7 @@ import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.FastBoard;
 import me.kevind.utils.ItemList;
+import net.luckperms.api.model.user.User;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,9 +14,13 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import static org.bukkit.Bukkit.getServer;
 
 public class JoinListener implements Listener {
     String world = VibeHub.getInstance().getConfig().getString("coordinates.hub.world");
@@ -26,14 +31,17 @@ public class JoinListener implements Listener {
     float pitch = Float.parseFloat(VibeHub.getInstance().getConfig().getString("coordinates.hub.pitch"));
 
     private final Location loc = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
-    private final Map<UUID, FastBoard> boards = new HashMap<>();
-
+    public static final Map<UUID, FastBoard> boards = new HashMap<>();
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         FastBoard board = new FastBoard(player);
+        Date date = new Date(player.getFirstPlayed());
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
+        String firstplayed = sdf.format(date);
         String profileLoadedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileLoadedMessage");
         String profileCreatedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileCreatedMessage");
+        User user = VibeHub.luckperms.getUserManager().getUser(player.getUniqueId());
         //String ClearInventoryBypassPermission = VibeHub.getInstance().getConfig().getString("ClearInventoryBypassPermission");
         //Add potion effect, set gamemode, don't let the player take damage, set the health and saturation to 20, clear the inventory then give the player the server selector & speed item.
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
@@ -53,11 +61,15 @@ public class JoinListener implements Listener {
         player.updateInventory();
 
         //Scoreboard creation
-        board.updateTitle(ColorUtils.color("&9&lVibe | &7Hub"));
+        board.updateTitle(ColorUtils.color("&9&lVibe &8| &7Hub"));
         board.updateLines(
+                " ",
                 ChatColor.GRAY + "Player: " + ChatColor.WHITE + player.getName(),
-                ChatColor.GRAY + "Player: " + ChatColor.WHITE +
-                ChatColor.GRAY + "Ping: " + ChatColor.WHITE + player.getPing() + "ms"
+                ChatColor.GRAY + "Rank: " + ChatColor.WHITE + ColorUtils.color(user.getCachedData().getMetaData().getPrefix()),
+                ChatColor.GRAY + "Ping: " + ChatColor.WHITE + player.getPing() + "ms",
+                ChatColor.GRAY + "First Joined: " + ChatColor.WHITE + firstplayed,
+                " ",
+                ChatColor.GRAY + "vibemarket.org"
         );
         this.boards.put(player.getUniqueId(), board);
 
@@ -73,5 +85,20 @@ public class JoinListener implements Listener {
         //Allow the player to fly
         player.setAllowFlight(true);
 
+    }
+    public static void updateBoard(FastBoard board) {
+        Date date = new Date(board.getPlayer().getFirstPlayed());
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
+        String firstplayed = sdf.format(date);
+        User user = VibeHub.luckperms.getUserManager().getUser(board.getPlayer().getUniqueId());
+        board.updateLines(
+                " ",
+                ChatColor.GRAY + "Player: " + ChatColor.WHITE + board.getPlayer().getName(),
+                ChatColor.GRAY + "Rank: " + ChatColor.WHITE + ColorUtils.color(user.getCachedData().getMetaData().getPrefix()),
+                ChatColor.GRAY + "Ping: " + ChatColor.WHITE + board.getPlayer().getPing() + "ms",
+                ChatColor.GRAY + "First Joined: " + ChatColor.WHITE + firstplayed,
+                " ",
+                ChatColor.GRAY + "vibemarket.org"
+        );
     }
 }

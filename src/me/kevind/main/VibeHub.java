@@ -12,6 +12,7 @@ import me.kevind.listeners.item.ProjectileLaunchListener;
 import me.kevind.listeners.npc.NPCRightClickListener;
 import me.kevind.listeners.player.*;
 import me.kevind.utils.ColorUtils;
+import me.kevind.utils.FastBoard;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.model.user.User;
 import net.md_5.bungee.api.ChatMessageType;
@@ -20,6 +21,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import static org.bukkit.Bukkit.getServer;
 
 public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
@@ -56,7 +59,7 @@ public class VibeHub extends JavaPlugin {
     public static String getPrefix() {
         return instance.getConfig().getString("messages.Prefix");
     }
-    private static LuckPerms luckperms;
+    public static LuckPerms luckperms;
     String serverip = getConfig().getString("messages.ServerIP");
 
     public void onEnable() {
@@ -78,6 +81,13 @@ public class VibeHub extends JavaPlugin {
                 }
             }
         }.runTaskTimerAsynchronously(this, 40, 40);
+
+        getServer().getScheduler().runTaskTimer(this, () -> {
+            for (FastBoard board : JoinListener.boards.values()) {
+                JoinListener.updateBoard(board);
+            }
+        }, 0, 1);
+
 
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
