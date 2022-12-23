@@ -2,7 +2,7 @@
 
 # Dependencies
 
-PlaceholderAPI, HolographicDisplaysAPI
+PlaceholderAPI, LuckPerms
 
 # Soft Dependencies
 
