@@ -3,16 +3,19 @@ package me.kevind.listeners.player;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
+import me.kevind.utils.FastBoard;
 import me.kevind.utils.ItemList;
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class JoinListener implements Listener {
     String world = VibeHub.getInstance().getConfig().getString("coordinates.hub.world");
@@ -23,13 +26,14 @@ public class JoinListener implements Listener {
     float pitch = Float.parseFloat(VibeHub.getInstance().getConfig().getString("coordinates.hub.pitch"));
 
     private final Location loc = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
+    private final Map<UUID, FastBoard> boards = new HashMap<>();
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
+        FastBoard board = new FastBoard(player);
         String profileLoadedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileLoadedMessage");
         String profileCreatedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileCreatedMessage");
-
         //String ClearInventoryBypassPermission = VibeHub.getInstance().getConfig().getString("ClearInventoryBypassPermission");
         //Add potion effect, set gamemode, don't let the player take damage, set the health and saturation to 20, clear the inventory then give the player the server selector & speed item.
         player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 2));
@@ -47,6 +51,16 @@ public class JoinListener implements Listener {
         player.getInventory().getItem(7).setAmount(16);
         player.getInventory().setHeldItemSlot(4);
         player.updateInventory();
+
+        //Scoreboard creation
+        board.updateTitle(ColorUtils.color("&9&lVibe | &7Hub"));
+        board.updateLines(
+                ChatColor.GRAY + "Player: " + ChatColor.WHITE + player.getName(),
+                ChatColor.GRAY + "Player: " + ChatColor.WHITE +
+                ChatColor.GRAY + "Ping: " + ChatColor.WHITE + player.getPing() + "ms"
+        );
+        this.boards.put(player.getUniqueId(), board);
+
         if (player.hasPlayedBefore()) {
             profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + profileLoadedMessage));

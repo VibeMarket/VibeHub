@@ -12,6 +12,8 @@ import me.kevind.listeners.item.ProjectileLaunchListener;
 import me.kevind.listeners.npc.NPCRightClickListener;
 import me.kevind.listeners.player.*;
 import me.kevind.utils.ColorUtils;
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.model.user.User;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -54,7 +56,7 @@ public class VibeHub extends JavaPlugin {
     public static String getPrefix() {
         return instance.getConfig().getString("messages.Prefix");
     }
-
+    private static LuckPerms luckperms;
     String serverip = getConfig().getString("messages.ServerIP");
 
     public void onEnable() {
@@ -63,6 +65,7 @@ public class VibeHub extends JavaPlugin {
         speeditem = new SpeedGUI();
         timegui = new TimeGUI();
         staffselector = new StaffSelectorGUI();
+        this.luckperms = getServer().getServicesManager().load(LuckPerms.class);
         saveDefaultConfig();
         //tasks
         //action bar to always show server ip

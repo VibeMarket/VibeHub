@@ -43,8 +43,8 @@
             <url>https://maven.citizensnpcs.co/repo</url>
         </repository>
         <repository>
-            <id>hfox-public</id>
-            <url>https://nexus.hfox.uk/repository/maven-public/</url>
+            <id>luckperms-repo</id>
+            <url>https://central.sonatype.org/</url>
         </repository>
     </repositories>
     <dependencies>
@@ -86,9 +86,10 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>me.hfox</groupId>
-            <artifactId>spigboard</artifactId>
-            <version>1.1.0</version>
+            <groupId>net.luckperms</groupId>
+            <artifactId>api</artifactId>
+            <version>5.4</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <groupId>me.kevind</groupId>
