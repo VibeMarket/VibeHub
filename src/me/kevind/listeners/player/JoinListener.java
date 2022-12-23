@@ -6,7 +6,10 @@ import me.kevind.utils.ColorUtils;
 import me.kevind.utils.FastBoard;
 import me.kevind.utils.ItemList;
 import net.luckperms.api.model.user.User;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,8 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static org.bukkit.Bukkit.getServer;
-
 public class JoinListener implements Listener {
     String world = VibeHub.getInstance().getConfig().getString("coordinates.hub.world");
     Double x = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.x"));
@@ -32,6 +33,7 @@ public class JoinListener implements Listener {
 
     private final Location loc = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
     public static final Map<UUID, FastBoard> boards = new HashMap<>();
+
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
@@ -86,6 +88,7 @@ public class JoinListener implements Listener {
         player.setAllowFlight(true);
 
     }
+
     public static void updateBoard(FastBoard board) {
         Date date = new Date(board.getPlayer().getFirstPlayed());
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");

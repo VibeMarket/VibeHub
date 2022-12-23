@@ -4,8 +4,8 @@ import me.kevind.commands.*;
 import me.kevind.inventory.CosmeticsGUI;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.inventory.SpeedGUI;
-import me.kevind.inventory.staff.StaffSelectorGUI;
 import me.kevind.inventory.TimeGUI;
+import me.kevind.inventory.staff.StaffSelectorGUI;
 import me.kevind.listeners.inventory.InteractListener;
 import me.kevind.listeners.inventory.InventoryClickListener;
 import me.kevind.listeners.item.ProjectileLaunchListener;
@@ -14,15 +14,12 @@ import me.kevind.listeners.player.*;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.FastBoard;
 import net.luckperms.api.LuckPerms;
-import net.luckperms.api.model.user.User;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
-
-import static org.bukkit.Bukkit.getServer;
 
 public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
@@ -59,6 +56,7 @@ public class VibeHub extends JavaPlugin {
     public static String getPrefix() {
         return instance.getConfig().getString("messages.Prefix");
     }
+
     public static LuckPerms luckperms;
     String serverip = getConfig().getString("messages.ServerIP");
 
@@ -123,7 +121,7 @@ public class VibeHub extends JavaPlugin {
         if (!Bukkit.getPluginManager().isPluginEnabled("LuckPerms")) {
             getLogger().warning("LuckPerms is not enabled! Please either install it or enable it.");
             Bukkit.getPluginManager().disablePlugin(this);
-        }else {
+        } else {
             getLogger().info("Found LuckPerms! Using...");
         }
         Bukkit.getPluginManager().registerEvents(new EntityDismountListener(), this);

@@ -7,10 +7,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.potion.PotionEffect;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 public class LeaveListener implements Listener {
     @EventHandler
     public void onLeaveEvent(PlayerQuitEvent event) {
