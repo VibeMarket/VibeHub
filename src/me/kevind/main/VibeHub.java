@@ -119,6 +119,13 @@ public class VibeHub extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new BlockPlaceListener(), this);
             getLogger().warning("WorldGuard is highly encouraged... registered fallback protection.");
         }
+        //Check to make sure luckperms is enabled, if its not then disable the plugin.
+        if (!Bukkit.getPluginManager().isPluginEnabled("LuckPerms")) {
+            getLogger().warning("LuckPerms is not enabled! Please either install it or enable it.");
+            Bukkit.getPluginManager().disablePlugin(this);
+        }else {
+            getLogger().info("Found LuckPerms! Using...");
+        }
         Bukkit.getPluginManager().registerEvents(new EntityDismountListener(), this);
         //Commands
         getCommand("hubreload").setExecutor(new ReloadCommand());
