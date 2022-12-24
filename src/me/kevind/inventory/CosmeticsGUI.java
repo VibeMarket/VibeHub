@@ -14,5 +14,4 @@ public class CosmeticsGUI {
         return inv;
     }
 
-    ;
 }

@@ -73,7 +73,7 @@ public class JoinListener implements Listener {
                 " ",
                 ColorUtils.color("&9&lvibemarket.org")
         );
-        this.boards.put(player.getUniqueId(), board);
+        boards.put(player.getUniqueId(), board);
 
         if (player.hasPlayedBefore()) {
             profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);

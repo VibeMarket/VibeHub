@@ -10,6 +10,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class ActionbarTask extends BukkitRunnable {
     String serverip = VibeHub.getInstance().getConfig().getString("messages.ServerIP");
+
     @Override
     public void run() {
         for (Player player : Bukkit.getOnlinePlayers()) {

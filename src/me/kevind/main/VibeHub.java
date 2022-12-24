@@ -13,18 +13,10 @@ import me.kevind.listeners.npc.NPCRightClickListener;
 import me.kevind.listeners.player.*;
 import me.kevind.tasks.ActionbarTask;
 import me.kevind.tasks.ScoreboardTask;
-import me.kevind.tasks.ScoreboardUpdateTask;
-import me.kevind.utils.ColorUtils;
-import me.kevind.utils.FastBoard;
 import net.luckperms.api.LuckPerms;
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
-import org.bukkit.scoreboard.Scoreboard;
 
 public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
@@ -92,7 +84,7 @@ public class VibeHub extends JavaPlugin {
             getLogger().warning("LuckPerms is not enabled! Please either install it or enable it.");
             Bukkit.getPluginManager().disablePlugin(this);
         } else {
-            this.luckperms = getServer().getServicesManager().load(LuckPerms.class);
+            luckperms = getServer().getServicesManager().load(LuckPerms.class);
             getLogger().info("Found LuckPerms! Using...");
         }
         //Events
