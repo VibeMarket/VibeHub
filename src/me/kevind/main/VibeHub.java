@@ -11,6 +11,8 @@ import me.kevind.listeners.inventory.InventoryClickListener;
 import me.kevind.listeners.item.ProjectileLaunchListener;
 import me.kevind.listeners.npc.NPCRightClickListener;
 import me.kevind.listeners.player.*;
+import me.kevind.tasks.ActionbarTask;
+import me.kevind.tasks.ScoreboardTask;
 import me.kevind.tasks.ScoreboardUpdateTask;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.FastBoard;
@@ -21,6 +23,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitTask;
+import org.bukkit.scoreboard.Scoreboard;
 
 public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
@@ -62,6 +66,7 @@ public class VibeHub extends JavaPlugin {
     String serverip = getConfig().getString("messages.ServerIP");
 
     public void onEnable() {
+        long start = System.currentTimeMillis();
         instance = this;
         serverselector = new SelectorGUI();
         speeditem = new SpeedGUI();
@@ -69,23 +74,9 @@ public class VibeHub extends JavaPlugin {
         staffselector = new StaffSelectorGUI();
         saveDefaultConfig();
         //tasks
-        //action bar to always show server ip
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                for (Player player : Bukkit.getOnlinePlayers()) {
-                    TextComponent ip = new TextComponent(ColorUtils.color(serverip));
-                    player.spigot().sendMessage(ChatMessageType.ACTION_BAR, ip);
-                }
-            }
-        }.runTaskTimerAsynchronously(this, 40, 40);
-
-        getServer().getScheduler().runTaskTimer(this, () -> {
-            for (FastBoard board : JoinListener.boards.values()) {
-                ScoreboardUpdateTask.updateBoard(board);
-            }
-        }, 0, 1);
-
+        getLogger().info("Registering tasks...");
+        BukkitTask actionbartask = new ActionbarTask().runTaskTimerAsynchronously(this, 40, 40);
+        BukkitTask scoreboardtask = new ScoreboardTask().runTaskTimerAsynchronously(this, 0, 20);
 
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
@@ -105,6 +96,7 @@ public class VibeHub extends JavaPlugin {
             getLogger().info("Found LuckPerms! Using...");
         }
         //Events
+        getLogger().info("Registering events...");
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         Bukkit.getPluginManager().registerEvents(new LeaveListener(), this);
         Bukkit.getPluginManager().registerEvents(new InteractListener(), this);
@@ -127,11 +119,13 @@ public class VibeHub extends JavaPlugin {
         }
         Bukkit.getPluginManager().registerEvents(new EntityDismountListener(), this);
         //Commands
+        getLogger().info("Registering commands...");
         getCommand("hubreload").setExecutor(new ReloadCommand());
         getCommand("build").setExecutor(new BuildCommand());
         getCommand("vspeed").setExecutor(new VSpeedCommand());
         getCommand("sethub").setExecutor(new SetHubCommand());
         getCommand("iteminfo").setExecutor(new ItemInfoCommand());
+        getLogger().info("Done! Took " + (System.currentTimeMillis() - start) + "ms");
     }
 
     public void onDisable() {
