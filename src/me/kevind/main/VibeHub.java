@@ -11,6 +11,7 @@ import me.kevind.listeners.inventory.InventoryClickListener;
 import me.kevind.listeners.item.ProjectileLaunchListener;
 import me.kevind.listeners.npc.NPCRightClickListener;
 import me.kevind.listeners.player.*;
+import me.kevind.tasks.ScoreboardUpdateTask;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.FastBoard;
 import net.luckperms.api.LuckPerms;
@@ -81,7 +82,7 @@ public class VibeHub extends JavaPlugin {
 
         getServer().getScheduler().runTaskTimer(this, () -> {
             for (FastBoard board : JoinListener.boards.values()) {
-                JoinListener.updateBoard(board);
+                ScoreboardUpdateTask.updateBoard(board);
             }
         }, 0, 1);
 

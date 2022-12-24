@@ -66,7 +66,7 @@ public class JoinListener implements Listener {
         board.updateTitle(ColorUtils.color("&9&lVibe &8| &7Hub"));
         board.updateLines(
                 " ",
-                ChatColor.GRAY + "Player: " + ChatColor.WHITE + player.getName(),
+                ChatColor.GRAY + "Name: " + ChatColor.WHITE + player.getName(),
                 ChatColor.GRAY + "Rank: " + ChatColor.WHITE + ColorUtils.color(user.getCachedData().getMetaData().getPrefix()),
                 ChatColor.GRAY + "Ping: " + ChatColor.WHITE + player.getPing() + "ms",
                 ChatColor.GRAY + "Joined: " + ChatColor.WHITE + firstplayed,
@@ -87,21 +87,5 @@ public class JoinListener implements Listener {
         //Allow the player to fly
         player.setAllowFlight(true);
 
-    }
-
-    public static void updateBoard(FastBoard board) {
-        Date date = new Date(board.getPlayer().getFirstPlayed());
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
-        String firstplayed = sdf.format(date);
-        User user = VibeHub.luckperms.getUserManager().getUser(board.getPlayer().getUniqueId());
-        board.updateLines(
-                " ",
-                ChatColor.GRAY + "Player: " + ChatColor.WHITE + board.getPlayer().getName(),
-                ChatColor.GRAY + "Rank: " + ChatColor.WHITE + ColorUtils.color(user.getCachedData().getMetaData().getPrefix()),
-                ChatColor.GRAY + "Ping: " + ChatColor.WHITE + board.getPlayer().getPing() + "ms",
-                ChatColor.GRAY + "Joined: " + ChatColor.WHITE + firstplayed,
-                " ",
-                ChatColor.GRAY + "vibemarket.org"
-        );
     }
 }
