@@ -8,12 +8,12 @@ public class StaffSelectorGUI {
     private final Inventory inv;
 
     public StaffSelectorGUI() {
-        inv = Bukkit.createInventory(null, 27, "Server Selector");
+        inv = Bukkit.createInventory(null, 36, "Server Selector");
         inv.setItem(12, ItemList.SURVIVAL_SERVER);
         inv.setItem(13, ItemList.SKYBLOCK_SERVER);
         inv.setItem(14, ItemList.CREATIVE_SERVER);
-        inv.setItem(8, ItemList.DEVELOPMENT_SERVER);
-        inv.setItem(26, ItemList.BUILD_SERVER);
+        inv.setItem(22, ItemList.DEVELOPMENT_SERVER);
+        inv.setItem(21, ItemList.BUILD_SERVER);
     }
 
     public Inventory getInv() {
