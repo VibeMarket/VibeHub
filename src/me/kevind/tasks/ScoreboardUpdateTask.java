@@ -22,7 +22,7 @@ public class ScoreboardUpdateTask {
                 ChatColor.GRAY + "Ping: " + ChatColor.WHITE + board.getPlayer().getPing() + "ms",
                 ChatColor.GRAY + "Joined: " + ChatColor.WHITE + firstplayed,
                 " ",
-                ChatColor.GRAY + "vibemarket.org"
+                ColorUtils.color("&9&lvibemarket.org")
         );
     }
 }

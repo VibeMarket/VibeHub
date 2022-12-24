@@ -71,7 +71,7 @@ public class JoinListener implements Listener {
                 ChatColor.GRAY + "Ping: " + ChatColor.WHITE + player.getPing() + "ms",
                 ChatColor.GRAY + "Joined: " + ChatColor.WHITE + firstplayed,
                 " ",
-                ChatColor.GRAY + "vibemarket.org"
+                ColorUtils.color("&9&lvibemarket.org")
         );
         this.boards.put(player.getUniqueId(), board);
 
