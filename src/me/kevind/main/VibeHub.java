@@ -17,6 +17,7 @@ import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
+import org.bukkit.scoreboard.Score;
 
 public class VibeHub extends JavaPlugin {
     private static VibeHub instance;
@@ -117,6 +118,8 @@ public class VibeHub extends JavaPlugin {
         getCommand("vspeed").setExecutor(new VSpeedCommand());
         getCommand("sethub").setExecutor(new SetHubCommand());
         getCommand("iteminfo").setExecutor(new ItemInfoCommand());
+        getCommand("actionbar").setExecutor(new ActionbarCommand());
+        getCommand("scoreboard").setExecutor(new ScoreboardCommand());
         getLogger().info("Done! Took " + (System.currentTimeMillis() - start) + "ms");
     }
 

@@ -27,3 +27,7 @@ commands:
     description: Shows information about the item you're currently holding
     aliases:
       - "ii"
+  scoreboard:
+    description: Turns on and off the scoreboard.
+  actionbar:
+    description: Turns on and off the actionbar.
