@@ -21,7 +21,6 @@ public class ActionbarCommand implements CommandExecutor {
 
         }
         if (args[0].equalsIgnoreCase("off")) {
-            new ActionbarTask().cancel();
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Turned &c&loff &7the action bar."));
         }
         return false;
