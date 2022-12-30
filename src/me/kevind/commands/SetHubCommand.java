@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class SetHubCommand implements CommandExecutor {
+public final class SetHubCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         String NoPermissionMessage = VibeHub.getInstance().getConfig().getString("messages.NoPermissionMessage");

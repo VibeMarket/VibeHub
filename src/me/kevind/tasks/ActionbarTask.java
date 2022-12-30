@@ -8,7 +8,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-public class ActionbarTask extends BukkitRunnable {
+public final class ActionbarTask extends BukkitRunnable {
     String serverip = VibeHub.getInstance().getConfig().getString("messages.ServerIP");
 
     @Override

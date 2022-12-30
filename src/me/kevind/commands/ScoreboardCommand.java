@@ -8,11 +8,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class ScoreboardCommand implements CommandExecutor {
+public final class ScoreboardCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         Player player = (Player) sender;
-        if (args[0] == null) {
+        if (args[0].length() == 0) {
             player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&cPlease specify arguments."));
         }
         if (args[0].equalsIgnoreCase("on")) {

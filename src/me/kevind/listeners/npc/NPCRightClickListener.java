@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-public class NPCRightClickListener implements Listener {
+public final class NPCRightClickListener implements Listener {
     @EventHandler
     public void onNPCRightClickEvent(NPCRightClickEvent event) {
         NPC npc = event.getNPC();

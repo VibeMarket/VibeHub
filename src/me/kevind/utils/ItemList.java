@@ -5,11 +5,11 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 
-public class ItemList {
-    static String survivalversion = VibeHub.getInstance().getConfig().getString("versions.survival");
-    static String skyblockversion = VibeHub.getInstance().getConfig().getString("versions.skyblock");
-    static String creativeversion = VibeHub.getInstance().getConfig().getString("versions.creative");
-    static String staffversion = VibeHub.getInstance().getConfig().getString("versions.staff");
+public final class ItemList {
+    static final String survivalversion = VibeHub.getInstance().getConfig().getString("versions.survival");
+    static final String skyblockversion = VibeHub.getInstance().getConfig().getString("versions.skyblock");
+    static final String creativeversion = VibeHub.getInstance().getConfig().getString("versions.creative");
+    static final String staffversion = VibeHub.getInstance().getConfig().getString("versions.staff");
     public static final ItemStack SERVER_SELECTOR = new ItemMaker(Material.NETHER_STAR).name("&a&lServer Selector &7(Right Click)").lore("&7Teleport to the other servers!").build();
     public static final ItemStack SURVIVAL_SERVER = new ItemMaker(Material.GRASS_BLOCK).name("&a&lSurvival").lore("&7Version: &9" + survivalversion, "&7Teleport to the survival server").build();
     public static final ItemStack CREATIVE_SERVER = new ItemMaker(Material.BIRCH_WOOD).name("&6&lCreative").lore("&7Version: &9" + creativeversion, "&7Teleport to the creative server").build();

@@ -3,7 +3,7 @@ package me.kevind.inventory;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 
-public class CosmeticsGUI {
+public final class CosmeticsGUI {
     private final Inventory inv;
 
     public CosmeticsGUI() {

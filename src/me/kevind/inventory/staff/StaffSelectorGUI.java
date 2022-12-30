@@ -4,7 +4,7 @@ import me.kevind.utils.ItemList;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 
-public class StaffSelectorGUI {
+public final class StaffSelectorGUI {
     private final Inventory inv;
 
     public StaffSelectorGUI() {

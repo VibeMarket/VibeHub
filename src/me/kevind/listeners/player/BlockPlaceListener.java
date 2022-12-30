@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-public class BlockPlaceListener implements Listener {
+public final class BlockPlaceListener implements Listener {
     public void BlockPlaceEvent(BlockPlaceEvent event) {
         Player player = event.getPlayer();
         if (!(player.hasPermission("vibe.build"))) {

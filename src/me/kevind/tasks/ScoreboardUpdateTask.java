@@ -9,7 +9,7 @@ import org.bukkit.ChatColor;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ScoreboardUpdateTask {
+public final class ScoreboardUpdateTask {
     public static void updateBoard(FastBoard board) {
         Date date = new Date(board.getPlayer().getFirstPlayed());
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");

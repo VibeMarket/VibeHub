@@ -4,7 +4,7 @@ import me.kevind.utils.ItemList;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 
-public class TimeGUI {
+public final class TimeGUI {
     private final Inventory inv;
 
     public TimeGUI() {

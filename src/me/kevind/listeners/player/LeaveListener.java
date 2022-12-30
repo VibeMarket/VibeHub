@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.potion.PotionEffect;
 
-public class LeaveListener implements Listener {
+public final class LeaveListener implements Listener {
     @EventHandler
     public void onLeaveEvent(PlayerQuitEvent event) {
         Player player = event.getPlayer();
