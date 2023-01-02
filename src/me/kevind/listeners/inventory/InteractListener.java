@@ -32,5 +32,9 @@ public final class InteractListener implements Listener {
         if (action.equals(Action.RIGHT_CLICK_AIR) || action.equals(Action.RIGHT_CLICK_BLOCK)) {
             e.getPlayer().getInventory().getItem(7).setAmount(16);
         }
+        if (e.getPlayer().getInventory().getItemInMainHand().isSimilar(ItemList.COSMETICS_ITEM)) {
+            e.setCancelled(true);
+            e.getPlayer().openInventory(VibeHub.getCosmetics().getInv());
+        }
     }
 }

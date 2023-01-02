@@ -5,6 +5,8 @@ import me.kevind.inventory.CosmeticsGUI;
 import me.kevind.inventory.SelectorGUI;
 import me.kevind.inventory.SpeedGUI;
 import me.kevind.inventory.TimeGUI;
+import me.kevind.inventory.cosmetics.ArmorsGUI;
+import me.kevind.inventory.cosmetics.ParticlesGUI;
 import me.kevind.inventory.staff.StaffSelectorGUI;
 import me.kevind.listeners.inventory.InteractListener;
 import me.kevind.listeners.inventory.InventoryClickListener;
@@ -25,6 +27,8 @@ public class VibeHub extends JavaPlugin {
     private static TimeGUI timegui;
     private static StaffSelectorGUI staffselector;
     private static CosmeticsGUI cosmetics;
+    private static ArmorsGUI armorsGUI;
+    private static ParticlesGUI particlesGUI;
 
     public static SelectorGUI getSelectorGUI() {
         return serverselector;
@@ -46,6 +50,12 @@ public class VibeHub extends JavaPlugin {
         return speeditem;
     }
 
+    public static ArmorsGUI getArmorsGUI() {
+        return armorsGUI;
+    }
+    public static ParticlesGUI getParticlesGUI() {
+        return particlesGUI;
+    }
     public static VibeHub getInstance() {
         return instance;
     }
@@ -63,6 +73,9 @@ public class VibeHub extends JavaPlugin {
         speeditem = new SpeedGUI();
         timegui = new TimeGUI();
         staffselector = new StaffSelectorGUI();
+        cosmetics = new CosmeticsGUI();
+        armorsGUI = new ArmorsGUI();
+        particlesGUI = new ParticlesGUI();
         saveDefaultConfig();
         //tasks
         getLogger().info("Registering tasks...");

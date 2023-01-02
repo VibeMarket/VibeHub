@@ -35,4 +35,6 @@ versions:
   survival: "1.19.3"
   creative: "1.19.3"
   skyblock: "1.19.3"
-  staff: "1.19.3"
+  build: "1.19.3"
+  dev: "1.17.1"
+  limbo: "1.7-1.19.3"

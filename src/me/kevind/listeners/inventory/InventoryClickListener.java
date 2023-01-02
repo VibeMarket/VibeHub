@@ -5,10 +5,12 @@ import com.google.common.io.ByteStreams;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.ItemList;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -79,6 +81,28 @@ public final class InventoryClickListener implements Listener {
                     player.setPlayerTime(14000, true);
                     player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Set your time to &8Night&7."));
                 }
+                e.setCancelled(true);
+            }
+            if (e.getClickedInventory().equals(VibeHub.getCosmetics().getInv())) {
+                if (e.getCurrentItem().isSimilar(ItemList.ARMORS)) {
+                    player.openInventory(VibeHub.getArmorsGUI().getInv());
+                }
+                if (e.getCurrentItem().isSimilar(ItemList.PARTICLES)) {
+                    player.openInventory(VibeHub.getParticlesGUI().getInv());
+                }
+                e.setCancelled(true);
+            }
+            if (e.getClickedInventory().equals(VibeHub.getArmorsGUI().getInv())) {
+                if (e.getCurrentItem().isSimilar(ItemList.RAINBOW_ARMOR)) {
+                    player.getInventory().setHelmet(new ItemStack(Material.LEATHER_HELMET, 1));
+                    player.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE, 1));
+                    player.getInventory().setLeggings(new ItemStack(Material.LEATHER_LEGGINGS, 1));
+                    player.getInventory().setBoots(new ItemStack(Material.LEATHER_BOOTS, 1));
+                    player.sendMessage(ColorUtils.color("&7Equipped &c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or"));
+                }
+                e.setCancelled(true);
+            }
+            if (e.getClickedInventory().equals(VibeHub.getParticlesGUI().getInv())) {
                 e.setCancelled(true);
             }
         }
