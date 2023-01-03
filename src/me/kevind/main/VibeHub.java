@@ -129,6 +129,8 @@ public class VibeHub extends JavaPlugin {
         getCommand("vspeed").setExecutor(new VSpeedCommand());
         getCommand("sethub").setExecutor(new SetHubCommand());
         getCommand("iteminfo").setExecutor(new ItemInfoCommand());
+        getCommand("particles").setExecutor(new ParticlesComand());
+        getCommand("cosmetics").setExecutor(new CosmeticsCommand());
         //getCommand("actionbar").setExecutor(new ActionbarCommand());
         //getCommand("scoreboard").setExecutor(new ScoreboardCommand());
         getLogger().info("Done! Took " + (System.currentTimeMillis() - start) + "ms");
