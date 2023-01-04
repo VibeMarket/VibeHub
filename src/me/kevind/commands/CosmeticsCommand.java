@@ -13,8 +13,12 @@ public class CosmeticsCommand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            player.openInventory(VibeHub.getCosmetics().getInv());
-            player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Opening cosmetics selector"));
+            if (player.getUniqueId().toString().equalsIgnoreCase("a948c50c-ede2-4dfa-9b6c-688daf22197c")) {
+                player.openInventory(VibeHub.getCosmetics().getInv());
+                player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Opening cosmetics selector..."));
+            }else {
+                player.sendMessage(ColorUtils.color("&cThis command can only be used by Kevin."));
+            }
 
         }
         return false;
