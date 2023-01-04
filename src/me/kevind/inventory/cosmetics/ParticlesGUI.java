@@ -18,6 +18,7 @@ public class ParticlesGUI {
             inv.setItem(i, ItemList.PLACEHOLDER_BLUE_GLASS);
         }
         inv.setItem(9, ItemList.TEST_PARTICLE);
+        inv.setItem(10, ItemList.FLAME_PARTICLE);
         inv.setItem(26, ItemList.GO_BACK);
     }
     public Inventory getInv() {

@@ -38,4 +38,5 @@ public final class ItemList {
     public static final ItemStack RAINBOW_ARMOR = new ItemMaker(Material.LEATHER).name("&c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or").lore("&7Right click to equip", "&7Left click to unequip").build();
     public static final ItemStack GO_BACK = new ItemMaker(Material.BARRIER).name("&c&lGo back").lore("&7Click to go back!").build();
     public static final ItemStack TEST_PARTICLE = new ItemMaker(Material.NETHER_STAR).name("&f&lTest Particle").lore("&7This is a test particle.").build();
+    public static final ItemStack FLAME_PARTICLE = new ItemMaker(Material.FIRE_CHARGE).name("&cFlame Particle &7(Right Click)").build();
 }
