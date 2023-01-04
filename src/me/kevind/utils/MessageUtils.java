@@ -1,9 +1,10 @@
 package me.kevind.utils;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class MessageUtils {
-    public static void sendMessage(Player player, String s) {
-        player.sendMessage(ColorUtils.color(s));
+    public static void sendMessage(CommandSender sender, String s) {
+        sender.sendMessage(ColorUtils.color(s));
     }
 }
