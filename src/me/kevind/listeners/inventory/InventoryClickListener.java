@@ -106,10 +106,10 @@ public final class InventoryClickListener implements Listener {
                         player.getInventory().setChestplate(Rainbow.createRainbowChestplate());
                         player.getInventory().setLeggings(Rainbow.createRainbowLeggings());
                         player.getInventory().setBoots(Rainbow.createRainbowBoots());
-                        player.sendMessage(ColorUtils.color("&7Equipped &c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or"));
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or&7!");
                     }else if (e.isRightClick()) {
                         ArmorUtils.clearArmor(player);
-                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "Cleared your armor slots!");
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
                     }
                 }
                 if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
