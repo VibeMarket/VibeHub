@@ -43,6 +43,8 @@ public final class InventoryClickListener implements Listener {
                     out.writeUTF("staff");
                 else if (e.getCurrentItem().isSimilar(ItemList.DEVELOPMENT_SERVER))
                     out.writeUTF("dev");
+                else if (e.getCurrentItem().isSimilar(ItemList.LIMBO_SERVER))
+                    out.writeUTF("limbo");
                 e.setCancelled(true);
                 player.sendPluginMessage(VibeHub.getInstance(), "BungeeCord", out.toByteArray());
             }
@@ -83,6 +85,7 @@ public final class InventoryClickListener implements Listener {
                 }
                 e.setCancelled(true);
             }
+            //cosmetics main gui
             if (e.getClickedInventory().equals(VibeHub.getCosmetics().getInv())) {
                 if (e.getCurrentItem().isSimilar(ItemList.ARMORS)) {
                     player.openInventory(VibeHub.getArmorsGUI().getInv());
@@ -92,6 +95,7 @@ public final class InventoryClickListener implements Listener {
                 }
                 e.setCancelled(true);
             }
+            //cosmetics armor gui
             if (e.getClickedInventory().equals(VibeHub.getArmorsGUI().getInv())) {
                 if (e.getCurrentItem().isSimilar(ItemList.RAINBOW_ARMOR)) {
                     player.getInventory().setHelmet(new ItemStack(Material.LEATHER_HELMET, 1));
@@ -100,9 +104,16 @@ public final class InventoryClickListener implements Listener {
                     player.getInventory().setBoots(new ItemStack(Material.LEATHER_BOOTS, 1));
                     player.sendMessage(ColorUtils.color("&7Equipped &c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or"));
                 }
+                if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
+                    player.openInventory(VibeHub.getCosmetics().getInv());
+                }
                 e.setCancelled(true);
             }
+            //cosmetics particles gui
             if (e.getClickedInventory().equals(VibeHub.getParticlesGUI().getInv())) {
+                if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
+                    player.openInventory(VibeHub.getCosmetics().getInv());
+                }
                 e.setCancelled(true);
             }
         }
