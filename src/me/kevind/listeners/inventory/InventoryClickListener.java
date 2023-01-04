@@ -3,7 +3,6 @@ package me.kevind.listeners.inventory;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import me.kevind.cosmetics.armor.rainbow.Rainbow;
-import me.kevind.cosmetics.particles.Flame;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ArmorUtils;
 import me.kevind.utils.ColorUtils;
@@ -107,8 +106,8 @@ public final class InventoryClickListener implements Listener {
                         player.getInventory().setChestplate(Rainbow.createRainbowChestplate());
                         player.getInventory().setLeggings(Rainbow.createRainbowLeggings());
                         player.getInventory().setBoots(Rainbow.createRainbowBoots());
-                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or&7!");
-                    }else if (e.isRightClick()) {
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or");
+                    } else if (e.isRightClick()) {
                         ArmorUtils.clearArmor(player);
                         MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
                     }
@@ -122,13 +121,6 @@ public final class InventoryClickListener implements Listener {
             if (e.getClickedInventory().equals(VibeHub.getParticlesGUI().getInv())) {
                 if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
                     player.openInventory(VibeHub.getCosmetics().getInv());
-                }
-                if (e.getCurrentItem().isSimilar(ItemList.FLAME_PARTICLE)) {
-                    if (e.isRightClick()) {
-                        Flame.createParticle(player);
-                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &c&lFlame &7particle!");
-                    }
-
                 }
                 e.setCancelled(true);
             }

@@ -20,6 +20,7 @@ public final class CosmeticsGUI {
         }
         inv.setItem(13, ItemList.ARMORS);
         inv.setItem(9, ItemList.PARTICLES);
+        inv.setItem(17, ItemList.CLOSE_MENU);
     }
 
     public Inventory getInv() {
