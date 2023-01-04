@@ -2,9 +2,12 @@ package me.kevind.listeners.inventory;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
+import me.kevind.cosmetics.armor.rainbow.Rainbow;
 import me.kevind.main.VibeHub;
+import me.kevind.utils.ArmorUtils;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.ItemList;
+import me.kevind.utils.MessageUtils;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -98,11 +101,16 @@ public final class InventoryClickListener implements Listener {
             //cosmetics armor gui
             if (e.getClickedInventory().equals(VibeHub.getArmorsGUI().getInv())) {
                 if (e.getCurrentItem().isSimilar(ItemList.RAINBOW_ARMOR)) {
-                    player.getInventory().setHelmet(new ItemStack(Material.LEATHER_HELMET, 1));
-                    player.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE, 1));
-                    player.getInventory().setLeggings(new ItemStack(Material.LEATHER_LEGGINGS, 1));
-                    player.getInventory().setBoots(new ItemStack(Material.LEATHER_BOOTS, 1));
-                    player.sendMessage(ColorUtils.color("&7Equipped &c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or"));
+                    if (e.isLeftClick()) {
+                        player.getInventory().setHelmet(Rainbow.createRainbowHelmet());
+                        player.getInventory().setChestplate(Rainbow.createRainbowChestplate());
+                        player.getInventory().setLeggings(Rainbow.createRainbowLeggings());
+                        player.getInventory().setBoots(Rainbow.createRainbowBoots());
+                        player.sendMessage(ColorUtils.color("&7Equipped &c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or"));
+                    }else if (e.isRightClick()) {
+                        ArmorUtils.clearArmor(player);
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "Cleared your armor slots!");
+                    }
                 }
                 if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
                     player.openInventory(VibeHub.getCosmetics().getInv());
