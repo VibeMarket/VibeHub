@@ -8,7 +8,7 @@ public final class MessageUtils {
     public static void sendMessage(CommandSender sender, String s) {
         sender.sendMessage(ColorUtils.color(s));
     }
-    public static void broadcastMessage(CommandSender sender, String s) {
+    public static void broadcastMessage(String s) {
         Bukkit.broadcastMessage(ColorUtils.color(s));
     }
 }

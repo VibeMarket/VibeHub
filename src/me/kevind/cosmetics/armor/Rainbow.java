@@ -1,4 +1,4 @@
-package me.kevind.cosmetics.armor.rainbow;
+package me.kevind.cosmetics.armor;
 
 import org.bukkit.Color;
 import org.bukkit.Material;

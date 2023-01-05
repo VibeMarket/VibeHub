@@ -2,18 +2,16 @@ package me.kevind.listeners.inventory;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
-import me.kevind.cosmetics.armor.rainbow.Rainbow;
+import me.kevind.cosmetics.armor.Rainbow;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ArmorUtils;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.ItemList;
 import me.kevind.utils.MessageUtils;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
