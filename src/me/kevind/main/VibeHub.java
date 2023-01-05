@@ -20,7 +20,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
-public class VibeHub extends JavaPlugin {
+public final class VibeHub extends JavaPlugin {
     private static VibeHub instance;
     private static SelectorGUI serverselector;
     private static SpeedGUI speeditem;
