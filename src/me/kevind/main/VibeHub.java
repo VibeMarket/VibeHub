@@ -111,8 +111,7 @@ public final class VibeHub extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ProjectileLaunchListener(), this);
         if (Bukkit.getPluginManager().isPluginEnabled("Citizens")) {
             Bukkit.getPluginManager().registerEvents(new NPCRightClickListener(), this);
-            Bukkit.getPluginManager().registerEvents(new NPCCreateListener(), this);
-            getLogger().info("Registered NPC listeners.");
+            getLogger().info("Registered NPC listener.");
         } else {
             getLogger().warning("Not registering NPC listener. Please install Citizens.");
         }
