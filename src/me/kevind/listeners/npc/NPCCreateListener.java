@@ -9,13 +9,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-public class NPCCreateListener implements Listener {
+public final class NPCCreateListener implements Listener {
     @EventHandler
     public void onNPCCreate(NPCCreateEvent e) {
         NPC npc = e.getNPC();
         Player player = PlayerUtils.getPlayer();
         if (player.hasPermission("vibe.npcspy")) {
-            MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&9" + player.getDisplayName() + " &7created an NPC named &9" + npc.getName() + "&7 at " + npc.getStoredLocation());
+            MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&9" + player.getDisplayName() + " &7created an NPC named &9" + npc.getName() + "&7 at &9" + npc.getStoredLocation());
         }
     }
 }
