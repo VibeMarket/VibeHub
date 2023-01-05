@@ -3,6 +3,7 @@ package me.kevind.listeners.inventory;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import me.kevind.cosmetics.armor.Rainbow;
+import me.kevind.cosmetics.particles.Flame;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ArmorUtils;
 import me.kevind.utils.ColorUtils;
@@ -119,6 +120,15 @@ public final class InventoryClickListener implements Listener {
             if (e.getClickedInventory().equals(VibeHub.getParticlesGUI().getInv())) {
                 if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
                     player.openInventory(VibeHub.getCosmetics().getInv());
+                }
+                if (e.getCurrentItem().isSimilar(ItemList.FLAME_PARTICLE)) {
+                    if (e.isLeftClick()) {
+                        Flame.createParticle(player);
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &c&lFlame &7particle");
+                    }if (e.isRightClick()) {
+                        Flame.removeParticle(player);
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared particles.");
+                    }
                 }
                 e.setCancelled(true);
             }
