@@ -36,7 +36,7 @@ public final class ItemList {
     public static final ItemStack COSMETICS_ITEM = new ItemMaker(Material.CHEST).name("&6&lCosmetics &7(Right Click)").lore("&7Click to open the Cosmetics menu!").build();
     public static final ItemStack ARMORS = new ItemMaker(Material.LEATHER_HELMET).name("&9&lArmors").lore("&7Click to go to the armors section").build();
     public static final ItemStack PARTICLES = new ItemMaker(Material.NETHER_STAR).name("&f&lParticles &7(Right Click)").lore("&7Click to go to the particles section").build();
-    public static final ItemStack RAINBOW_ARMOR = new ItemMaker(Material.LEATHER).name("&c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or").lore("&7Left click to equip", "&7Right click to unequip").build();
+    public static final ItemStack RAINBOW_ARMOR = new ItemMaker(Material.RED_WOOL).name("&c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or").lore("&7Left click to equip", "&7Right click to unequip").build();
     public static final ItemStack STRAIGHT_ARMOR = new ItemMaker(Material.BLACK_WOOL).name("&fStra&0ight &7Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
     public static final ItemStack BI_ARMOR = new ItemMaker(Material.PURPLE_WOOL).name("&dBi&5sex&9ual &7Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
     public static final ItemStack PAN_ARMOR = new ItemMaker(Material.YELLOW_WOOL).name("&dPan&esex&bual &7Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
