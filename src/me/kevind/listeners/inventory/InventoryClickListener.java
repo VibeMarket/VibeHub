@@ -3,6 +3,7 @@ package me.kevind.listeners.inventory;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import me.kevind.cosmetics.armor.Rainbow;
+import me.kevind.cosmetics.armor.Straight;
 import me.kevind.cosmetics.particles.Flame;
 import me.kevind.main.VibeHub;
 import me.kevind.utils.ArmorUtils;
@@ -106,6 +107,18 @@ public final class InventoryClickListener implements Listener {
                         player.getInventory().setLeggings(Rainbow.createRainbowLeggings());
                         player.getInventory().setBoots(Rainbow.createRainbowBoots());
                         MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or");
+                    } else if (e.isRightClick()) {
+                        ArmorUtils.clearArmor(player);
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
+                    }
+                }
+                if (e.getCurrentItem().isSimilar(ItemList.STRAIGHT_ARMOR)) {
+                    if (e.isLeftClick()) {
+                        player.getInventory().setHelmet(Straight.createStraightHelmet());
+                        player.getInventory().setChestplate(Straight.createStraightChestplate());
+                        player.getInventory().setLeggings(Straight.createStraightLeggings());
+                        player.getInventory().setBoots(Straight.createStraightBoots());
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &fStraight &7armor");
                     } else if (e.isRightClick()) {
                         ArmorUtils.clearArmor(player);
                         MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
