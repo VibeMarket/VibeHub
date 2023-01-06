@@ -159,6 +159,18 @@ public final class InventoryClickListener implements Listener {
                         MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
                     }
                 }
+                if (e.getCurrentItem().isSimilar(ItemList.LESBIAN_ARMOR)) {
+                    if (e.isLeftClick()) {
+                        player.getInventory().setHelmet(Lesbian.createLesbianHelmet());
+                        player.getInventory().setChestplate(Lesbian.createLesbianChesplate());
+                        player.getInventory().setLeggings(Lesbian.createLesbianLeggings());
+                        player.getInventory().setBoots(Lesbian.createLesbianBoots());
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &6Les&fb&cian &7armor");
+                    } else if (e.isRightClick()) {
+                        ArmorUtils.clearArmor(player);
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
+                    }
+                }
 
                         if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
                             player.openInventory(VibeHub.getCosmetics().getInv());

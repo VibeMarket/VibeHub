@@ -2,6 +2,7 @@ package me.kevind.inventory.cosmetics;
 
 import me.kevind.utils.ItemList;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.Inventory;
 
 public final class ArmorsGUI {
@@ -22,6 +23,7 @@ public final class ArmorsGUI {
         inv.setItem(11, ItemList.BI_ARMOR);
         inv.setItem(12, ItemList.PAN_ARMOR);
         inv.setItem(13, ItemList.Asexual_Armor);
+        inv.setItem(14, ItemList.LESBIAN_ARMOR);
         inv.setItem(26, ItemList.GO_BACK);
 
     }
