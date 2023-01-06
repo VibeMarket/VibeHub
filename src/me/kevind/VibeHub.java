@@ -12,6 +12,7 @@ import me.kevind.listeners.inventory.InteractListener;
 import me.kevind.listeners.inventory.InventoryClickListener;
 import me.kevind.listeners.item.ProjectileLaunchListener;
 import me.kevind.listeners.npc.NPCCreateListener;
+import me.kevind.listeners.npc.NPCDeleteListener;
 import me.kevind.listeners.npc.NPCRightClickListener;
 import me.kevind.listeners.player.*;
 import me.kevind.tasks.ActionbarTask;
@@ -111,8 +112,10 @@ public final class VibeHub extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ProjectileLaunchListener(), this);
         if (Bukkit.getPluginManager().isPluginEnabled("Citizens")) {
             Bukkit.getPluginManager().registerEvents(new NPCRightClickListener(), this);
+            Bukkit.getPluginManager().registerEvents(new NPCDeleteListener(), this);
             Bukkit.getPluginManager().registerEvents(new NPCCreateListener(), this);
             getLogger().info("Registered NPC listeners.");
+            getLogger().info("NPC Spy is enabled.");
         } else {
             getLogger().warning("Not registering NPC listener. Please install Citizens.");
         }
