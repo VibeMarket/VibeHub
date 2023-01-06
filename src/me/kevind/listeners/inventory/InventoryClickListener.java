@@ -95,6 +95,10 @@ public final class InventoryClickListener implements Listener {
                 if (e.getCurrentItem().isSimilar(ItemList.PARTICLES)) {
                     player.openInventory(VibeHub.getParticlesGUI().getInv());
                 }
+                if (e.getCurrentItem().isSimilar(ItemList.CLOSE_MENU)) {
+                    player.closeInventory();
+                    MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Closing menu...");
+                }
                 e.setCancelled(true);
             }
             //cosmetics armor gui
