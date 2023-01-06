@@ -22,5 +22,8 @@ public final class DropListener implements Listener {
         if (player.getInventory().contains(ItemList.SERVER_SELECTOR)) {
             event.setCancelled(true);
         }
+        if (player.getInventory().contains(ItemList.COSMETICS_ITEM)) {
+            event.setCancelled(true);
+        }
     }
 }
