@@ -6,8 +6,8 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
-public class Pansexual {
-    public static final ItemStack createPanHelmet() {
+public final class Pansexual {
+    public static ItemStack createPanHelmet() {
         ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
         LeatherArmorMeta meta = (LeatherArmorMeta) helmet.getItemMeta();
         meta.setColor(Color.fromRGB(255, 0, 0)); // Red
@@ -15,7 +15,7 @@ public class Pansexual {
         helmet.setItemMeta(meta);
         return helmet;
     }
-    public static final ItemStack createPanChesplate() {
+    public static ItemStack createPanChesplate() {
         ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
         LeatherArmorMeta meta = (LeatherArmorMeta) chestplate.getItemMeta();
         meta.setColor(Color.fromRGB(255, 0, 0)); // Red
@@ -23,7 +23,7 @@ public class Pansexual {
         chestplate.setItemMeta(meta);
         return chestplate;
     }
-    public static final ItemStack createPanLeggings() {
+    public static ItemStack createPanLeggings() {
         ItemStack leggings = new ItemStack(Material.LEATHER_LEGGINGS);
         LeatherArmorMeta meta = (LeatherArmorMeta) leggings.getItemMeta();
         meta.setColor(Color.fromRGB(255, 0, 0)); // Red
@@ -31,7 +31,7 @@ public class Pansexual {
         leggings.setItemMeta(meta);
         return leggings;
     }
-    public static final ItemStack createPanBoots() {
+    public static ItemStack createPanBoots() {
         ItemStack boots = new ItemStack(Material.LEATHER_HELMET);
         LeatherArmorMeta meta = (LeatherArmorMeta) boots.getItemMeta();
         meta.setColor(Color.fromRGB(255, 0, 0)); // Red

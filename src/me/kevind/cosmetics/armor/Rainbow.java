@@ -8,7 +8,7 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 public final class Rainbow {
     //This class handles the making of the rainbow armor.
-    public static final ItemStack createRainbowHelmet() {
+    public static ItemStack createRainbowHelmet() {
         ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
         LeatherArmorMeta meta = (LeatherArmorMeta) helmet.getItemMeta();
         meta.setColor(Color.fromRGB(255, 0, 0)); // Red
@@ -16,7 +16,7 @@ public final class Rainbow {
         helmet.setItemMeta(meta);
         return helmet;
     }
-    public static final ItemStack createRainbowChestplate() {
+    public static ItemStack createRainbowChestplate() {
         ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
         LeatherArmorMeta meta = (LeatherArmorMeta) chestplate.getItemMeta();
         meta.setColor(Color.fromRGB(255, 127, 0)); // Orange
@@ -24,7 +24,7 @@ public final class Rainbow {
         chestplate.setItemMeta(meta);
         return chestplate;
     }
-    public static final ItemStack createRainbowLeggings() {
+    public static ItemStack createRainbowLeggings() {
         ItemStack leggings = new ItemStack(Material.LEATHER_LEGGINGS);
         LeatherArmorMeta meta = (LeatherArmorMeta) leggings.getItemMeta();
         meta.setColor(Color.fromRGB(255, 255, 0)); // Yellow
@@ -32,7 +32,7 @@ public final class Rainbow {
         leggings.setItemMeta(meta);
         return leggings;
     }
-    public static final ItemStack createRainbowBoots() {
+    public static ItemStack createRainbowBoots() {
         ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
         LeatherArmorMeta meta = (LeatherArmorMeta) boots.getItemMeta();
         meta.setColor(Color.fromRGB(0, 255, 0)); // Green
