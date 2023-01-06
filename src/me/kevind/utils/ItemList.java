@@ -36,7 +36,7 @@ public final class ItemList {
     public static final ItemStack ARMORS = new ItemMaker(Material.LEATHER_HELMET).name("&9&lArmors").lore("&7Click to go to the armors section").build();
     public static final ItemStack PARTICLES = new ItemMaker(Material.NETHER_STAR).name("&f&lParticles &7(Right Click)").lore("&7Click to go to the particles section").build();
     public static final ItemStack RAINBOW_ARMOR = new ItemMaker(Material.LEATHER).name("&c&l&oR&6&l&oa&e&l&oi&a&l&on&3&l&ob&9&l&oo&5&l&ow &6&l&oA&e&l&or&a&l&om&3&l&oo&9&l&or").lore("&7Left click to equip", "&7Right click to unequip").build();
-    public static final ItemStack STRAIGHT_ARMOR = new ItemMaker(Material.BLACK_DYE).name("&fStraight Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
+    public static final ItemStack STRAIGHT_ARMOR = new ItemMaker(Material.BLACK_WOOL).name("&fStraight Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
     public static final ItemStack GO_BACK = new ItemMaker(Material.BARRIER).name("&c&lGo back").lore("&7Click to go back!").build();
     public static final ItemStack TEST_PARTICLE = new ItemMaker(Material.NETHER_STAR).name("&f&lTest Particle").lore("&7This is a test particle.").build();
     public static final ItemStack CLOSE_MENU = new ItemMaker(Material.BARRIER).name("&c&lClose menu").build();
