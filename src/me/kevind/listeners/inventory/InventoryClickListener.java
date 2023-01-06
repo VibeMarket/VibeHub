@@ -121,7 +121,7 @@ public final class InventoryClickListener implements Listener {
                         player.getInventory().setChestplate(Straight.createStraightChestplate());
                         player.getInventory().setLeggings(Straight.createStraightLeggings());
                         player.getInventory().setBoots(Straight.createStraightBoots());
-                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &fStraight &7armor");
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &fStra&0ight &7armor");
                     } else if (e.isRightClick()) {
                         ArmorUtils.clearArmor(player);
                         MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
