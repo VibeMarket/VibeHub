@@ -15,7 +15,7 @@ public final class NPCDeleteListener implements Listener {
         NPC npc = e.getNPC();
         for (Player player : Bukkit.getOnlinePlayers()) {
             if (player.hasPermission("vibe.npcspy")) {
-                MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&9" + player.getDisplayName() + " &7created an NPC named &9" + npc.getName());
+                MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&9" + player.getDisplayName() + " &7deleted an NPC named &9" + npc.getName());
 
             }
         }
