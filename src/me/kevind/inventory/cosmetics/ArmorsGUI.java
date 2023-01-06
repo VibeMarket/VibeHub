@@ -21,6 +21,7 @@ public final class ArmorsGUI {
         inv.setItem(10, ItemList.STRAIGHT_ARMOR);
         inv.setItem(11, ItemList.BI_ARMOR);
         inv.setItem(12, ItemList.PAN_ARMOR);
+        inv.setItem(13, ItemList.Asexual_Armor);
         inv.setItem(26, ItemList.GO_BACK);
 
     }

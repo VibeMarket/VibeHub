@@ -39,6 +39,7 @@ public final class ItemList {
     public static final ItemStack STRAIGHT_ARMOR = new ItemMaker(Material.BLACK_WOOL).name("&fStraight Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
     public static final ItemStack BI_ARMOR = new ItemMaker(Material.PURPLE_WOOL).name("&dBi&5sex&9ual &7Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
     public static final ItemStack PAN_ARMOR = new ItemMaker(Material.YELLOW_WOOL).name("&dPan&esex&bual &7Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
+    public static final ItemStack Asexual_Armor = new ItemMaker(Material.LIGHT_GRAY_WOOL).name("&0As&7ex&fua&5l &7Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
     public static final ItemStack GO_BACK = new ItemMaker(Material.BARRIER).name("&c&lGo back").lore("&7Click to go back!").build();
     public static final ItemStack TEST_PARTICLE = new ItemMaker(Material.NETHER_STAR).name("&f&lTest Particle").lore("&7This is a test particle.").build();
     public static final ItemStack CLOSE_MENU = new ItemMaker(Material.BARRIER).name("&c&lClose menu").build();

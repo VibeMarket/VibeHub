@@ -2,10 +2,7 @@ package me.kevind.listeners.inventory;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
-import me.kevind.cosmetics.armor.Bisexual;
-import me.kevind.cosmetics.armor.Pansexual;
-import me.kevind.cosmetics.armor.Rainbow;
-import me.kevind.cosmetics.armor.Straight;
+import me.kevind.cosmetics.armor.*;
 import me.kevind.cosmetics.particles.Flame;
 import me.kevind.VibeHub;
 import me.kevind.utils.ArmorUtils;
@@ -150,6 +147,18 @@ public final class InventoryClickListener implements Listener {
                             MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
                         }
                     }
+                if (e.getCurrentItem().isSimilar(ItemList.Asexual_Armor)) {
+                    if (e.isLeftClick()) {
+                        player.getInventory().setHelmet(Asexual.createAsexualHelmet());
+                        player.getInventory().setChestplate(Asexual.createAsexualChesplate());
+                        player.getInventory().setLeggings(Asexual.createAsexualLeggings());
+                        player.getInventory().setBoots(Asexual.createAsexualBoots());
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &0As&7ex&fua&5l &7armor");
+                    } else if (e.isRightClick()) {
+                        ArmorUtils.clearArmor(player);
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
+                    }
+                }
 
                         if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
                             player.openInventory(VibeHub.getCosmetics().getInv());
