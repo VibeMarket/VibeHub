@@ -1,6 +1,6 @@
 package me.kevind.tasks;
 
-import me.kevind.main.VibeHub;
+import me.kevind.VibeHub;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.FastBoard;
 import net.luckperms.api.model.user.User;

@@ -1,6 +1,6 @@
 package me.kevind.utils;
 
-import me.kevind.main.VibeHub;
+import me.kevind.VibeHub;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 

@@ -1,6 +1,6 @@
 package me.kevind.listeners.player;
 
-import me.kevind.main.VibeHub;
+import me.kevind.VibeHub;
 import me.kevind.utils.ColorUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -1,4 +1,4 @@
-package me.kevind.main;
+package me.kevind;
 
 import me.kevind.commands.*;
 import me.kevind.inventory.CosmeticsGUI;

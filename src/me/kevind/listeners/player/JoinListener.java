@@ -1,7 +1,7 @@
 package me.kevind.listeners.player;
 
 import me.clip.placeholderapi.PlaceholderAPI;
-import me.kevind.main.VibeHub;
+import me.kevind.VibeHub;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.FastBoard;
 import me.kevind.utils.ItemList;

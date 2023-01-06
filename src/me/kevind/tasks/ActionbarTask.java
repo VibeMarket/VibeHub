@@ -1,6 +1,6 @@
 package me.kevind.tasks;
 
-import me.kevind.main.VibeHub;
+import me.kevind.VibeHub;
 import me.kevind.utils.ColorUtils;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;

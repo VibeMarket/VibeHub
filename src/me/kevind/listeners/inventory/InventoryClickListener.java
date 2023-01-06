@@ -5,7 +5,7 @@ import com.google.common.io.ByteStreams;
 import me.kevind.cosmetics.armor.Rainbow;
 import me.kevind.cosmetics.armor.Straight;
 import me.kevind.cosmetics.particles.Flame;
-import me.kevind.main.VibeHub;
+import me.kevind.VibeHub;
 import me.kevind.utils.ArmorUtils;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.ItemList;

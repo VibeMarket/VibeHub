@@ -1,6 +1,6 @@
 package me.kevind.listeners.inventory;
 
-import me.kevind.main.VibeHub;
+import me.kevind.VibeHub;
 import me.kevind.utils.ItemList;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

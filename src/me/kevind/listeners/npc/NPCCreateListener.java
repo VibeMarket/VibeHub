@@ -1,8 +1,7 @@
 package me.kevind.listeners.npc;
 
-import me.kevind.main.VibeHub;
+import me.kevind.VibeHub;
 import me.kevind.utils.MessageUtils;
-import me.kevind.utils.PlayerUtils;
 import net.citizensnpcs.api.event.NPCCreateEvent;
 import net.citizensnpcs.api.npc.NPC;
 import org.bukkit.Bukkit;

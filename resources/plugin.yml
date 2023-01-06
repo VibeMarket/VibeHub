@@ -2,7 +2,7 @@ name: VibeHub
 version: 1.2.3
 author: ItsCryptic
 api-version: 1.17
-main: me.kevind.main.VibeHub
+main: me.kevind.VibeHub
 softdepend: [ HolographicDisplays, WorldGuard, Citizens, GadgetsMenu ]
 depend: [ PlaceholderAPI, LuckPerms ]
 commands:
