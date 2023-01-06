@@ -57,7 +57,7 @@ public final class JoinListener implements Listener {
         player.getInventory().setItem(4, ItemList.SERVER_SELECTOR);
         player.getInventory().setItem(8, ItemList.SPEED_ITEM);
         player.getInventory().setItem(0, ItemList.TIME_SELECTOR);
-        if (player.getUniqueId().toString().equalsIgnoreCase("a948c50c-ede2-4dfa-9b6c-688daf22197c")) {
+        if (player.hasPermission("vibe.cosmetics")) {
             player.getInventory().setItem(1, ItemList.COSMETICS_ITEM);
         }
         player.getInventory().setItem(7, ItemList.ENDERPEARL);

@@ -19,7 +19,7 @@ public final class CosmeticsGUI {
             inv.setItem(i, ItemList.PLACEHOLDER_BLUE_GLASS);
         }
         inv.setItem(13, ItemList.ARMORS);
-        inv.setItem(9, ItemList.PARTICLES);
+        //inv.setItem(9, ItemList.PARTICLES);
         inv.setItem(17, ItemList.CLOSE_MENU);
     }
 
