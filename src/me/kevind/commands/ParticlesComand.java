@@ -2,6 +2,7 @@ package me.kevind.commands;
 
 import me.kevind.VibeHub;
 import me.kevind.utils.ColorUtils;
+import me.kevind.utils.MessageUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,9 +16,9 @@ public final class ParticlesComand implements CommandExecutor {
             Player player = (Player) sender;
             if (player.getUniqueId().toString().equalsIgnoreCase("a948c50c-ede2-4dfa-9b6c-688daf22197c")) {
                 player.openInventory(VibeHub.getParticlesGUI().getInv());
-                player.sendMessage(ColorUtils.color(VibeHub.getPrefix() + "&7Opening particle selector..."));
+                MessageUtils.sendMessage(player, VibeHub.getPrefix()+ "&7Opening particle selector...");
             }else {
-                player.sendMessage(ColorUtils.color("&cThis command can only be used by Kevin."));
+                MessageUtils.sendMessage(sender, "&cThis command can only be used by Kevin.");
             }
         }
         return false;
