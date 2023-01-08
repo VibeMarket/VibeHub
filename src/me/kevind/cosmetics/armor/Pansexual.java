@@ -15,6 +15,7 @@ public final class Pansexual {
         helmet.setItemMeta(meta);
         return helmet;
     }
+
     public static ItemStack createPanChesplate() {
         ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
         LeatherArmorMeta meta = (LeatherArmorMeta) chestplate.getItemMeta();
@@ -23,6 +24,7 @@ public final class Pansexual {
         chestplate.setItemMeta(meta);
         return chestplate;
     }
+
     public static ItemStack createPanLeggings() {
         ItemStack leggings = new ItemStack(Material.LEATHER_LEGGINGS);
         LeatherArmorMeta meta = (LeatherArmorMeta) leggings.getItemMeta();
@@ -31,6 +33,7 @@ public final class Pansexual {
         leggings.setItemMeta(meta);
         return leggings;
     }
+
     public static ItemStack createPanBoots() {
         ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
         LeatherArmorMeta meta = (LeatherArmorMeta) boots.getItemMeta();

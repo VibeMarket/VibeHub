@@ -12,6 +12,7 @@ public class Flame {
         World PlayerWorld = player.getWorld();
         PlayerWorld.spawnParticle(Particle.FLAME, PlayerLocation, 10);
     }
+
     public static void removeParticle(Player player) {
         Location PlayerLocation = player.getLocation();
         World PlayerWorld = player.getWorld();

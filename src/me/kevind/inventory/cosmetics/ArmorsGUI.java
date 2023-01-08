@@ -2,11 +2,11 @@ package me.kevind.inventory.cosmetics;
 
 import me.kevind.utils.ItemList;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Item;
 import org.bukkit.inventory.Inventory;
 
 public final class ArmorsGUI {
     private final Inventory inv;
+
     public ArmorsGUI() {
         inv = Bukkit.createInventory(null, 27, "Armors");
         for (int i = 0; i < 9; i++) {
@@ -27,6 +27,7 @@ public final class ArmorsGUI {
         inv.setItem(26, ItemList.GO_BACK);
 
     }
+
     public Inventory getInv() {
         return inv;
     }

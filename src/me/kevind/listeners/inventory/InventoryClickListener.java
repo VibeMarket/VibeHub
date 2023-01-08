@@ -2,9 +2,9 @@ package me.kevind.listeners.inventory;
 
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
+import me.kevind.VibeHub;
 import me.kevind.cosmetics.armor.*;
 import me.kevind.cosmetics.particles.Flame;
-import me.kevind.VibeHub;
 import me.kevind.utils.ArmorUtils;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.ItemList;
@@ -139,18 +139,18 @@ public final class InventoryClickListener implements Listener {
                         MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
                     }
                 }
-                    if (e.getCurrentItem().isSimilar(ItemList.PAN_ARMOR)) {
-                        if (e.isLeftClick()) {
-                            player.getInventory().setHelmet(Pansexual.createPanHelmet());
-                            player.getInventory().setChestplate(Pansexual.createPanChesplate());
-                            player.getInventory().setLeggings(Pansexual.createPanLeggings());
-                            player.getInventory().setBoots(Pansexual.createPanBoots());
-                            MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &dPan&esex&bual &7armor");
-                        } else if (e.isRightClick()) {
-                            ArmorUtils.clearArmor(player);
-                            MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
-                        }
+                if (e.getCurrentItem().isSimilar(ItemList.PAN_ARMOR)) {
+                    if (e.isLeftClick()) {
+                        player.getInventory().setHelmet(Pansexual.createPanHelmet());
+                        player.getInventory().setChestplate(Pansexual.createPanChesplate());
+                        player.getInventory().setLeggings(Pansexual.createPanLeggings());
+                        player.getInventory().setBoots(Pansexual.createPanBoots());
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &dPan&esex&bual &7armor");
+                    } else if (e.isRightClick()) {
+                        ArmorUtils.clearArmor(player);
+                        MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared your armor slots!");
                     }
+                }
                 if (e.getCurrentItem().isSimilar(ItemList.Asexual_Armor)) {
                     if (e.isLeftClick()) {
                         player.getInventory().setHelmet(Asexual.createAsexualHelmet());
@@ -176,27 +176,27 @@ public final class InventoryClickListener implements Listener {
                     }
                 }
 
-                        if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
-                            player.openInventory(VibeHub.getCosmetics().getInv());
-                        }
-                        e.setCancelled(true);
-                    //cosmetics particles gui
-                    if (e.getClickedInventory().equals(VibeHub.getParticlesGUI().getInv())) {
-                        if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
-                            player.openInventory(VibeHub.getCosmetics().getInv());
-                        }
-                        if (e.getCurrentItem().isSimilar(ItemList.FLAME_PARTICLE)) {
-                            if (e.isLeftClick()) {
-                                Flame.createParticle(player);
-                                MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &c&lFlame &7particle");
-                            }
-                            if (e.isRightClick()) {
-                                Flame.removeParticle(player);
-                                MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared particles.");
-                            }
-                        }
-                        e.setCancelled(true);
+                if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
+                    player.openInventory(VibeHub.getCosmetics().getInv());
+                }
+                e.setCancelled(true);
+                //cosmetics particles gui
+                if (e.getClickedInventory().equals(VibeHub.getParticlesGUI().getInv())) {
+                    if (e.getCurrentItem().isSimilar(ItemList.GO_BACK)) {
+                        player.openInventory(VibeHub.getCosmetics().getInv());
                     }
+                    if (e.getCurrentItem().isSimilar(ItemList.FLAME_PARTICLE)) {
+                        if (e.isLeftClick()) {
+                            Flame.createParticle(player);
+                            MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Equipped &c&lFlame &7particle");
+                        }
+                        if (e.isRightClick()) {
+                            Flame.removeParticle(player);
+                            MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Cleared particles.");
+                        }
+                    }
+                    e.setCancelled(true);
+                }
             }
         }
     }

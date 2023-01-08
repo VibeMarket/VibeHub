@@ -23,6 +23,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
 public final class VibeHub extends JavaPlugin {
+    public static LuckPerms luckperms;
     private static VibeHub instance;
     private static SelectorGUI serverselector;
     private static SpeedGUI speeditem;
@@ -55,9 +56,11 @@ public final class VibeHub extends JavaPlugin {
     public static ArmorsGUI getArmorsGUI() {
         return armorsGUI;
     }
+
     public static ParticlesGUI getParticlesGUI() {
         return particlesGUI;
     }
+
     public static VibeHub getInstance() {
         return instance;
     }
@@ -65,8 +68,6 @@ public final class VibeHub extends JavaPlugin {
     public static String getPrefix() {
         return instance.getConfig().getString("messages.Prefix");
     }
-
-    public static LuckPerms luckperms;
 
     public void onEnable() {
         long start = System.currentTimeMillis();

@@ -16,6 +16,7 @@ public final class Rainbow {
         helmet.setItemMeta(meta);
         return helmet;
     }
+
     public static ItemStack createRainbowChestplate() {
         ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
         LeatherArmorMeta meta = (LeatherArmorMeta) chestplate.getItemMeta();
@@ -24,6 +25,7 @@ public final class Rainbow {
         chestplate.setItemMeta(meta);
         return chestplate;
     }
+
     public static ItemStack createRainbowLeggings() {
         ItemStack leggings = new ItemStack(Material.LEATHER_LEGGINGS);
         LeatherArmorMeta meta = (LeatherArmorMeta) leggings.getItemMeta();
@@ -32,6 +34,7 @@ public final class Rainbow {
         leggings.setItemMeta(meta);
         return leggings;
     }
+
     public static ItemStack createRainbowBoots() {
         ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
         LeatherArmorMeta meta = (LeatherArmorMeta) boots.getItemMeta();

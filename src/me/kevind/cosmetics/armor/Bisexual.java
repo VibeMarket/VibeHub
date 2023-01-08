@@ -15,6 +15,7 @@ public final class Bisexual {
         helmet.setItemMeta(meta);
         return helmet;
     }
+
     public static ItemStack createBiChesplate() {
         ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
         LeatherArmorMeta meta = (LeatherArmorMeta) chestplate.getItemMeta();
@@ -23,6 +24,7 @@ public final class Bisexual {
         chestplate.setItemMeta(meta);
         return chestplate;
     }
+
     public static ItemStack createBiLeggings() {
         ItemStack leggings = new ItemStack(Material.LEATHER_LEGGINGS);
         LeatherArmorMeta meta = (LeatherArmorMeta) leggings.getItemMeta();
@@ -31,6 +33,7 @@ public final class Bisexual {
         leggings.setItemMeta(meta);
         return leggings;
     }
+
     public static ItemStack createBiBoots() {
         ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
         LeatherArmorMeta meta = (LeatherArmorMeta) boots.getItemMeta();

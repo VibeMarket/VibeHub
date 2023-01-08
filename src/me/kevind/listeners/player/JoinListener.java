@@ -24,15 +24,14 @@ import java.util.Map;
 import java.util.UUID;
 
 public final class JoinListener implements Listener {
+    public static final Map<UUID, FastBoard> boards = new HashMap<>();
     String world = VibeHub.getInstance().getConfig().getString("coordinates.hub.world");
     Double x = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.x"));
     Double y = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.y"));
     Double z = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.z"));
     float yaw = Float.parseFloat(VibeHub.getInstance().getConfig().getString("coordinates.hub.yaw"));
     float pitch = Float.parseFloat(VibeHub.getInstance().getConfig().getString("coordinates.hub.pitch"));
-
     private final Location loc = new Location(Bukkit.getWorld(world), x, y, z, yaw, pitch);
-    public static final Map<UUID, FastBoard> boards = new HashMap<>();
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {

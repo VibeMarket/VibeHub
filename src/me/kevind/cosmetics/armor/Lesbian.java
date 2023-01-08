@@ -15,6 +15,7 @@ public final class Lesbian {
         helmet.setItemMeta(meta);
         return helmet;
     }
+
     public static ItemStack createLesbianChesplate() {
         ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
         LeatherArmorMeta meta = (LeatherArmorMeta) chestplate.getItemMeta();
@@ -23,6 +24,7 @@ public final class Lesbian {
         chestplate.setItemMeta(meta);
         return chestplate;
     }
+
     public static ItemStack createLesbianLeggings() {
         ItemStack leggings = new ItemStack(Material.LEATHER_LEGGINGS);
         LeatherArmorMeta meta = (LeatherArmorMeta) leggings.getItemMeta();
@@ -31,6 +33,7 @@ public final class Lesbian {
         leggings.setItemMeta(meta);
         return leggings;
     }
+
     public static ItemStack createLesbianBoots() {
         ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
         LeatherArmorMeta meta = (LeatherArmorMeta) boots.getItemMeta();
