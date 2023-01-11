@@ -5,6 +5,8 @@ import me.kevind.VibeHub;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import java.io.ObjectInputFilter;
+
 
 public final class ItemList {
     HeadDatabaseAPI api = new HeadDatabaseAPI();
@@ -35,16 +37,16 @@ public final class ItemList {
     public static final ItemStack TEST_PARTICLE = new ItemMaker(Material.NETHER_STAR).name("&f&lTest Particle").lore("&7This is a test particle.").build();
     public static final ItemStack CLOSE_MENU = new ItemMaker(Material.BARRIER).name("&c&lClose menu").build();
     public static final ItemStack FLAME_PARTICLE = new ItemMaker(Material.FIRE_CHARGE).name("&c&lFlame Particle &7(Right Click)").lore("&7Left click to spawn.", "&7Right click to remove.").build();
-    static final String survivalversion = VibeHub.getInstance().getConfig().getString("versions.survival");
+    static final String survivalversion = ConfigUtils.getString("versions.survival");
     public static final ItemStack SURVIVAL_SERVER = new ItemMaker(Material.GRASS_BLOCK).name("&a&lSurvival").lore("&7Version: &9" + survivalversion, "&7Teleport to the survival server").build();
-    static final String skyblockversion = VibeHub.getInstance().getConfig().getString("versions.skyblock");
+    static final String skyblockversion = ConfigUtils.getString("versions.skyblock");
     public static final ItemStack SKYBLOCK_SERVER = new ItemMaker(Material.OAK_WOOD).name("&b&lSkyblock").lore("&7Version: &9" + skyblockversion, "&7Teleport to the skyblock server").build();
-    static final String creativeversion = VibeHub.getInstance().getConfig().getString("versions.creative");
+    static final String creativeversion = ConfigUtils.getString("versions.creative");
     public static final ItemStack CREATIVE_SERVER = new ItemMaker(Material.BIRCH_WOOD).name("&6&lCreative").lore("&7Version: &9" + creativeversion, "&7Teleport to the creative server").build();
-    static final String staffversion = VibeHub.getInstance().getConfig().getString("versions.build");
+    static final String staffversion = ConfigUtils.getString("versions.build");
     public static final ItemStack BUILD_SERVER = new ItemMaker(Material.DIAMOND_PICKAXE).name("&c&lBuild").lore("&7Version: &9" + staffversion, "&7Teleport to the Build server.", "&7You are staff so you can see this server.").build();
-    static final String devversion = VibeHub.getInstance().getConfig().getString("versions.dev");
+    static final String devversion = ConfigUtils.getString("versions.dev");
     public static final ItemStack DEVELOPMENT_SERVER = new ItemMaker(Material.COMMAND_BLOCK).name("&d&lDevelopment").lore("&7Version: &9" + devversion).build();
-    static final String limboversion = VibeHub.getInstance().getConfig().getString("versions.limbo");
+    static final String limboversion = ConfigUtils.getString("versions.limbo");
     public static final ItemStack LIMBO_SERVER = new ItemMaker(Material.WOODEN_AXE).name("&e&lLimbo").lore("&7Version: &9" + limboversion, "&7If Vibe is under maintenance, this is where players get sent.", "&7Click to teleport to the Limbo server.").build();
 }
