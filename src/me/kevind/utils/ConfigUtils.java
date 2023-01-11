@@ -10,7 +10,4 @@ public final class ConfigUtils {
     public static String getString(String s) {
         return VibeHub.getInstance().getConfig().getString(s);
     }
-    public static String get(String s) {
-        return VibeHub.getInstance().getConfig().get(s);
-    }
 }
