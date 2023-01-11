@@ -3,8 +3,8 @@ version: 1.2.5
 author: ItsCryptic
 api-version: 1.17
 main: me.kevind.VibeHub
-softdepend: [ HolographicDisplays, WorldGuard, Citizens, GadgetsMenu ]
-depend: [ PlaceholderAPI, LuckPerms ]
+softdepend: [ HolographicDisplays, WorldGuard, Citizens]
+depend: [ PlaceholderAPI, LuckPerms, HeadDatabase ]
 commands:
   hubreload:
     description: Reloads Hub
