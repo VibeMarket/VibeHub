@@ -93,6 +93,12 @@ public final class VibeHub extends JavaPlugin {
             getLogger().warning("Could not find PlaceholderAPI. This plugin is required");
             Bukkit.getPluginManager().disablePlugin(this);
         }
+        if (Bukkit.getPluginManager().getPlugin("HeadDatabase") != null) {
+            getLogger().info("Using Head Database.");
+        } else {
+            getLogger().warning("Could not find Head Database. This plugin is required");
+            Bukkit.getPluginManager().disablePlugin(this);
+        }
 
         //Check to make sure luckperms is enabled, if its not then disable the plugin.
         if (!Bukkit.getPluginManager().isPluginEnabled("LuckPerms")) {
