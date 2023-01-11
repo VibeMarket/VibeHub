@@ -1,19 +1,12 @@
 package me.kevind;
 
 import me.kevind.commands.*;
-import me.kevind.inventory.CosmeticsGUI;
-import me.kevind.inventory.SelectorGUI;
-import me.kevind.inventory.SpeedGUI;
-import me.kevind.inventory.TimeGUI;
-import me.kevind.inventory.cosmetics.ArmorsGUI;
-import me.kevind.inventory.cosmetics.ParticlesGUI;
-import me.kevind.inventory.staff.StaffSelectorGUI;
-import me.kevind.listeners.inventory.InteractListener;
-import me.kevind.listeners.inventory.InventoryClickListener;
-import me.kevind.listeners.item.ProjectileLaunchListener;
-import me.kevind.listeners.npc.NPCCreateListener;
-import me.kevind.listeners.npc.NPCDeleteListener;
-import me.kevind.listeners.npc.NPCRightClickListener;
+import me.kevind.inventory.*;
+import me.kevind.inventory.cosmetics.*;
+import me.kevind.inventory.staff.*;
+import me.kevind.listeners.inventory.*;
+import me.kevind.listeners.item.*;
+import me.kevind.listeners.npc.*;
 import me.kevind.listeners.player.*;
 import me.kevind.tasks.ActionbarTask;
 import me.kevind.tasks.ScoreboardTask;
