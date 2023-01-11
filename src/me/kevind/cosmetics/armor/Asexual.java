@@ -6,7 +6,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
-public class Asexual {
+public final class Asexual {
     public static ItemStack createAsexualHelmet() {
         ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
         LeatherArmorMeta meta = (LeatherArmorMeta) helmet.getItemMeta();
