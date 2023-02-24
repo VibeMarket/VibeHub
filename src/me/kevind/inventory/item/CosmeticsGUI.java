@@ -1,14 +1,14 @@
-package me.kevind.inventory.cosmetics;
+package me.kevind.inventory.item;
 
 import me.kevind.utils.ItemList;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 
-public final class ArmorsGUI {
+public final class CosmeticsGUI {
     private final Inventory inv;
 
-    public ArmorsGUI() {
-        inv = Bukkit.createInventory(null, 27, "Armors");
+    public CosmeticsGUI() {
+        inv = Bukkit.createInventory(null, 27, "Cosmetics");
         for (int i = 0; i < 9; i++) {
             inv.setItem(i, ItemList.PLACEHOLDER_BLUE_GLASS);
         }
@@ -18,17 +18,13 @@ public final class ArmorsGUI {
         for (int i = 18; i < 27; i++) {
             inv.setItem(i, ItemList.PLACEHOLDER_BLUE_GLASS);
         }
-        inv.setItem(9, ItemList.RAINBOW_ARMOR);
-        inv.setItem(10, ItemList.STRAIGHT_ARMOR);
-        inv.setItem(11, ItemList.BI_ARMOR);
-        inv.setItem(12, ItemList.PAN_ARMOR);
-        inv.setItem(13, ItemList.Asexual_Armor);
-        inv.setItem(14, ItemList.LESBIAN_ARMOR);
-        inv.setItem(26, ItemList.GO_BACK);
-
+        inv.setItem(13, ItemList.ARMORS);
+        //inv.setItem(9, ItemList.PARTICLES);
+        inv.setItem(17, ItemList.CLOSE_MENU);
     }
 
     public Inventory getInv() {
         return inv;
     }
+
 }

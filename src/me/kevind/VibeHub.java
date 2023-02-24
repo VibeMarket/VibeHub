@@ -1,8 +1,11 @@
 package me.kevind;
 
 import me.kevind.commands.*;
-import me.kevind.inventory.*;
-import me.kevind.inventory.cosmetics.*;
+import me.kevind.cosmetics.cosmetics.*;
+import me.kevind.inventory.item.CosmeticsGUI;
+import me.kevind.inventory.item.SelectorGUI;
+import me.kevind.inventory.item.SpeedGUI;
+import me.kevind.inventory.item.TimeGUI;
 import me.kevind.inventory.staff.*;
 import me.kevind.listeners.inventory.*;
 import me.kevind.listeners.item.*;
