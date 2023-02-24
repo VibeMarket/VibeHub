@@ -12,6 +12,7 @@ public final class MessageUtils {
     public static void broadcastMessage(String s) {
         Bukkit.broadcastMessage(ColorUtils.color(VibeHub.getPrefix() + s));
     }
+
     public static void sendMessageWithPrefix(CommandSender sender, String s) {
         sender.sendMessage(ColorUtils.color(VibeHub.getPrefix() + s));
     }

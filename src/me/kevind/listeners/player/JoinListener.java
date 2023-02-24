@@ -62,7 +62,7 @@ public final class JoinListener implements Listener {
         player.getInventory().setHeldItemSlot(4);
         player.updateInventory();
 
-        //Scoreboard creation
+        //Scoreboard creation, this will probably be recoded in the future.
         board.updateTitle(ColorUtils.color("&9&lVibe &8| &7Hub"));
         board.updateLines(
                 " ",
