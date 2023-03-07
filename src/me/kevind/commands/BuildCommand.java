@@ -16,7 +16,6 @@ public final class BuildCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         Player player = (Player) sender;
         String incorrectusage = VibeHub.getInstance().getConfig().getString("messages.IncorrectUsage");
-        String buildpermission = VibeHub.getInstance().getConfig().getString("permissions.BuildCommandPermission");
         String NoPermissionMessage = VibeHub.getInstance().getConfig().getString("messages.NoPermissionMessage");
         String BuildEnabled = VibeHub.getInstance().getConfig().getString("messages.BuildEnabled");
         String BuildDisabled = VibeHub.getInstance().getConfig().getString("messages.BuildDisabled");
@@ -25,7 +24,7 @@ public final class BuildCommand implements CommandExecutor {
             return true;
         }
         if (args[0].equalsIgnoreCase("on")) {
-            if (player.hasPermission(buildpermission)) {
+            if (player.hasPermission("vibe.build")) {
                 player.setGameMode(GameMode.CREATIVE);
                 player.getInventory().clear();
                 player.getInventory().addItem(new ItemStack(Material.WOODEN_AXE));
