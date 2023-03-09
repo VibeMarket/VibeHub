@@ -1,17 +1,16 @@
-package me.kevind.inventory.item;
+package me.kevind.inventory.item.selector.survival;
 
 import me.kevind.utils.ItemList;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 
-public final class SelectorGUI {
+public class SurvivalSelectorGUI {
+
     private final Inventory inv;
 
-    public SelectorGUI() {
+    public SurvivalSelectorGUI() {
         inv = Bukkit.createInventory(null, 27, "Server Selector");
-        inv.setItem(12, ItemList.SURVIVAL_SERVER);
-        inv.setItem(13, ItemList.SKYBLOCK_SERVER);
-        inv.setItem(14, ItemList.CREATIVE_SERVER);
+        //future expansion
     }
 
     public Inventory getInv() {

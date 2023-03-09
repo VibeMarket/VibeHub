@@ -3,7 +3,7 @@ package me.kevind;
 import me.kevind.commands.*;
 import me.kevind.cosmetics.cosmetics.*;
 import me.kevind.inventory.item.CosmeticsGUI;
-import me.kevind.inventory.item.SelectorGUI;
+import me.kevind.inventory.item.selector.SelectorGUI;
 import me.kevind.inventory.item.SpeedGUI;
 import me.kevind.inventory.item.TimeGUI;
 import me.kevind.inventory.staff.*;
@@ -28,6 +28,7 @@ public final class VibeHub extends JavaPlugin {
     private static CosmeticsGUI cosmetics;
     private static ArmorsGUI armorsGUI;
     private static ParticlesGUI particlesGUI;
+    private static StaffCosmeticsGUI staffCosmeticsGUI;
 
     public static SelectorGUI getSelectorGUI() {
         return serverselector;
@@ -56,6 +57,9 @@ public final class VibeHub extends JavaPlugin {
     public static ParticlesGUI getParticlesGUI() {
         return particlesGUI;
     }
+    public static StaffCosmeticsGUI getStaffCosmeticsGUI(){
+        return staffCosmeticsGUI;
+    }
 
     public static VibeHub getInstance() {
         return instance;
@@ -75,6 +79,7 @@ public final class VibeHub extends JavaPlugin {
         cosmetics = new CosmeticsGUI();
         armorsGUI = new ArmorsGUI();
         particlesGUI = new ParticlesGUI();
+        staffCosmeticsGUI = new StaffCosmeticsGUI();
         saveDefaultConfig();
         //tasks
         getLogger().info("Registering tasks...");
