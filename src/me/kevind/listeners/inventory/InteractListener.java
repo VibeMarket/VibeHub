@@ -33,8 +33,13 @@ public final class InteractListener implements Listener {
             e.getPlayer().getInventory().getItem(7).setAmount(16);
         }
         if (e.getPlayer().getInventory().getItemInMainHand().isSimilar(ItemList.COSMETICS_ITEM)) {
-            e.setCancelled(true);
-            e.getPlayer().openInventory(VibeHub.getCosmetics().getInv());
+            if (!(e.getPlayer().hasPermission("vibe.staff"))) {
+                e.setCancelled(true);
+                e.getPlayer().openInventory(VibeHub.getCosmetics().getInv());
+            }else if (e.getPlayer().hasPermission("vibe.staff")) {
+                e.setCancelled(true);
+                e.getPlayer().openInventory(VibeHub.getStaffCosmeticsGUI().getInv());
+            }
         }
     }
 }

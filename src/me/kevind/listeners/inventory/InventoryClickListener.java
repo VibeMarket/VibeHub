@@ -198,6 +198,19 @@ public final class InventoryClickListener implements Listener {
                     e.setCancelled(true);
                 }
             }
+            if (e.getClickedInventory().equals(VibeHub.getStaffCosmeticsGUI().getInv())) {
+                if (e.getCurrentItem().isSimilar(ItemList.ARMORS)) {
+                    player.openInventory(VibeHub.getArmorsGUI().getInv());
+                }
+                if (e.getCurrentItem().isSimilar(ItemList.PARTICLES)) {
+                    player.openInventory(VibeHub.getParticlesGUI().getInv());
+                }
+                if (e.getCurrentItem().isSimilar(ItemList.CLOSE_MENU)) {
+                    player.closeInventory();
+                    MessageUtils.sendMessage(player, VibeHub.getPrefix() + "&7Closing menu...");
+                }
+                e.setCancelled(true);
+            }
         }
     }
 }
