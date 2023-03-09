@@ -3,12 +3,10 @@ package me.kevind.listeners.player;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.kevind.VibeHub;
 import me.kevind.utils.ColorUtils;
-import me.kevind.utils.FastBoard;
 import me.kevind.utils.ItemList;
 import me.kevind.utils.ScoreboardUtils;
 import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -18,14 +16,11 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 public final class JoinListener implements Listener {
-    public static final Map<UUID, FastBoard> boards = new HashMap<>();
     String world = VibeHub.getInstance().getConfig().getString("coordinates.hub.world");
     Double x = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.x"));
     Double y = Double.valueOf(VibeHub.getInstance().getConfig().getString("coordinates.hub.y"));
@@ -37,10 +32,6 @@ public final class JoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        FastBoard board = new FastBoard(player);
-        Date date = new Date(player.getFirstPlayed());
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
-        String firstplayed = sdf.format(date);
         String profileLoadedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileLoadedMessage");
         String profileCreatedMessage = VibeHub.getInstance().getConfig().getString("messages.ProfileCreatedMessage");
         User user = VibeHub.luckperms.getUserManager().getUser(player.getUniqueId());
@@ -62,20 +53,9 @@ public final class JoinListener implements Listener {
         player.getInventory().getItem(7).setAmount(16);
         player.getInventory().setHeldItemSlot(4);
         player.updateInventory();
-
-        //Scoreboard creation, this will probably be recoded in the future.
-        board.updateTitle(ColorUtils.color("&9&lVibe &8| &7Hub"));
-        board.updateLines(
-                " ",
-                ChatColor.GRAY + "Name: " + ChatColor.WHITE + player.getName(),
-                ChatColor.GRAY + "Rank: " + ChatColor.WHITE + ColorUtils.color(user.getCachedData().getMetaData().getPrefix()),
-                ChatColor.GRAY + "Ping: " + ChatColor.WHITE + player.getPing() + "ms",
-                ChatColor.GRAY + "Joined: " + ChatColor.WHITE + firstplayed,
-                " ",
-                ColorUtils.color("&9&lvibemarket.org")
-        );
-        boards.put(player.getUniqueId(), board);
-        ScoreboardUtils.setupScoreboard();
+        player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
+        ScoreboardUtils.setupScoreboard(player);
+        ScoreboardUtils.setupEntityCollision(player);
 
         if (player.hasPlayedBefore()) {
             profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);

@@ -9,7 +9,6 @@ import java.io.ObjectInputFilter;
 
 
 public final class ItemList {
-    HeadDatabaseAPI api = new HeadDatabaseAPI();
     //Servers
     public static final ItemStack SERVER_SELECTOR = new ItemMaker(Material.NETHER_STAR).name("&a&lServer Selector &7(Right Click)").lore("&7Teleport to the other servers!").build();
     // Items & Clickable things

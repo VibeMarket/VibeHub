@@ -1,5 +1,6 @@
 package me.kevind;
 
+import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import me.kevind.commands.*;
 import me.kevind.cosmetics.cosmetics.*;
 import me.kevind.inventory.item.CosmeticsGUI;
@@ -12,9 +13,11 @@ import me.kevind.listeners.item.*;
 import me.kevind.listeners.npc.*;
 import me.kevind.listeners.player.*;
 import me.kevind.tasks.ActionbarTask;
-import me.kevind.tasks.ScoreboardTask;
+import me.kevind.tasks.ScoreboardUpdateTask;
+import me.kevind.utils.ScoreboardUtils;
 import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -81,10 +84,12 @@ public final class VibeHub extends JavaPlugin {
         particlesGUI = new ParticlesGUI();
         staffCosmeticsGUI = new StaffCosmeticsGUI();
         saveDefaultConfig();
+
+
         //tasks
         getLogger().info("Registering tasks...");
         BukkitTask actionbartask = new ActionbarTask().runTaskTimerAsynchronously(this, 40, 40);
-        BukkitTask scoreboardtask = new ScoreboardTask().runTaskTimerAsynchronously(this, 0, 20);
+        BukkitTask scoreupdatetask = new ScoreboardUpdateTask().runTaskTimerAsynchronously(this, 20, 20);
 
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 
@@ -95,6 +100,7 @@ public final class VibeHub extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
         }
         if (Bukkit.getPluginManager().getPlugin("HeadDatabase") != null) {
+            Bukkit.getPluginManager().registerEvents(new DatabaseLoadListener(), this);
             getLogger().info("Using Head Database.");
         } else {
             getLogger().warning("Could not find Head Database. This plugin is required");
@@ -109,6 +115,8 @@ public final class VibeHub extends JavaPlugin {
             luckperms = getServer().getServicesManager().load(LuckPerms.class);
             getLogger().info("Found LuckPerms! Using...");
         }
+        //Scoreboards
+        //ScoreboardUtils.setupEntityCollision();
         //Events
         getLogger().info("Registering events...");
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
