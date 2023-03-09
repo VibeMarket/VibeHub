@@ -5,6 +5,7 @@ import me.kevind.VibeHub;
 import me.kevind.utils.ColorUtils;
 import me.kevind.utils.FastBoard;
 import me.kevind.utils.ItemList;
+import me.kevind.utils.ScoreboardUtils;
 import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -74,6 +75,7 @@ public final class JoinListener implements Listener {
                 ColorUtils.color("&9&lvibemarket.org")
         );
         boards.put(player.getUniqueId(), board);
+        ScoreboardUtils.setupScoreboard();
 
         if (player.hasPlayedBefore()) {
             profileLoadedMessage = PlaceholderAPI.setPlaceholders(event.getPlayer(), profileLoadedMessage);

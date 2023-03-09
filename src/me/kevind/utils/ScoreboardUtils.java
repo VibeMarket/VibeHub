@@ -22,16 +22,17 @@ public class ScoreboardUtils {
     String firstplayed = sdf.format(date);
 
 
-    public void setupScoreboard() {
+    public static void setupScoreboard() {
+        ScoreboardManager scoreboard = Bukkit.getScoreboardManager();
         Objective objective = scoreboard.getNewScoreboard().registerNewObjective("sidebar", "dummy", ColorUtils.color("&9&lVibe &8| &7Hub"), RenderType.INTEGER);
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
-        objective.getScore(" ").setScore(8);
-        objective.getScore(ColorUtils.color("&7Name: " )).setScore(7);
-        objective.getScore(ColorUtils.color("&8Rank: " + PlaceholderAPI.setPlaceholders(player, "%player_name%"))).setScore(6);
-        objective.getScore(ColorUtils.color("&8Joined: " + firstplayed)).setScore(5);
-        objective.getScore(" ").setScore(4);
-        objective.getScore("").setScore(3);
+        objective.getScore(" ").setScore(6);
+        objective.getScore(ColorUtils.color("&7Name: " )).setScore(5);
+        objective.getScore(ColorUtils.color("&8Rank: " + PlaceholderAPI.setPlaceholders(player, "%player_name%"))).setScore(4);
+        objective.getScore(ColorUtils.color("&8Joined: " + firstplayed)).setScore(3);
+        objective.getScore(" ").setScore(2);
+        objective.getScore("&9&lvibemarket.org").setScore(1);
 
     }
 }
