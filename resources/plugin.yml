@@ -1,10 +1,10 @@
 name: VibeHub
-version: 1.3.0
-author: ItsCryptic
+version: 1.4.0
+authors: [ ItsCryptic, MasterDash5 ]
 api-version: 1.17
-main: me.kevind.VibeHub
+main: me.kevind.vibehub.VibeHub
 softdepend: [ HolographicDisplays, WorldGuard, Citizens]
-depend: [ PlaceholderAPI, LuckPerms, HeadDatabase ]
+depend: [ PlaceholderAPI, LuckPerms ]
 commands:
   hubreload:
     description: Reloads Hub
@@ -23,10 +23,6 @@ commands:
     description: Sets the Hub
     aliases:
       - "sh"
-  iteminfo:
-    description: Shows information about the item you're currently holding
-    aliases:
-      - "ii"
   scoreboard:
     description: Turns on and off the scoreboard.
   actionbar:

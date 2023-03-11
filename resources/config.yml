@@ -1,6 +1,6 @@
 # In order for the player to see their name, please install the Player extension for PlaceholderAPI.
 messages:
-  Prefix: '&9&lVibeツ &8» '
+  Prefix: '&9&lVibeツ&8 » '
   ProfileLoadedMessage: '&aProfile loaded. Welcome back %player_name%'
   ProfileCreatedMessage: '&aProfile created. Welcome %player_name%'
   ConfigReloaded: '&aReloaded config.'
@@ -13,19 +13,22 @@ messages:
   HubSetMessage: '&7Hub location has been set to your current location! &cYou may need to reboot the server for this change to take effect.'
   ServerIP: '&9&lvibemarket.org'
   VSpeedInvalidArgs: '&cInvalid arguments! Correct usage is /vspeed on & /vspeed off'
+
 #This section controls where to spawn players, this section should never need to be touched directly, please use /sethub in game to change these values!
 coordinates:
   hub:
     world: "Hub2021"
     x: 0.5
-    y: 67
+    y: 67.0
     z: 0.5
-    pitch: -2.550001
-    yaw: -90.59805
+    pitch: 0.0
+    yaw: -90.0
+
 uuids:
   minauuid: 40ef6ecc-b56f-41f9-bfb1-ec7b7300bfa4
   kevinuuid: a948c50c-ede2-4dfa-9b6c-688daf22197c
   andreauuid: 8bab5cd7-e97f-44bc-839f-c7e54461de20
+
 #This section controls the names of the NPCs that the plugin will search for to tp you to another server.
 citizens:
   npcs:
@@ -33,6 +36,7 @@ citizens:
     skyblock: "§b§lSkyblock §7(Coming Soon)"
     creative: "§6§lCreative §7(Coming Soon)"
     comingsoon: "§c§lComing Soon §7(Right Click)"
+
 #If a servers version changes, you can update it here. This may require you to reboot the server.
 versions:
   survival: "1.19.3"
