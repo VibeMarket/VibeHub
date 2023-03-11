@@ -12,7 +12,6 @@ import me.kevind.vibehub.gui.guis.staff.StaffSelectorGui;
 import me.kevind.vibehub.listeners.entity.EntityDismountListener;
 import me.kevind.vibehub.listeners.entity.ProjectileLaunchListener;
 import me.kevind.vibehub.listeners.inventory.InteractListener;
-import me.kevind.vibehub.listeners.inventory.InventoryClickListener;
 import me.kevind.vibehub.listeners.npc.NPCCreateListener;
 import me.kevind.vibehub.listeners.npc.NPCDeleteListener;
 import me.kevind.vibehub.listeners.npc.NPCRightClickListener;
@@ -69,12 +68,11 @@ public final class VibeHub extends JavaPlugin {
 
         // Listeners
         logger.info("Registering listeners...");
-        pluginManager.registerEvents(new InteractListener(), this);
-        pluginManager.registerEvents(new InventoryClickListener(), this);
-
+        pluginManager.registerEvents(new EntityDismountListener(), this);
         pluginManager.registerEvents(new ProjectileLaunchListener(), this);
 
-        pluginManager.registerEvents(new EntityDismountListener(), this);
+        pluginManager.registerEvents(new InteractListener(), this);
+
         pluginManager.registerEvents(new FoodLevelChangeListener(), this);
         pluginManager.registerEvents(new PlayerDropItemListener(), this);
         pluginManager.registerEvents(new PlayerJoinListener(), this);
