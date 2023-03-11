@@ -11,16 +11,14 @@ public final class ScoreboardUtils {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
 
-    public static void setupEntityCollision(Player player) {
-        Team team = player.getScoreboard().registerNewTeam("NoPush");
-        team.setOption(Team.Option.COLLISION_RULE, Team.OptionStatus.NEVER);
-        team.addEntry(player.getName());
-    }
-
     public static void setupScoreboard(Player player) {
         User user = LuckPermsUtils.getUser(player);
         String firstPlayed = sdf.format(new Date(player.getFirstPlayed()));
         Scoreboard scoreboard = player.getScoreboard();
+
+        Team team = scoreboard.registerNewTeam("NoPush");
+        team.setOption(Team.Option.COLLISION_RULE, Team.OptionStatus.NEVER);
+        team.addEntry(player.getName());
 
         Objective objective = scoreboard.registerNewObjective(
                 "sidebar", "dummy",

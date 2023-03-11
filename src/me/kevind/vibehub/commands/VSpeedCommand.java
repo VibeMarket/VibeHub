@@ -15,12 +15,9 @@ public final class VSpeedCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (sender instanceof Player player) {
-            if (sender.hasPermission("vibe.vspeed")) {
-                player.openInventory(Gui.get(SpeedGui.class).getInventory());
+            player.openInventory(Gui.get(SpeedGui.class).getInventory());
 
-                MessageUtils.message(sender, "&7Opening speed gui...");
-            } else
-                MessageUtils.message(sender, ConfigUtils.get(String.class, "messages.NoPermissionMessage"));
+            MessageUtils.message(sender, "&7Opening speed gui...");
         } else
             MessageUtils.message(sender, "You must be a player to use this command.");
 

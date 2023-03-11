@@ -38,7 +38,6 @@ public final class PlayerJoinListener implements Listener {
         player.setGameMode(GameMode.ADVENTURE);
         player.setInvulnerable(true);
         player.setAllowFlight(true);
-        player.setCollidable(false);
 
         player.setHealth(20);
         player.setFoodLevel(20);
@@ -57,7 +56,6 @@ public final class PlayerJoinListener implements Listener {
             player.setScoreboard(scoreboardManager.getNewScoreboard());
 
             ScoreboardUtils.setupScoreboard(player);
-            ScoreboardUtils.setupEntityCollision(player);
         }
 
         String message = ConfigUtils.get(String.class, player.hasPlayedBefore() ?
