@@ -1,4 +1,4 @@
-package me.kevind.vibehub.listeners.item;
+package me.kevind.vibehub.listeners.entity;
 
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;

@@ -1,4 +1,4 @@
-package me.kevind.vibehub.listeners.player;
+package me.kevind.vibehub.listeners.entity;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;

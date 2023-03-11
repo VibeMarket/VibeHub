@@ -13,9 +13,8 @@ public final class TimeGui extends Gui {
             player.resetPlayerTime();
             MessageUtils.message(player, "&7Set your time to &eDay&7.");
         });
-
         setItem(1, 6, ItemList.NIGHT_TIME, (player, click) -> {
-            player.setPlayerTime(18000, true);
+            player.setPlayerTime(12000, true);
             MessageUtils.message(player, "&7Set your time to &8Night&7.");
         });
 

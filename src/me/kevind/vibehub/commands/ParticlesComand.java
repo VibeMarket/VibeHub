@@ -1,6 +1,7 @@
 package me.kevind.vibehub.commands;
 
-import me.kevind.vibehub.VibeHub;
+import me.kevind.vibehub.gui.Gui;
+import me.kevind.vibehub.gui.guis.cosmetics.ParticlesGui;
 import me.kevind.vibehub.utils.MessageUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,7 +15,7 @@ public final class ParticlesComand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player player) {
             if (player.getUniqueId().toString().equalsIgnoreCase("a948c50c-ede2-4dfa-9b6c-688daf22197c")) {
-                player.openInventory(VibeHub.getParticlesGUI().getInv()); // TODO
+                player.openInventory(Gui.get(ParticlesGui.class).getInventory());
 
                 MessageUtils.message(sender, "&7Opening particle selector...");
             } else

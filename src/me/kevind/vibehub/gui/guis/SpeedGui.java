@@ -17,21 +17,18 @@ public final class SpeedGui extends Gui {
 
             MessageUtils.message(player, "&aYou've been given Speed 3");
         });
-
         setItem(1, 2, ItemList.SPEED_6, (player, click) -> {
             player.removePotionEffect(PotionEffectType.SPEED);
             player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 5));
 
             MessageUtils.message(player, "&aYou've been given Speed 6");
         });
-
         setItem(1, 3, ItemList.SPEED_9, (player, click) -> {
             player.removePotionEffect(PotionEffectType.SPEED);
             player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 8));
 
             MessageUtils.message(player, "&aYou've been given Speed 9");
         });
-
         setItem(1, 9, ItemList.NO_SPEED, (player, click) -> {
             player.removePotionEffect(PotionEffectType.SPEED);
 

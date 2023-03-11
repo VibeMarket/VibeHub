@@ -1,7 +1,8 @@
 package me.kevind.vibehub.gui.guis.staff;
 
-import me.kevind.vibehub.VibeHub;
 import me.kevind.vibehub.gui.Gui;
+import me.kevind.vibehub.gui.guis.cosmetics.ArmorsGui;
+import me.kevind.vibehub.gui.guis.cosmetics.ParticlesGui;
 import me.kevind.vibehub.utils.ItemList;
 import me.kevind.vibehub.utils.MessageUtils;
 
@@ -11,13 +12,11 @@ public final class StaffCosmeticsGui extends Gui {
         super(1, "Cosmetics");
 
         setItem(1, 1, ItemList.PARTICLES, (player, click) -> {
-            player.openInventory(VibeHub.getParticlesGUI().getInv()); // TODO
+            player.openInventory(Gui.get(ParticlesGui.class).getInventory());
         });
-
         setItem(1, 5, ItemList.ARMORS, (player, click) -> {
-            player.openInventory(VibeHub.getArmorsGUI().getInv()); // TODO
+            player.openInventory(Gui.get(ArmorsGui.class).getInventory());
         });
-
         setItem(1, 9, ItemList.CLOSE_MENU, (player, click) -> {
             player.closeInventory();
             MessageUtils.message(player, "&7Closing menu...");

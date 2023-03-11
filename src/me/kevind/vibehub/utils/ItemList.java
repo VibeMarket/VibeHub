@@ -1,6 +1,7 @@
 package me.kevind.vibehub.utils;
 
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 
 public final class ItemList {
@@ -37,13 +38,13 @@ public final class ItemList {
     public static final ItemStack ASEXUAL_ARMOR = new ItemMaker(Material.LIGHT_GRAY_WOOL).name("&0As&7ex&fua&5l &7Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
     public static final ItemStack LESBIAN_ARMOR = new ItemMaker(Material.ORANGE_WOOL).name("&6Les&fb&cian &7Armor").lore("&7Left click to equip", "&7Right click to unequip").build();
     public static final ItemStack GO_BACK = new ItemMaker(Material.BARRIER).name("&c&lGo back").lore("&7Click to go back!").build();
-    public static final ItemStack TEST_PARTICLE = new ItemMaker(Material.NETHER_STAR).name("&f&lTest Particle").lore("&7This is a test particle.").build();
     public static final ItemStack CLOSE_MENU = new ItemMaker(Material.BARRIER).name("&c&lClose menu").build();
     public static final ItemStack FLAME_PARTICLE = new ItemMaker(Material.FIRE_CHARGE).name("&c&lFlame Particle &7(Right Click)").lore("&7Left click to spawn.", "&7Right click to remove.").build();
     public static final ItemStack SURVIVAL_SERVER = new ItemMaker(Material.GRASS_BLOCK).name("&a&lSurvival").lore("&7Version: &9" + survivalversion, "&7Teleport to the survival server").build();
     public static final ItemStack SKYBLOCK_SERVER = new ItemMaker(Material.OAK_WOOD).name("&b&lSkyblock").lore("&7Version: &9" + skyblockversion, "&7Teleport to the skyblock server").build();
     public static final ItemStack CREATIVE_SERVER = new ItemMaker(Material.BIRCH_WOOD).name("&6&lCreative").lore("&7Version: &9" + creativeversion, "&7Teleport to the creative server").build();
-    public static final ItemStack BUILD_SERVER = new ItemMaker(Material.DIAMOND_PICKAXE).name("&c&lBuild").lore("&7Version: &9" + staffversion, "&7Teleport to the Build server.", "&7You are staff so you can see this server.").build();
+    public static final ItemStack BUILD_SERVER = new ItemMaker(Material.DIAMOND_PICKAXE).name("&c&lBuild").lore("&7Version: &9" + staffversion, "&7Teleport to the Build server.", "&7You are staff so you can see this server.").flags(ItemFlag.HIDE_ATTRIBUTES).build();
     public static final ItemStack DEVELOPMENT_SERVER = new ItemMaker(Material.COMMAND_BLOCK).name("&d&lDevelopment").lore("&7Version: &9" + devversion).build();
-    public static final ItemStack LIMBO_SERVER = new ItemMaker(Material.WOODEN_AXE).name("&e&lLimbo").lore("&7Version: &9" + limboversion, "&7If Vibe is under maintenance, this is where players get sent.", "&7Click to teleport to the Limbo server.").build();
+    public static final ItemStack LIMBO_SERVER = new ItemMaker(Material.WOODEN_AXE).name("&e&lLimbo").lore("&7Version: &9" + limboversion, "&7If Vibe is under maintenance, this is where players get sent.", "&7Click to teleport to the Limbo server.").flags(ItemFlag.HIDE_ATTRIBUTES).build();
+
 }

@@ -42,7 +42,7 @@ public abstract class Gui implements Listener {
     protected void fillRemaining() {
         for (int i = 0; i < inventory.getSize(); i++)
             if (inventory.getItem(i) == null)
-                inventory.setItem(i, new ItemMaker(Material.GRAY_STAINED_GLASS_PANE).name("").build());
+                inventory.setItem(i, new ItemMaker(Material.GRAY_STAINED_GLASS_PANE).name(" ").build());
     }
 
     public Inventory getInventory() {

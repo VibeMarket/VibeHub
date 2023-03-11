@@ -1,6 +1,7 @@
 package me.kevind.vibehub.commands;
 
-import me.kevind.vibehub.VibeHub;
+import me.kevind.vibehub.gui.Gui;
+import me.kevind.vibehub.gui.guis.CosmeticsGui;
 import me.kevind.vibehub.utils.MessageUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,7 +14,7 @@ public final class CosmeticsCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (sender instanceof Player player) {
-            player.openInventory(VibeHub.getCosmetics().getInv()); // TODO
+            player.openInventory(Gui.get(CosmeticsGui.class).getInventory());
 
             MessageUtils.message(sender, "&7Opening Cosmetics menu...");
         } else

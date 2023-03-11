@@ -8,7 +8,6 @@ import me.kevind.vibehub.gui.guis.TimeGui;
 import me.kevind.vibehub.gui.guis.staff.StaffCosmeticsGui;
 import me.kevind.vibehub.gui.guis.staff.StaffSelectorGui;
 import me.kevind.vibehub.utils.ItemList;
-import org.bukkit.GameMode;
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -1,6 +1,7 @@
 package me.kevind.vibehub.commands;
 
-import me.kevind.vibehub.VibeHub;
+import me.kevind.vibehub.gui.Gui;
+import me.kevind.vibehub.gui.guis.SpeedGui;
 import me.kevind.vibehub.utils.ConfigUtils;
 import me.kevind.vibehub.utils.MessageUtils;
 import org.bukkit.command.Command;
@@ -15,7 +16,7 @@ public final class VSpeedCommand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (sender instanceof Player player) {
             if (sender.hasPermission("vibe.vspeed")) {
-                player.openInventory(VibeHub.getSpeedGUI().getInv()); // TODO
+                player.openInventory(Gui.get(SpeedGui.class).getInventory());
 
                 MessageUtils.message(sender, "&7Opening speed gui...");
             } else

@@ -1,27 +1,23 @@
 package me.kevind.vibehub;
 
 import me.kevind.vibehub.commands.*;
-import me.kevind.vibehub.cosmetics.cosmetics.ArmorsGUI;
-import me.kevind.vibehub.cosmetics.cosmetics.ParticlesGUI;
 import me.kevind.vibehub.gui.guis.CosmeticsGui;
 import me.kevind.vibehub.gui.guis.SelectorGui;
 import me.kevind.vibehub.gui.guis.SpeedGui;
 import me.kevind.vibehub.gui.guis.TimeGui;
+import me.kevind.vibehub.gui.guis.cosmetics.ArmorsGui;
+import me.kevind.vibehub.gui.guis.cosmetics.ParticlesGui;
 import me.kevind.vibehub.gui.guis.staff.StaffCosmeticsGui;
 import me.kevind.vibehub.gui.guis.staff.StaffSelectorGui;
-import me.kevind.vibehub.inventory.item.CosmeticsGUI;
-import me.kevind.vibehub.inventory.item.SpeedGUI;
-import me.kevind.vibehub.inventory.item.TimeGUI;
-import me.kevind.vibehub.inventory.item.selector.SelectorGUI;
-import me.kevind.vibehub.inventory.staff.StaffCosmeticsGUI;
-import me.kevind.vibehub.inventory.staff.StaffSelectorGUI;
+import me.kevind.vibehub.listeners.entity.EntityDismountListener;
+import me.kevind.vibehub.listeners.entity.ProjectileLaunchListener;
 import me.kevind.vibehub.listeners.inventory.InteractListener;
 import me.kevind.vibehub.listeners.inventory.InventoryClickListener;
-import me.kevind.vibehub.listeners.item.ProjectileLaunchListener;
 import me.kevind.vibehub.listeners.npc.NPCCreateListener;
 import me.kevind.vibehub.listeners.npc.NPCDeleteListener;
 import me.kevind.vibehub.listeners.npc.NPCRightClickListener;
 import me.kevind.vibehub.listeners.player.*;
+import me.kevind.vibehub.listeners.world.WeatherChangeListener;
 import me.kevind.vibehub.tasks.ActionbarTask;
 import me.kevind.vibehub.tasks.ScoreboardUpdateTask;
 import net.luckperms.api.LuckPerms;
@@ -37,14 +33,6 @@ public final class VibeHub extends JavaPlugin {
 
     private static VibeHub instance;
     private static LuckPerms luckperms;
-    private static SelectorGUI serverselector;
-    private static SpeedGUI speeditem;
-    private static TimeGUI timegui;
-    private static StaffSelectorGUI staffselector;
-    private static CosmeticsGUI cosmetics;
-    private static ArmorsGUI armorsGUI;
-    private static ParticlesGUI particlesGUI;
-    private static StaffCosmeticsGUI staffCosmeticsGUI;
 
     public static VibeHub getInstance() {
         return instance;
@@ -52,38 +40,6 @@ public final class VibeHub extends JavaPlugin {
 
     public static LuckPerms getLuckPerms() {
         return luckperms;
-    }
-
-    public static SelectorGUI getSelectorGUI() {
-        return serverselector;
-    }
-
-    public static TimeGUI getTimeGUI() {
-        return timegui;
-    }
-
-    public static StaffSelectorGUI getStaffselector() {
-        return staffselector;
-    }
-
-    public static CosmeticsGUI getCosmetics() {
-        return cosmetics;
-    }
-
-    public static SpeedGUI getSpeedGUI() {
-        return speeditem;
-    }
-
-    public static ArmorsGUI getArmorsGUI() {
-        return armorsGUI;
-    }
-
-    public static ParticlesGUI getParticlesGUI() {
-        return particlesGUI;
-    }
-
-    public static StaffCosmeticsGUI getStaffCosmeticsGUI(){
-        return staffCosmeticsGUI;
     }
 
     @Override
@@ -111,15 +67,6 @@ public final class VibeHub extends JavaPlugin {
         Messenger messenger = getServer().getMessenger();
         messenger.registerOutgoingPluginChannel(this, "BungeeCord");
 
-        serverselector = new SelectorGUI();
-        speeditem = new SpeedGUI();
-        timegui = new TimeGUI();
-        staffselector = new StaffSelectorGUI();
-        cosmetics = new CosmeticsGUI();
-        armorsGUI = new ArmorsGUI();
-        particlesGUI = new ParticlesGUI();
-        staffCosmeticsGUI = new StaffCosmeticsGUI();
-
         // Listeners
         logger.info("Registering listeners...");
         pluginManager.registerEvents(new InteractListener(), this);
@@ -132,6 +79,8 @@ public final class VibeHub extends JavaPlugin {
         pluginManager.registerEvents(new PlayerDropItemListener(), this);
         pluginManager.registerEvents(new PlayerJoinListener(), this);
         pluginManager.registerEvents(new PlayerQuitListener(), this);
+
+        pluginManager.registerEvents(new WeatherChangeListener(), this);
 
         if (pluginManager.isPluginEnabled("Citizens")) {
             pluginManager.registerEvents(new NPCRightClickListener(), this);
@@ -150,6 +99,10 @@ public final class VibeHub extends JavaPlugin {
 
             logger.warning("WorldGuard is highly encouraged... registered fallback protection.");
         }
+
+        // GUIs
+        new ArmorsGui();
+        new ParticlesGui();
 
         new StaffCosmeticsGui();
         new StaffSelectorGui();
