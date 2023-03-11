@@ -29,7 +29,7 @@ public final class ScoreboardUtils {
         objective.getScore("  ").setScore(6);
         objective.getScore(ColorUtils.color("&7Name: &f")).setScore(5);
         objective.getScore(ColorUtils.color("&7Rank: &f")).setScore(4);
-        objective.getScore(ColorUtils.color("&7Ping &f")).setScore(3);
+        objective.getScore(ColorUtils.color("&7Ping: &f")).setScore(3);
         objective.getScore(ColorUtils.color("&7Joined: &f" + firstPlayed)).setScore(2);
         objective.getScore(" ").setScore(1);
         objective.getScore(ColorUtils.color("&9&lvibemarket.org")).setScore(0);
@@ -40,7 +40,7 @@ public final class ScoreboardUtils {
 
         Team ping = scoreboard.registerNewTeam("ping");
         ping.setSuffix(player.getPing() + "ms");
-        ping.addEntry(ColorUtils.color("&7Ping &f"));
+        ping.addEntry(ColorUtils.color("&7Ping: &f"));
 
         Team username = scoreboard.registerNewTeam("username");
         username.setSuffix(player.getName());
@@ -58,7 +58,7 @@ public final class ScoreboardUtils {
             return;
 
         ping.setSuffix(player.getPing() + "ms");
-        ping.addEntry(ColorUtils.color("&7Ping &f"));
+        ping.addEntry(ColorUtils.color("&7Ping: &f"));
 
         rank.setSuffix(ColorUtils.color(user.getCachedData().getMetaData().getPrefix()));
         rank.addEntry(ColorUtils.color("&7Rank: &f"));
