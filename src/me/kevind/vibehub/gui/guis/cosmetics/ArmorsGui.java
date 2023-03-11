@@ -2,6 +2,7 @@ package me.kevind.vibehub.gui.guis.cosmetics;
 
 import me.kevind.vibehub.gui.Gui;
 import me.kevind.vibehub.gui.guis.CosmeticsGui;
+import me.kevind.vibehub.gui.guis.staff.StaffCosmeticsGui;
 import me.kevind.vibehub.utils.ArmorType;
 import me.kevind.vibehub.utils.ArmorUtils;
 import me.kevind.vibehub.utils.ItemList;
@@ -110,7 +111,10 @@ public final class ArmorsGui extends Gui {
             }
         });
         setItem(1, 9, ItemList.GO_BACK, (player, click) -> {
-            player.openInventory(Gui.get(CosmeticsGui.class).getInventory());
+            if (player.hasPermission("vibe.staff"))
+                player.openInventory(Gui.get(StaffCosmeticsGui.class).getInventory());
+            else
+                player.openInventory(Gui.get(CosmeticsGui.class).getInventory());
         });
 
         fillRemaining();
