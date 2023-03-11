@@ -11,10 +11,6 @@ commands:
     aliases:
       - "hr"
       - "reloadhub"
-  build:
-    description: Toggle build mode for Hub
-    aliases:
-      - b
   vspeed:
     description: Old speed setting command for Hub.
     aliases:

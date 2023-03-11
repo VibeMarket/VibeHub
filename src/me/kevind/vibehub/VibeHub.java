@@ -119,7 +119,6 @@ public final class VibeHub extends JavaPlugin {
         // Commands
         logger.info("Registering commands...");
         //getCommand("actionbar").setExecutor(new ActionbarCommand());
-        Objects.requireNonNull(getCommand("build")).setExecutor(new BuildCommand());
         Objects.requireNonNull(getCommand("cosmetics")).setExecutor(new CosmeticsCommand());
         Objects.requireNonNull(getCommand("particles")).setExecutor(new ParticlesComand());
         Objects.requireNonNull(getCommand("hubreload")).setExecutor(new ReloadCommand());
