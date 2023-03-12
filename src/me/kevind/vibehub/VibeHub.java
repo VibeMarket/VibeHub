@@ -11,7 +11,6 @@ import me.kevind.vibehub.gui.guis.staff.StaffCosmeticsGui;
 import me.kevind.vibehub.gui.guis.staff.StaffSelectorGui;
 import me.kevind.vibehub.listeners.entity.EntityDismountListener;
 import me.kevind.vibehub.listeners.entity.ProjectileLaunchListener;
-import me.kevind.vibehub.listeners.player.PlayerInteractListener;
 import me.kevind.vibehub.listeners.npc.NPCCreateListener;
 import me.kevind.vibehub.listeners.npc.NPCDeleteListener;
 import me.kevind.vibehub.listeners.npc.NPCRightClickListener;

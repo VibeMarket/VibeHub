@@ -2,7 +2,6 @@ package me.kevind.vibehub.commands;
 
 import me.kevind.vibehub.gui.Gui;
 import me.kevind.vibehub.gui.guis.SpeedGui;
-import me.kevind.vibehub.utils.ConfigUtils;
 import me.kevind.vibehub.utils.MessageUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
