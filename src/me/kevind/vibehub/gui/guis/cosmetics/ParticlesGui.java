@@ -24,7 +24,7 @@ public final class ParticlesGui extends Gui {
             }
         });
         setItem(1, 9, ItemList.GO_BACK, (player, click) -> {
-            player.openInventory(Gui.get(StaffCosmeticsGui.class).getInventory());
+            player.openInventory(Gui.get(StaffCosmeticsGui.class));
         });
     }
 

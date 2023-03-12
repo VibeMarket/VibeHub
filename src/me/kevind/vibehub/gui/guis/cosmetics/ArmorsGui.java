@@ -112,9 +112,9 @@ public final class ArmorsGui extends Gui {
         });
         setItem(1, 9, ItemList.GO_BACK, (player, click) -> {
             if (player.hasPermission("vibe.staff"))
-                player.openInventory(Gui.get(StaffCosmeticsGui.class).getInventory());
+                player.openInventory(Gui.get(StaffCosmeticsGui.class));
             else
-                player.openInventory(Gui.get(CosmeticsGui.class).getInventory());
+                player.openInventory(Gui.get(CosmeticsGui.class));
         });
 
         fillRemaining();

@@ -14,7 +14,7 @@ public final class CosmeticsCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (sender instanceof Player player) {
-            player.openInventory(Gui.get(CosmeticsGui.class).getInventory());
+            player.openInventory(Gui.get(CosmeticsGui.class));
 
             MessageUtils.message(sender, "&7Opening Cosmetics menu...");
         } else

@@ -4,7 +4,7 @@ import me.kevind.vibehub.utils.ScoreboardUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public final class ScoreboardUpdateTask implements Runnable {
+public final class ScoreboardTask implements Runnable {
 
     @Override
     public void run() {

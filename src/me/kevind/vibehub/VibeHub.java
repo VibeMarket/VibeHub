@@ -11,14 +11,15 @@ import me.kevind.vibehub.gui.guis.staff.StaffCosmeticsGui;
 import me.kevind.vibehub.gui.guis.staff.StaffSelectorGui;
 import me.kevind.vibehub.listeners.entity.EntityDismountListener;
 import me.kevind.vibehub.listeners.entity.ProjectileLaunchListener;
-import me.kevind.vibehub.listeners.inventory.InteractListener;
+import me.kevind.vibehub.listeners.player.PlayerInteractListener;
 import me.kevind.vibehub.listeners.npc.NPCCreateListener;
 import me.kevind.vibehub.listeners.npc.NPCDeleteListener;
 import me.kevind.vibehub.listeners.npc.NPCRightClickListener;
 import me.kevind.vibehub.listeners.player.*;
 import me.kevind.vibehub.listeners.world.WeatherChangeListener;
 import me.kevind.vibehub.tasks.ActionbarTask;
-import me.kevind.vibehub.tasks.ScoreboardUpdateTask;
+import me.kevind.vibehub.tasks.ScoreboardTask;
+import me.kevind.vibehub.utils.ItemList;
 import net.luckperms.api.LuckPerms;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -66,15 +67,16 @@ public final class VibeHub extends JavaPlugin {
         Messenger messenger = getServer().getMessenger();
         messenger.registerOutgoingPluginChannel(this, "BungeeCord");
 
+        ItemList.load();
+
         // Listeners
         logger.info("Registering listeners...");
         pluginManager.registerEvents(new EntityDismountListener(), this);
         pluginManager.registerEvents(new ProjectileLaunchListener(), this);
 
-        pluginManager.registerEvents(new InteractListener(), this);
-
         pluginManager.registerEvents(new FoodLevelChangeListener(), this);
         pluginManager.registerEvents(new PlayerDropItemListener(), this);
+        pluginManager.registerEvents(new PlayerInteractListener(), this);
         pluginManager.registerEvents(new PlayerJoinListener(), this);
         pluginManager.registerEvents(new PlayerQuitListener(), this);
 
@@ -114,7 +116,7 @@ public final class VibeHub extends JavaPlugin {
         logger.info("Registering tasks...");
         BukkitScheduler scheduler = getServer().getScheduler();
         scheduler.runTaskTimerAsynchronously(this, new ActionbarTask(), 40, 40);
-        scheduler.runTaskTimerAsynchronously(this, new ScoreboardUpdateTask(), 20, 20);
+        scheduler.runTaskTimerAsynchronously(this, new ScoreboardTask(), 20, 20);
 
         // Commands
         logger.info("Registering commands...");

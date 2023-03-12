@@ -14,6 +14,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import java.lang.reflect.Field;
 import java.util.*;
 
+@Deprecated
 public final class ItemMaker {
 
     private final Material material;

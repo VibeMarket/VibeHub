@@ -15,7 +15,7 @@ public final class VSpeedCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (sender instanceof Player player) {
-            player.openInventory(Gui.get(SpeedGui.class).getInventory());
+            player.openInventory(Gui.get(SpeedGui.class));
 
             MessageUtils.message(sender, "&7Opening speed gui...");
         } else
