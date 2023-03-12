@@ -1,4 +1,5 @@
-<p style="text-align: center; font-weight:bold; font-size: 30px;">VibeHub</p>
+<strong><p align="center" width="100%">
+VibeHub</p></strong>
 
 <p style="text-align: center;"><a href='https://ci.kevind.me/job/VibeHub/'><img src='https://ci.kevind.me/job/VibeHub/badge/icon'></a></p>
 
