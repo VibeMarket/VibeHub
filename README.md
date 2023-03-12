@@ -3,6 +3,9 @@ VibeHub</p></strong>
 
 <p align="center"><a href='https://ci.kevind.me/job/VibeHub/'><img src='https://ci.kevind.me/job/VibeHub/badge/icon'></a></p>
 
+<p align="center">You can find production-ready built binaries in the [Releases](https://github.com/VibeMarket/VibeHub/releases) tab.</p>
+
+
 # Dependencies
 
 PlaceholderAPI
