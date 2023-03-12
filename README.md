@@ -5,7 +5,7 @@
 PlaceholderAPI, LuckPerms, Citizens, WorldGuard
 
 If you're compiling this from source, Maven should automatically download these dependencies. If you're using this on a
-server, please have PlaceholderAPI & HolographicDisplays installed.
+server, please have PlaceholderAPI installed.
 
 # Requirements
 

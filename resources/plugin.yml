@@ -3,7 +3,7 @@ version: 1.4.1
 authors: [ ItsCryptic, MasterDash5 ]
 api-version: 1.17
 main: me.kevind.vibehub.VibeHub
-softdepend: [ HolographicDisplays, WorldGuard, Citizens]
+softdepend: [WorldGuard, Citizens]
 depend: [ PlaceholderAPI, LuckPerms ]
 commands:
   hubreload:
