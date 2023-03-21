@@ -12,8 +12,6 @@ messages:
   IncorrectUsage: '&cThe proper usage for this command is ' #Argument would go after this line.
   HubSetMessage: '&7Hub location has been set to your current location! &cYou may need to reboot the server for this change to take effect.'
   ServerIP: '&9&lvibemarket.org'
-  VSpeedInvalidArgs: '&cInvalid arguments! Correct usage is /vspeed on & /vspeed off'
-
 #This section controls where to spawn players, this section should never need to be touched directly, please use /sethub in game to change these values!
 coordinates:
   hub:
