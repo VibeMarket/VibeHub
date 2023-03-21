@@ -1,8 +1,8 @@
 # In order for the player to see their name, please install the Player extension for PlaceholderAPI.
 messages:
   Prefix: '&9&lVibeツ&8 » '
-  ProfileLoadedMessage: '&aProfile loaded. Welcome back %player_name%'
-  ProfileCreatedMessage: '&aProfile created. Welcome %player_name%'
+  ProfileLoadedMessage: 'Welcome back %player_name%'
+  ProfileCreatedMessage: 'Welcome %player_name%'
   ConfigReloaded: '&aReloaded config.'
   NoPermissionMessage: '&cYou do not have permission!'
   IDontWantSpeedMessage: '&cDisabled speed.'
