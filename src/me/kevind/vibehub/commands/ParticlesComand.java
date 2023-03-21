@@ -15,7 +15,7 @@ public final class ParticlesComand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (sender instanceof Player player) {
             if (player.getUniqueId().toString().equalsIgnoreCase("a948c50c-ede2-4dfa-9b6c-688daf22197c")) {
-                player.openInventory(Gui.get(ParticlesGui.class).getInventory());
+                player.openInventory(Gui.get(ParticlesGui.class));
 
                 MessageUtils.message(sender, "&7Opening particle selector...");
             } else

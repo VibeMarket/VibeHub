@@ -12,10 +12,10 @@ public final class StaffCosmeticsGui extends Gui {
         super(1, "Cosmetics");
 
         setItem(1, 1, ItemList.PARTICLES, (player, click) -> {
-            player.openInventory(Gui.get(ParticlesGui.class).getInventory());
+            player.openInventory(Gui.get(ParticlesGui.class));
         });
         setItem(1, 5, ItemList.ARMORS, (player, click) -> {
-            player.openInventory(Gui.get(ArmorsGui.class).getInventory());
+            player.openInventory(Gui.get(ArmorsGui.class));
         });
         setItem(1, 9, ItemList.CLOSE_MENU, (player, click) -> {
             player.closeInventory();

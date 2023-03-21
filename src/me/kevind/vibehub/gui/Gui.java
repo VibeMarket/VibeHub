@@ -1,7 +1,7 @@
 package me.kevind.vibehub.gui;
 
 import me.kevind.vibehub.VibeHub;
-import me.kevind.vibehub.utils.ItemMaker;
+import me.kevind.vibehub.utils.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -24,12 +24,11 @@ public abstract class Gui implements Listener {
         inventory = Bukkit.createInventory(null, rows * 9, name);
 
         Bukkit.getPluginManager().registerEvents(this, VibeHub.getInstance());
-
         guis.put(getClass(), this);
     }
 
-    public static Gui get(Class<? extends Gui> clazz) {
-        return guis.get(clazz);
+    public static Inventory get(Class<? extends Gui> clazz) {
+        return guis.get(clazz).inventory;
     }
 
     protected void setItem(int row, int column, ItemStack item, Action action) {
@@ -42,11 +41,7 @@ public abstract class Gui implements Listener {
     protected void fillRemaining() {
         for (int i = 0; i < inventory.getSize(); i++)
             if (inventory.getItem(i) == null)
-                inventory.setItem(i, new ItemMaker(Material.GRAY_STAINED_GLASS_PANE).name(" ").build());
-    }
-
-    public Inventory getInventory() {
-        return inventory;
+                inventory.setItem(i, new ItemBuilder<>(Material.GRAY_STAINED_GLASS_PANE).name(" ").build());
     }
 
     @EventHandler

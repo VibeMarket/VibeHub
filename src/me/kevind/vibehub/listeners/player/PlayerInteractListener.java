@@ -1,4 +1,4 @@
-package me.kevind.vibehub.listeners.inventory;
+package me.kevind.vibehub.listeners.player;
 
 import me.kevind.vibehub.gui.Gui;
 import me.kevind.vibehub.gui.guis.CosmeticsGui;
@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
-public final class InteractListener implements Listener {
+public final class PlayerInteractListener implements Listener {
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
@@ -27,25 +27,25 @@ public final class InteractListener implements Listener {
 
         if (main.isSimilar(ItemList.TIME_SELECTOR)) {
             event.setCancelled(true);
-            player.openInventory(Gui.get(TimeGui.class).getInventory());
+            player.openInventory(Gui.get(TimeGui.class));
         }
 
-        if (main.isSimilar(ItemList.COSMETICS_ITEM)) {
+        if (main.isSimilar(ItemList.COSMETICS_SELECTOR)) {
             event.setCancelled(true);
 
             if (staff)
-                player.openInventory(Gui.get(StaffCosmeticsGui.class).getInventory());
+                player.openInventory(Gui.get(StaffCosmeticsGui.class));
             else
-                player.openInventory(Gui.get(CosmeticsGui.class).getInventory());
+                player.openInventory(Gui.get(CosmeticsGui.class));
         }
 
         if (main.isSimilar(ItemList.SERVER_SELECTOR)) {
             event.setCancelled(true);
 
             if (staff)
-                player.openInventory(Gui.get(StaffSelectorGui.class).getInventory());
+                player.openInventory(Gui.get(StaffSelectorGui.class));
             else
-                player.openInventory(Gui.get(SelectorGui.class).getInventory());
+                player.openInventory(Gui.get(SelectorGui.class));
         }
 
         if (main.isSimilar(ItemList.ENDERPEARL)) {
@@ -53,9 +53,9 @@ public final class InteractListener implements Listener {
             player.launchProjectile(EnderPearl.class);
         }
 
-        if (main.isSimilar(ItemList.SPEED_ITEM)) {
+        if (main.isSimilar(ItemList.SPEED_SELECTOR)) {
             event.setCancelled(true);
-            player.openInventory(Gui.get(SpeedGui.class).getInventory());
+            player.openInventory(Gui.get(SpeedGui.class));
         }
     }
 

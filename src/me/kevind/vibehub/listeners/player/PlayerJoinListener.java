@@ -45,10 +45,10 @@ public final class PlayerJoinListener implements Listener {
         PlayerInventory inventory = player.getInventory();
         inventory.clear();
         inventory.setItem(0, ItemList.TIME_SELECTOR);
-        inventory.setItem(1, ItemList.COSMETICS_ITEM);
+        inventory.setItem(1, ItemList.COSMETICS_SELECTOR);
         inventory.setItem(4, ItemList.SERVER_SELECTOR);
         inventory.setItem(7, ItemList.ENDERPEARL);
-        inventory.setItem(8, ItemList.SPEED_ITEM);
+        inventory.setItem(8, ItemList.SPEED_SELECTOR);
         inventory.setHeldItemSlot(4);
         player.updateInventory();
 

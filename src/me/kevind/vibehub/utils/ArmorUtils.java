@@ -26,10 +26,10 @@ public final class ArmorUtils {
         meta.setColor(Color.fromRGB(red, green, blue));
         meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
         meta.addItemFlags(
-                ItemFlag.HIDE_POTION_EFFECTS,
-                ItemFlag.HIDE_DYE,
                 ItemFlag.HIDE_ENCHANTS,
-                ItemFlag.HIDE_ATTRIBUTES
+                ItemFlag.HIDE_ATTRIBUTES,
+                ItemFlag.HIDE_POTION_EFFECTS,
+                ItemFlag.HIDE_DYE
         );
         item.setItemMeta(meta);
 
