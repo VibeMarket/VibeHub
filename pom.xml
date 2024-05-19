@@ -84,5 +84,5 @@
     </dependencies>
     <groupId>me.kevind</groupId>
     <artifactId>VibeHub</artifactId>
-    <version>1.4.5-SNAPSHOT</version>
+    <version>1.4.6-SNAPSHOT</version>
 </project>
