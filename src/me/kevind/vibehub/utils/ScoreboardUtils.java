@@ -6,6 +6,7 @@ import org.bukkit.scoreboard.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public final class ScoreboardUtils {
 
@@ -62,6 +63,16 @@ public final class ScoreboardUtils {
 
         rank.setSuffix(ColorUtils.color(user.getCachedData().getMetaData().getPrefix()));
         rank.addEntry(ColorUtils.color("&7Rank: &f"));
+    }
+
+    public static void clearScoreboard(Player player) {
+        Scoreboard scoreboard = player.getScoreboard();
+        scoreboard.clearSlot(DisplaySlot.SIDEBAR);
+    }
+
+    public static void addScoreboard(Player player) {
+        Scoreboard scoreboard = player.getScoreboard();
+        Objects.requireNonNull(scoreboard.getObjective("sidebar")).setDisplaySlot(DisplaySlot.SIDEBAR);
     }
 
 }

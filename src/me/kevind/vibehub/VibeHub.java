@@ -123,7 +123,7 @@ public final class VibeHub extends JavaPlugin {
         Objects.requireNonNull(getCommand("cosmetics")).setExecutor(new CosmeticsCommand());
         Objects.requireNonNull(getCommand("particles")).setExecutor(new ParticlesComand());
         Objects.requireNonNull(getCommand("hubreload")).setExecutor(new ReloadCommand());
-        //getCommand("scoreboard").setExecutor(new ScoreboardCommand());
+        Objects.requireNonNull(getCommand("scoreboard")).setExecutor(new ScoreboardCommand());
         Objects.requireNonNull(getCommand("sethub")).setExecutor(new SetHubCommand());
         Objects.requireNonNull(getCommand("vspeed")).setExecutor(new VSpeedCommand());
 
